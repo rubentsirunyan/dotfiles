@@ -12,7 +12,7 @@ cp -r terminator ~/.config/
 
 vim +PluginInstall +qall
 
-if [ ! -f /etc/bashrc ];
+if ! [ -f /etc/bashrc ]; then
   sudo cp /etc/skel/.bashrc /etc/bashrc
 fi
 cp .bashrc ~/.bashrc
