@@ -25,8 +25,6 @@
 [plugins]
 [profiles]
   [[default]]
-    background_color = "#2e3436"
-    cursor_color = "#aaaaaa"
     show_titlebar = False
     use_theme_colors = True
 
