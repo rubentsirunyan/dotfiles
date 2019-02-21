@@ -11,3 +11,8 @@ cp -r .vim* ~/
 cp -r terminator ~/.config/
 
 vim +PluginInstall +qall
+
+if [ ! -f /etc/bashrc ];
+  sudo cp ~/.bashrc /etc/bashrc
+fi
+cp .bashrc ~/.bashrc
