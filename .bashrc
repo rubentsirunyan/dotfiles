@@ -24,6 +24,10 @@ PROMPT_COMMAND='history -a'
 alias ll='ls -lah'
 
 # Fzf stuff
+if [ -f ~/.fzf.bash ]; then
+	. ~/.fzf.bash
+fi
+
 alias __fzf_content_search__='grep -r --line-buffered "" * | fzf --height 40%'
 rvim() { vim "scp://$1/$2"; }
 export FZF_CTRL_T_OPTS="--preview '(highlight -O ansi -l {} 2> /dev/null || cat {} || tree -C {}) 2> /dev/null | head -200'"
