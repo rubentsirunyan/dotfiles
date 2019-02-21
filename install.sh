@@ -8,6 +8,6 @@ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install --all --no-zsh --no-fish
 
 cp -r .vim* ~/
-cp -r terminator ~/
+cp -r terminator ~/.config/
 
 vim +PluginInstall +qall
