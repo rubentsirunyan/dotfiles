@@ -36,3 +36,5 @@ export FZF_DEFAULT_OPTS='--border'
 # Key bindings
 bind '"\C-f":" \C-e\C-u\C-y\ey\C-u`__fzf_content_search__`\e\C-e\er\e^"'
 
+# LastPass
+alias flpass='lpass show -c --password $(lpass ls  | fzf | awk '\''{print $(NF)}'\'' | sed "s/\]//g")'
