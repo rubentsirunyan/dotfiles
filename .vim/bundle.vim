@@ -18,10 +18,12 @@ Plugin 'tpope/vim-repeat'
 
 "Plugin 'Shougo/neocomplete.vim'
 Plugin 'scrooloose/nerdtree'
-Plugin 'junegunn/fzf.vim'
 "Plugin 'junegunn/fzf'
+set rtp+=~/.fzf
+Plugin 'junegunn/fzf.vim'
 Plugin 'Townk/vim-autoclose'
 Plugin 'tomtom/tcomment_vim'
+Plugin 'junegunn/limelight.vim'
 "Plugin 'davidhalter/jedi-vim'
 "if v:version > 704
 "  Plugin 'Valloric/YouCompleteMe'

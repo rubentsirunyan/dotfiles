@@ -28,7 +28,7 @@ filetype plugin indent on
 syntax on
 " :W sudo saves the file 
 " (useful for handling the permission-denied error)
-command W w !sudo tee % > /dev/null
+command! W w !sudo tee % > /dev/null
 
 " Don't redraw while executing macros (good performance config)
 set lazyredraw 
@@ -210,6 +210,20 @@ set so=10
 " Guide column
 set colorcolumn=80
 highlight ColorColumn ctermbg=black
+
+" LimeLight
+let g:limelight_conceal_ctermfg = 'gray'
+
+" Line highlighting
+hi CursorLine cterm=NONE ctermbg=black
+
+augroup CursorLine
+  au!
+  au VimEnter,WinEnter,BufWinEnter * setlocal cursorline
+  au WinLeave * setlocal nocursorline
+augroup END
+
+nnoremap <leader>l :set cursorline!<CR>
 
 " Useful settings
 set history=700
