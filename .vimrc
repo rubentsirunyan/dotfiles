@@ -1,26 +1,6 @@
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Sections:
-"    => General
-"    => Search
-"    => Files and backups
-"    => Text, tab and indent related
-"    => Moving around, tabs and buffers
-"    => Status line
-"    => File Explorer
-"    => Line Numbers
-"    => FZF
-"    => Copy & Paste, Clipboard
-"    => Editing mappings
-"    => vimgrep searching and cope displaying
-"    => Misc
-"    => Helper functions
-"
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" vim:fdm=marker
 
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => General
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => General {{{
 " Include vundle config
 source ~/.vim/bundle.vim
 
@@ -32,10 +12,9 @@ command! W w !sudo tee % > /dev/null
 
 " Don't redraw while executing macros (good performance config)
 set lazyredraw 
+" }}}
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Search
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Search {{{
 " Ignore case when searching
 set ignorecase
 
@@ -50,20 +29,17 @@ set incsearch
 
 " Disable highlight when <leader><cr> is pressed
 map <silent> <leader><cr> :noh<cr>
+" }}}
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"=> Files and backups
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"=> Files and backups {{{
 " Disable stupid backup and swap files - they trigger too many events
 " for file system watchers
 set nobackup
 set nowritebackup
 set noswapfile
+" }}}
 
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Text, tab and indent related
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Text, tab and indent related {{{
 " Use spaces instead of tabs
 set tabstop=2
 set softtabstop=2
@@ -77,11 +53,9 @@ let g:indent_guides_enable_on_vim_startup = 1
 hi IndentGuidesOdd  guibg=red   ctermbg=black
 hi IndentGuidesEven guibg=green ctermbg=236
 map <leader>ig :IndentGuidesToggle<cr>
+" }}}
 
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Moving around, tabs, windows and buffers
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Moving around, tabs, windows and buffers {{{
 " Smart way to move between windows
 map <C-j> <C-W>j
 map <C-k> <C-W>k
@@ -106,44 +80,35 @@ map <leader>te :tabedit <c-r>=expand("%:p:h")<cr>/
 
 " Switch CWD to the directory of the open buffer
 map <leader>cd :cd %:p:h<cr>:pwd<cr>
+" }}}
 
-
-""""""""""""""""""""""""""""""
-" => Status line
-""""""""""""""""""""""""""""""
+" => Status line {{{
 " Always show the status line
 set laststatus=2
 
 " Format the status line
 "set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l\ \ Column:\ %c
+" }}}
 
-
-""""""""""""""""""""""""""""""
-" => File Explorer
-""""""""""""""""""""""""""""""
+" => File Explorer {{{
 let g:netrw_banner = 0
 let g:netrw_liststyle = 3
 let g:netrw_browse_split = 4
 let g:netrw_altv = 1
 let g:netrw_winsize = 25
 map <F2> :NERDTreeToggle<CR>
+" }}}
 
-
-""""""""""""""""""""""""""""""
-" => Line Numbers
-""""""""""""""""""""""""""""""
+" => Line Numbers {{{
 set number
 map <F3> :set rnu!<CR>
 autocmd InsertEnter   * set norelativenumber
 
-
-
 " Automatic reloading of .vimrc
 autocmd! bufwritepost .vimrc source %
+" }}}
 
-""""""""""""""""""""""""""""""
-" => FZF
-""""""""""""""""""""""""""""""
+" => FZF {{{
 " Fzf Configuration
 " This is the default extra key bindings
 let g:fzf_action = {
@@ -185,25 +150,28 @@ let g:fzf_colors =
   \ 'marker':  ['fg', 'Keyword'],
   \ 'spinner': ['fg', 'Label'],
   \ 'header':  ['fg', 'Comment'] }
+" }}}
 
-
-""""""""""""""""""""""""""""""
-" => Copy & Paste, Clipboard
-"""""""""""""""""""""""""""""" 
+" => Copy & Paste, Clipboard {{{
 set pastetoggle=<F7> "F7 before pasting to preserve indentation
 " set clipboard=unnamedplus
 inoremap <C-v> <ESC>"+pa
 vnoremap <C-c> "+y
+" }}}
 
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Misc
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Misc {{{
 " Mouse
 set mouse=a  " on OSX press ALT and click
 
 " map sort function to a key
 "" vnoremap <Leader>s :sort<CR>
+
+" jump to the last position when reopening a file
+if has("autocmd")
+  au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
+    \| exe "normal! g'\"" | endif
+endif
+
 
 set so=10
 
@@ -236,3 +204,4 @@ try
   set undofile
 catch
 endtry
+" }}}
