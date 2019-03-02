@@ -20,6 +20,10 @@ shopt -s histappend
 # instead of after closing the session.
 PROMPT_COMMAND='history -a'
 
+# Prompt
+PS1='[${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\h\[\033[00m\] \[\033[01;34m\]\W\[\033[00m\]]\$ '
+
+
 # User specific aliases and functions
 alias ll='ls -lah'
 
@@ -36,5 +40,6 @@ export FZF_DEFAULT_OPTS='--border'
 # Key bindings
 bind '"\C-f":" \C-e\C-u\C-y\ey\C-u`__fzf_content_search__`\e\C-e\er\e^"'
 
-# LastPass
+# FZF LastPass
 alias flpass='lpass show -c --password $(lpass ls  | fzf | awk '\''{print $(NF)}'\'' | sed "s/\]//g")'
+

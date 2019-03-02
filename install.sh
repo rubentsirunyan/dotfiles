@@ -25,3 +25,5 @@ if ! [ -f /etc/bashrc ]; then
   sudo cp /etc/skel/.bashrc /etc/bashrc
 fi
 cp .bashrc ~/.bashrc
+
+sudo cp root.bashrc /root/.bashrc
