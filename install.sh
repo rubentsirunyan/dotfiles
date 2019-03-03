@@ -2,6 +2,7 @@
 
 sudo apt install -y terminator
 sudo apt install -y vim-gtk
+sudo apt install -y silversearcher-ag
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install --all --no-zsh --no-fish
 

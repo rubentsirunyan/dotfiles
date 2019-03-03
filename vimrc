@@ -113,7 +113,7 @@ autocmd! bufwritepost .vimrc source %
 " This is the default extra key bindings
 let g:fzf_action = {
   \ 'ctrl-t': 'tab split',
-  \ 'ctrl-x': 'split',
+  \ 'ctrl-h': 'split',
   \ 'ctrl-v': 'vsplit' }
 
 " Default fzf layout
@@ -130,12 +130,12 @@ imap <c-x><c-f> <plug>(fzf-complete-path)
 imap <c-x><c-j> <plug>(fzf-complete-file-ag)
 imap <c-x><c-l> <plug>(fzf-complete-line)
 
-nmap <c-t> :FzfFiles<cr>
-nmap <c-l>l :FzfLines<cr>
-nmap <c-l>b :FzfBLines<cr>
+nmap <c-t> :FzFiles<cr>
+nmap <c-l>l :FzLines<cr>
+nmap <c-l>b :FzBLines<cr>
+nmap <leader>ag :FzAg<cr>
 
-
-let g:fzf_command_prefix = 'Fzf' 
+let g:fzf_command_prefix = 'Fz'
 let g:fzf_colors =
 \ { 'fg':      ['fg', 'Normal'],
   \ 'bg':      ['bg', 'Normal'],
