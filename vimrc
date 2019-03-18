@@ -172,8 +172,11 @@ if has("autocmd")
     \| exe "normal! g'\"" | endif
 endif
 
-
+" Keep the cursor centered
 set so=10
+
+" Text wrapping
+set wrap linebreak nolist
 
 " Guide column
 set colorcolumn=80
