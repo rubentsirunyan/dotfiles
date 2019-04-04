@@ -11,7 +11,10 @@ sudo add-apt-repository -y ppa:ryu0/aesthetics
 sudo add-apt-repository -y ppa:papirus/papirus
 sudo add-apt-repository -y ppa:tista/adapta
 sudo apt update
-sudo apt install -y matcha-theme adapta-gtk-theme papirus-icon-theme
+sudo apt install -y matcha-theme adapta-gtk-theme papirus-icon-theme papirus-folders
+
+# Change folder colors
+#papirus-folders -C teal --theme Papirus-Dark
 
 # Docky
 sudo apt install -y docky
