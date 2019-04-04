@@ -18,6 +18,7 @@ Plugin 'tpope/vim-repeat'
 
 "Plugin 'Shougo/neocomplete.vim'
 Plugin 'scrooloose/nerdtree'
+Plugin 'janlay/NERD-tree-project'
 "Plugin 'junegunn/fzf'
 set rtp+=~/.fzf
 Plugin 'junegunn/fzf.vim'

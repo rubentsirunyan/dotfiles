@@ -96,7 +96,7 @@ let g:netrw_liststyle = 3
 let g:netrw_browse_split = 4
 let g:netrw_altv = 1
 let g:netrw_winsize = 25
-map <F2> :NERDTreeToggle<CR>
+map <F2> :ToggleNERDTree<CR>
 " }}}
 
 " => Line Numbers {{{
@@ -172,11 +172,10 @@ if has("autocmd")
     \| exe "normal! g'\"" | endif
 endif
 
-" Keep the cursor centered
-set so=10
-
 " Text wrapping
 set wrap linebreak nolist
+
+set so=10
 
 " Guide column
 set colorcolumn=80
