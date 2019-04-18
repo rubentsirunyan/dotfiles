@@ -12,19 +12,22 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'Yggdroot/indentLine'
 Plugin 'PProvost/vim-ps1'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-repeat'
-
+Plugin 'google/vim-searchindex.git'
 "Plugin 'Shougo/neocomplete.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'janlay/NERD-tree-project'
 "Plugin 'junegunn/fzf'
 set rtp+=~/.fzf
 Plugin 'junegunn/fzf.vim'
-Plugin 'Townk/vim-autoclose'
+" Plugin 'Townk/vim-autoclose'
+Plugin 'ivang/vim-autoclose'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'junegunn/limelight.vim'
+Plugin 'aonemd/kuroi.vim'
 "Plugin 'davidhalter/jedi-vim'
 "if v:version > 704
 "  Plugin 'Valloric/YouCompleteMe'

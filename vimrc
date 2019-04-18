@@ -1,6 +1,9 @@
 " vim:fdm=marker
 
 " => General {{{
+" Leader to Space mapping
+let mapleader = " "
+
 " Include vundle config
 source ~/.vim/bundle.vim
 
@@ -46,13 +49,8 @@ set softtabstop=2
 set shiftwidth=2
 set expandtab
 
-" Indent Guide
-let g:indent_guides_auto_colors = 0
-let g:indent_guides_guide_size = 1
-let g:indent_guides_enable_on_vim_startup = 1
-hi IndentGuidesOdd  guibg=red   ctermbg=black
-hi IndentGuidesEven guibg=green ctermbg=236
-map <leader>ig :IndentGuidesToggle<cr>
+" Indent guides
+nnoremap <leader>il :IndentLinesToggle<CR>
 " }}}
 
 " => Moving around, tabs, windows and buffers {{{
@@ -101,6 +99,7 @@ map <F2> :ToggleNERDTree<CR>
 
 " => Line Numbers {{{
 set number
+set relativenumber
 map <F3> :set rnu!<CR>
 autocmd InsertEnter   * set norelativenumber
 
@@ -134,6 +133,7 @@ nmap <c-t> :FzFiles<cr>
 nmap <c-l>l :FzLines<cr>
 nmap <c-l>b :FzBLines<cr>
 nmap <leader>ag :FzAg<cr>
+nmap <leader>b :FzBuffers<cr>
 
 let g:fzf_command_prefix = 'Fz'
 let g:fzf_colors =
@@ -154,9 +154,14 @@ let g:fzf_colors =
 
 " => Copy & Paste, Clipboard {{{
 set pastetoggle=<F7> "F7 before pasting to preserve indentation
-" set clipboard=unnamedplus
-inoremap <C-v> <ESC>"+pa
+
+inoremap <C-v> <ESC>"+Pa
 vnoremap <C-c> "+y
+augroup PersistentClipboard
+  autocmd!
+  autocmd VimLeave * call system("xclip -selection clipboard -i", getreg('+'))
+augroup END
+
 " }}}
 
 " => Misc {{{
@@ -206,4 +211,9 @@ try
   set undofile
 catch
 endtry
+
+set termguicolors
+" set t_Co=256
+set background=dark
+colorscheme kuroi
 " }}}
