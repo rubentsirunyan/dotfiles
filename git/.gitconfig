@@ -1,0 +1,9 @@
+[user]
+  name = Ruben Tsirunyan
+  email = rubentsirunyan@gmail.com
+#[includeIf "gitdir:~/Documents/<client>/"]
+#  path = .gitconfig-<client>
+[core]
+  fileMode = false
+[push]
+	default = current
