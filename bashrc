@@ -26,11 +26,15 @@ PS1='[${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\h\[\033[00m\] \[\033[01;
 # User specific aliases and functions
 alias ll='ls -lah'
 
-# LastPass
+# Jump root
+alias jr='. /opt/jr/jr'
+
+vimscp() { vim "scp://$1/$2"; }
+
+# {{{ LastPass
 alias fzlpass='lpass show -c --password $(lpass ls | fzf --height 50% --border | awk '\''{print $(NF)}'\'' | sed "s/\]//g")'
 bind '"\C-l\C-p": "fzlpass\n"'
-
-alias syncp='cd ~/Documents/SYNC-TOPS/syncp'
+# }}}
 
 # Fzf stuff {{{
 if [ -f ~/.fzf.bash ]; then
@@ -38,9 +42,10 @@ if [ -f ~/.fzf.bash ]; then
 fi
 
 alias __fzf_content_search__='grep -r --line-buffered "" * | fzf --height 40%'
-rvim() { vim "scp://$1/$2"; }
-export FZF_CTRL_T_OPTS="--preview '(highlight -O ansi -l {} 2> /dev/null || cat {} || tree -C {}) 2> /dev/null | head -200'"
-export FZF_DEFAULT_OPTS='--border'
+
+# export FZF_CTRL_T_OPTS="--border"
+
+export FZF_DEFAULT_OPTS='--bind "ctrl-e:execute(vim {} < /dev/tty > /dev/tty)" --border --preview "[[ $(file --mime {}) =~ binary ]] && echo {} is a binary file || (bat --style=numbers --color=always {} || cat {}) 2> /dev/null | head -500" --height 40%'
 
 # Key bindings
 bind '"\C-f":" \C-e\C-u\C-y\ey\C-u`__fzf_content_search__`\e\C-e\er\e^"'
@@ -109,3 +114,22 @@ bind '"\C-g\C-t": "$(gt)\e\C-e\er"'
 bind '"\C-g\C-l": "$(gl)\e\C-e\er"'
 bind '"\C-g\C-r": "$(gr)\e\C-e\er"'
 # }}}
+
+# Virtual Environments {{{
+export WORKON_HOME=~/Envs
+source /usr/local/bin/virtualenvwrapper.sh
+alias activate='. venv/bin/activate'
+# }}}
+
+vo() {
+  local out file key
+  out=$(fzf --query="$1" --exit-0 --expect=ctrl-o,ctrl-e)
+  key=$(head -1 <<< "$out")
+  file=$(head -2 <<< "$out" | tail -1)
+  if [ -n "$file" ]; then
+    [ "$key" = ctrl-o ] && open "$file" || ${EDITOR:-vim} "$file"
+  fi
+}
+
+. /usr/share/autojump/autojump.sh
+
