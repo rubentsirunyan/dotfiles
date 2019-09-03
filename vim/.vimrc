@@ -50,7 +50,7 @@ set shiftwidth=2
 set expandtab
 
 " Indent guides
-nnoremap <leader>il :IndentLinesToggle<CR>
+nnoremap <leader>il :IndentLinesToggle<CR> 
 " }}}
 
 " => Moving around, tabs, windows and buffers {{{
@@ -64,8 +64,11 @@ map <C-l> <C-W>l
 map <leader>tn :tabnew<cr>
 map <leader>to :tabonly<cr>
 map <leader>tc :tabclose<cr>
-map <leader>tm :tabmove 
-map <leader>t<leader> :tabnext 
+map <leader>tm :tabmove
+map t] :tabnext<cr>
+map t[ :tabprevious<cr>
+map b] :bnext<cr>
+map b[ :bprevious<cr>
 
 " Let 'tl' toggle between this and the last accessed tab
 let g:lasttab = 1
@@ -130,10 +133,14 @@ imap <c-x><c-j> <plug>(fzf-complete-file-ag)
 imap <c-x><c-l> <plug>(fzf-complete-line)
 
 nmap <c-t> :FzFiles<cr>
-nmap <c-l>l :FzLines<cr>
-nmap <c-l>b :FzBLines<cr>
 nmap <leader>ag :FzAg<cr>
 nmap <leader>b :FzBuffers<cr>
+nmap <leader>gf :FzGFiles<cr>
+nmap <leader>gs :FzGFiles?<cr>
+nmap <leader>mm :FzMaps<cr>
+nmap <leader>cc :FzCommands<cr>
+nmap <leader>ft :FzFiletypes<cr>
+nmap <leader>/ :FzLocate /<cr>
 
 let g:fzf_command_prefix = 'Fz'
 let g:fzf_colors =
@@ -155,13 +162,15 @@ let g:fzf_colors =
 " => Copy & Paste, Clipboard {{{
 set pastetoggle=<F7> "F7 before pasting to preserve indentation
 
-inoremap <C-v> <ESC>"+Pa
+vnoremap s c<C-r>0<ESC>
+
+inoremap <C-v> <ESC>l"+P
+
 vnoremap <C-c> "+y
 augroup PersistentClipboard
   autocmd!
   autocmd VimLeave * call system("xclip -selection clipboard -i", getreg('+'))
 augroup END
-
 " }}}
 
 " => Misc {{{

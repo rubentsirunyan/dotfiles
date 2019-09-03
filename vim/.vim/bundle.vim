@@ -28,6 +28,7 @@ Plugin 'ivang/vim-autoclose'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'junegunn/limelight.vim'
 Plugin 'aonemd/kuroi.vim'
+Plugin 'hiphish/jinja.vim'
 "Plugin 'davidhalter/jedi-vim'
 "if v:version > 704
 "  Plugin 'Valloric/YouCompleteMe'
