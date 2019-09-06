@@ -11,7 +11,6 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'Yggdroot/indentLine'
 Plugin 'PProvost/vim-ps1'
 Plugin 'tpope/vim-surround'
@@ -28,7 +27,12 @@ Plugin 'ivang/vim-autoclose'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'junegunn/limelight.vim'
 Plugin 'aonemd/kuroi.vim'
-Plugin 'hiphish/jinja.vim'
+" NOTE: Uncomment after https://gitlab.com/HiPhish/jinja.vim/merge_requests/1
+" is merged
+" Plugin 'hiphish/jinja.vim'
+Plugin 'rubentsirunyan/jinja.vim'
+Plugin 'tpope/vim-fugitive'
+Plugin 'elzr/vim-json'
 "Plugin 'davidhalter/jedi-vim'
 "if v:version > 704
 "  Plugin 'Valloric/YouCompleteMe'

@@ -9,9 +9,11 @@ fi
 # Set the default editor to vim.
 export EDITOR=vim
 
+# {{{ History
 # Avoid succesive duplicates in the bash command history.
 export HISTCONTROL=ignoredups
-
+export HISTFILESIZE=40000
+export HISTSIZE=30000
 # Append commands to the bash command history file (~/.bash_history)
 # instead of overwriting it.
 shopt -s histappend
@@ -19,6 +21,7 @@ shopt -s histappend
 # Append commands to the history every time a prompt is shown,
 # instead of after closing the session.
 PROMPT_COMMAND='history -a'
+# }}}
 
 # Prompt
 PS1='[${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\h\[\033[00m\] \[\033[01;34m\]\W\[\033[00m\]]\$ '
@@ -132,4 +135,3 @@ vo() {
 }
 
 . /usr/share/autojump/autojump.sh
-
