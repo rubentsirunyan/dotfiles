@@ -1,4 +1,5 @@
 [global_config]
+  enabled_plugins = LaunchpadCodeURLHandler, APTURLHandler, LaunchpadBugURLHandler
   window_state = maximise
 [keybindings]
   cycle_next = <Alt>bracketright
@@ -9,6 +10,7 @@
   go_prev = <Shift><Alt>braceleft
   go_right = <Shift><Alt>l
   go_up = <Shift><Alt>k
+  new_window = <Primary><Shift>n
   next_tab = <Primary>Tab
   prev_tab = <Primary><Shift>Tab
   split_horiz = <Alt>h
@@ -25,4 +27,7 @@
 [plugins]
 [profiles]
   [[default]]
+    background_darkness = 0.79
+    cursor_color = "#aaaaaa"
+    scrollback_lines = 5000
     show_titlebar = False

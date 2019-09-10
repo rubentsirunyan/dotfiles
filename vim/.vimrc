@@ -98,6 +98,8 @@ let g:netrw_browse_split = 4
 let g:netrw_altv = 1
 let g:netrw_winsize = 25
 map <F2> :ToggleNERDTree<CR>
+let g:NTPNames = ['requirements.txt', 'requirements.yml', 'build.xml', 'pom.xml', 'Makefile', '.project', '.lvimrc', 'README.md', 'LICENSE']
+let g:NTPNamesDirs = ['.git', 'venv']
 " }}}
 
 " => Line Numbers {{{
@@ -164,7 +166,7 @@ set pastetoggle=<F7> "F7 before pasting to preserve indentation
 
 vnoremap s c<C-r>0<ESC>
 
-inoremap <C-v> <ESC>l"+P
+inoremap <C-v> <ESC>"+p
 
 vnoremap <C-c> "+y
 augroup PersistentClipboard
@@ -225,4 +227,5 @@ set termguicolors
 " set t_Co=256
 set background=dark
 colorscheme kuroi
+let g:vim_json_syntax_conceal = 0
 " }}}
