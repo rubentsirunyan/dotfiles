@@ -19,8 +19,10 @@ sudo apt install -y matcha-theme adapta-gtk-theme papirus-icon-theme papirus-fol
 # Docky
 sudo apt install -y docky
 
-cp -r .vim* ~/
-cp -r terminator ~/.config/
+stow bash
+stow terminator
+stow vim
+stow git
 
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 vim +PluginInstall +qall
@@ -28,6 +30,5 @@ vim +PluginInstall +qall
 if ! [ -f /etc/bashrc ]; then
   sudo cp /etc/skel/.bashrc /etc/bashrc
 fi
-cp .bashrc ~/.bashrc
 
 sudo cp root.bashrc /root/.bashrc
