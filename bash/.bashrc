@@ -9,6 +9,8 @@ fi
 # Set the default editor to vim.
 export EDITOR=vim
 
+# export PATH="$PATH:~/.local/bin"
+
 # {{{ History
 # Avoid succesive duplicates in the bash command history.
 export HISTCONTROL=ignoredups
@@ -24,7 +26,8 @@ PROMPT_COMMAND='history -a'
 # }}}
 
 # Prompt
-PS1='[${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\h\[\033[00m\] \[\033[01;34m\]\W\[\033[00m\]]\$ '
+PS1='[${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\h\[\033[00m\] \[\033[01;34m\]\W\[\033[00m\]]\$ \e]2;`/opt/terminator-project-title/find_project_root`\a'
+
 
 # User specific aliases and functions
 alias ll='ls -lah'
@@ -119,8 +122,6 @@ bind '"\C-g\C-r": "$(gr)\e\C-e\er"'
 # }}}
 
 # Virtual Environments {{{
-export WORKON_HOME=~/Envs
-source /usr/local/bin/virtualenvwrapper.sh
 alias activate='. venv/bin/activate'
 # }}}
 
