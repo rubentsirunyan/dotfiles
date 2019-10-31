@@ -26,7 +26,7 @@ PROMPT_COMMAND='history -a'
 # }}}
 
 # Prompt
-PS1='[${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\h\[\033[00m\] \[\033[01;34m\]\W\[\033[00m\]]\$ \e]2;`/opt/terminal-project-title/find_project_root`\a'
+PS1='[${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\h\[\033[00m\] \[\033[01;34m\]\W\[\033[00m\]]\$ \[\e]2;`/opt/terminal-project-title/find_project_root`\a\]'
 
 
 # User specific aliases and functions
