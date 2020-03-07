@@ -19,6 +19,9 @@ sudo apt install -y matcha-theme adapta-gtk-theme papirus-icon-theme papirus-fol
 # Docky
 sudo apt install -y docky
 
+# Powerline
+pip3 install --user powerline-status
+
 # My scripts
 git clone https://github.com/rubentsirunyan/terminal-project-title.git /opt/terminal-project-title && chmod +x /opt/terminal-project-title/find_project_root
 git clone https://github.com/rubentsirunyan/jr.git /opt/jr && chmod +x /opt/jr/jr

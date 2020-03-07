@@ -13,6 +13,7 @@ highlight Folded ctermbg=245
 highlight BadWhitespace ctermbg=red guibg=darkred
 au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 
+autocmd BufWritePre *.py execute ':Black'
 ""python with virtualenv support
 "py << EOF
 "import os

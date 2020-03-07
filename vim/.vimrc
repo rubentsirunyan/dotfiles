@@ -51,6 +51,10 @@ set expandtab
 
 " Indent guides
 nnoremap <leader>il :IndentLinesToggle<CR> 
+
+" Terraform related
+let g:terraform_align=1
+let g:terraform_fmt_on_save=1
 " }}}
 
 " => Moving around, tabs, windows and buffers {{{
@@ -175,6 +179,31 @@ augroup PersistentClipboard
 augroup END
 " }}}
 
+" => Syntax {{{
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
+"
+"let g:syntastic_always_populate_loc_list = 1
+"let g:syntastic_auto_loc_list = 1
+"let g:syntastic_check_on_open = 0
+"let g:syntastic_check_on_wq = 1
+" }}}
+
+" => Ctags {{{
+let g:auto_ctags = 1
+" let g:auto_ctags_directory_list = ['.git', 'venv']
+let g:auto_ctags_tags_name = '.tags'
+" }}}
+
+" => Powerline {{{
+python3 << endpython3
+from powerline.vim import setup as powerline_setup
+powerline_setup()
+del powerline_setup
+endpython3
+" }}}
+
 " => Misc {{{
 " Mouse
 set mouse=a  " on OSX press ALT and click
@@ -226,6 +255,7 @@ endtry
 set termguicolors
 " set t_Co=256
 set background=dark
-colorscheme kuroi
+colorscheme codedark
+" colorscheme kuroi
 let g:vim_json_syntax_conceal = 0
 " }}}
