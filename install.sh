@@ -21,6 +21,19 @@ sudo apt install -y docky
 
 # Powerline
 pip3 install --user powerline-status
+sudo apt-get installi -y fonts-powerline
+
+sudo apt install -y cmake build-essential python3-dev mono-complete
+
+# Golang
+cd /tmp
+wget https://dl.google.com/go/go1.14.linux-amd64.tar.gz
+sudo tar -xvf go1.14.linux-amd64.tar.gz
+sudo mv go /usr/local
+
+# Node, NPM
+curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
+sudo apt-get install -y nodejs
 
 # My scripts
 git clone https://github.com/rubentsirunyan/terminal-project-title.git /opt/terminal-project-title && chmod +x /opt/terminal-project-title/find_project_root
@@ -36,6 +49,9 @@ stow git
 
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 vim +PluginInstall +qall
+
+cd ~/.vim/bundle/YouCompleteMe 
+python3 install.py --all
 
 if ! [ -f /etc/bashrc ]; then
   sudo cp /etc/skel/.bashrc /etc/bashrc

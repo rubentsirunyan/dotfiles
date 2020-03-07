@@ -15,6 +15,10 @@ command! W w !sudo tee % > /dev/null
 
 " Don't redraw while executing macros (good performance config)
 set lazyredraw 
+
+" Split right and below
+set splitbelow
+set splitright
 " }}}
 
 " => Search {{{
@@ -180,14 +184,22 @@ augroup END
 " }}}
 
 " => Syntax {{{
-"set statusline+=%#warningmsg#
-"set statusline+=%{SyntasticStatuslineFlag()}
-"set statusline+=%*
+
+" let g:syntastic_error_symbol = '✘'
+" let g:syntastic_warning_symbol = "▲"
+" augroup mySyntastic
+"   au!
+"   au FileType tex let b:syntastic_mode = "passive"
+" augroup END
+
+" set statusline+=%#warningmsg#
+" set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%*
 "
-"let g:syntastic_always_populate_loc_list = 1
-"let g:syntastic_auto_loc_list = 1
-"let g:syntastic_check_on_open = 0
-"let g:syntastic_check_on_wq = 1
+" let g:syntastic_always_populate_loc_list = 1
+" let g:syntastic_auto_loc_list = 1
+" let g:syntastic_check_on_open = 0
+" let g:syntastic_check_on_wq = 1
 " }}}
 
 " => Ctags {{{
@@ -197,11 +209,17 @@ let g:auto_ctags_tags_name = '.tags'
 " }}}
 
 " => Powerline {{{
-python3 << endpython3
-from powerline.vim import setup as powerline_setup
-powerline_setup()
-del powerline_setup
-endpython3
+" python3 << endpython3
+" from powerline.vim import setup as powerline_setup
+" powerline_setup()
+" del powerline_setup
+" endpython3
+" }}}
+
+" => Airline {{{
+" air-line
+let g:airline_powerline_fonts = 1
+let g:airline_theme='powerlineish'
 " }}}
 
 " => Misc {{{
@@ -255,7 +273,12 @@ endtry
 set termguicolors
 " set t_Co=256
 set background=dark
-colorscheme codedark
-" colorscheme kuroi
+" colorscheme codedark
+colorscheme kuroi
 let g:vim_json_syntax_conceal = 0
+
+" Show bad whitespace
+highlight BadWhitespace ctermbg=red guibg=darkred
+au BufRead,BufNewFile *.py,*.pyw,*.c,*.h,*.go,*.js,*.yml,*.yaml,*.json,*.tf match BadWhitespace /\s\+$/
+
 " }}}

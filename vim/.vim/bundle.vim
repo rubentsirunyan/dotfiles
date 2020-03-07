@@ -20,8 +20,8 @@ Plugin 'google/vim-searchindex.git'
 Plugin 'scrooloose/nerdtree'
 Plugin 'janlay/NERD-tree-project'
 "Plugin 'junegunn/fzf'
-set rtp+=~/.fzf
-Plugin 'junegunn/fzf.vim'
+" set rtp+=~/.fzf
+" Plugin 'junegunn/fzf.vim'
 " Plugin 'Townk/vim-autoclose'
 Plugin 'ivang/vim-autoclose'
 Plugin 'tomtom/tcomment_vim'
@@ -34,14 +34,19 @@ Plugin 'rubentsirunyan/jinja.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'elzr/vim-json'
 Plugin 'hashivim/vim-terraform'
-Plugin 'psf/black'
+" Plugin 'psf/black'
 Plugin 'soramugi/auto-ctags.vim'
 Plugin 'tomasiser/vim-code-dark'
-" Plugin 'vim-syntastic/syntastic'
+Plugin 'vim-syntastic/syntastic'
+Plugin 'tmhedberg/SimpylFold'
+Plugin 'vim-scripts/indentpython.vim'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'ctrlpvim/ctrlp.vim'
 "Plugin 'davidhalter/jedi-vim'
-"if v:version > 704
-"  Plugin 'Valloric/YouCompleteMe'
-"endif
+if v:version > 704
+ Plugin 'Valloric/YouCompleteMe'
+endif
  
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
