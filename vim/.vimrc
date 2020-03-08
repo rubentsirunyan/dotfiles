@@ -208,14 +208,6 @@ let g:auto_ctags = 1
 let g:auto_ctags_tags_name = '.tags'
 " }}}
 
-" => Powerline {{{
-" python3 << endpython3
-" from powerline.vim import setup as powerline_setup
-" powerline_setup()
-" del powerline_setup
-" endpython3
-" }}}
-
 " => Airline {{{
 " air-line
 let g:airline_powerline_fonts = 1
