@@ -9,12 +9,12 @@ source ~/.vim/bundle.vim
 
 filetype plugin indent on
 syntax on
-" :W sudo saves the file 
+" :W sudo saves the file
 " (useful for handling the permission-denied error)
 command! W w !sudo tee % > /dev/null
 
 " Don't redraw while executing macros (good performance config)
-set lazyredraw 
+set lazyredraw
 
 " Split right and below
 set splitbelow
@@ -25,7 +25,7 @@ set splitright
 " Ignore case when searching
 set ignorecase
 
-" When searching try to be smart about cases 
+" When searching try to be smart about cases
 set smartcase
 
 " Highlight search results
@@ -54,7 +54,7 @@ set shiftwidth=2
 set expandtab
 
 " Indent guides
-nnoremap <leader>il :IndentLinesToggle<CR> 
+nnoremap <leader>il :IndentLinesToggle<CR>
 
 " Terraform related
 let g:terraform_align=1
@@ -98,6 +98,15 @@ set laststatus=2
 " Format the status line
 "set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l\ \ Column:\ %c
 " }}}
+
+" => Colors {{{
+set termguicolors
+" set t_Co=256
+set background=dark
+" colorscheme codedark
+colorscheme kuroi
+let g:vim_json_syntax_conceal = 0
+"}}}
 
 " => File Explorer {{{
 let g:netrw_banner = 0
@@ -185,21 +194,19 @@ augroup END
 
 " => Syntax {{{
 
-" let g:syntastic_error_symbol = '✘'
-" let g:syntastic_warning_symbol = "▲"
-" augroup mySyntastic
-"   au!
-"   au FileType tex let b:syntastic_mode = "passive"
-" augroup END
+let g:syntastic_error_symbol = '✘'
+" let g:syntastic_style_error_symbol = '⚠'
+let g:syntastic_warning_symbol = "▲"
+hi SyntasticStyleError guibg=NONE
+hi SyntasticStyleWarning guibg=NONE
+highlight SyntasticStyleErrorSign guifg=#ffcc00 guibg=NONE
+augroup mySyntastic
+  au!
+  au FileType tex let b:syntastic_mode = "passive"
+augroup END
 
-" set statusline+=%#warningmsg#
-" set statusline+=%{SyntasticStatuslineFlag()}
-" set statusline+=%*
-"
-" let g:syntastic_always_populate_loc_list = 1
-" let g:syntastic_auto_loc_list = 1
-" let g:syntastic_check_on_open = 0
-" let g:syntastic_check_on_wq = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 1
 " }}}
 
 " => Ctags {{{
@@ -254,20 +261,13 @@ nnoremap <leader>l :set cursorline!<CR>
 set history=700
 set undolevels=700
 
-" Turn persistent undo on 
+" Turn persistent undo on
 " means that you can undo even when you close a buffer/VIM
 try
   set undodir=~/.vim/temp/undodir
   set undofile
 catch
 endtry
-
-set termguicolors
-" set t_Co=256
-set background=dark
-" colorscheme codedark
-colorscheme kuroi
-let g:vim_json_syntax_conceal = 0
 
 " Show bad whitespace
 highlight BadWhitespace ctermbg=red guibg=darkred
