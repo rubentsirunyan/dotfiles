@@ -79,9 +79,9 @@ map b] :bnext<cr>
 map b[ :bprevious<cr>
 
 " Let 'tl' toggle between this and the last accessed tab
-let g:lasttab = 1
-nmap <Leader>tt :exe "tabn ".g:lasttab<CR>
-au TabLeave * let g:lasttab = tabpagenr()
+" let g:lasttab = 1
+" nmap <Leader>tt :exe "tabn ".g:lasttab<CR>
+" au TabLeave * let g:lasttab = tabpagenr()
 
 " Opens a new tab with the current buffer's path
 " Super useful when editing files in the same directory
@@ -123,10 +123,17 @@ let g:NTPNamesDirs = ['.git', 'venv']
 set number
 set relativenumber
 map <F3> :set rnu!<CR>
-autocmd InsertEnter   * set norelativenumber
+augroup RelativeNumber
+  autocmd!
+  autocmd InsertEnter   * set norelativenumber
+augroup END
 
 " Automatic reloading of .vimrc
-autocmd! bufwritepost .vimrc source %
+
+augroup VimrcReload
+  autocmd!
+  autocmd! bufwritepost .vimrc source %
+augroup END
 " }}}
 
 " => FZF {{{
@@ -200,13 +207,21 @@ let g:syntastic_warning_symbol = "▲"
 hi SyntasticStyleError guibg=NONE
 hi SyntasticStyleWarning guibg=NONE
 highlight SyntasticStyleErrorSign guifg=#ffcc00 guibg=NONE
-augroup mySyntastic
-  au!
-  au FileType tex let b:syntastic_mode = "passive"
-augroup END
-
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 1
+let b:syntastic_mode = "passive"
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+nnoremap <leader>s :SyntasticCheck<CR>
+nnoremap <leader>S :SyntasticReset<CR>
+" augroup SyntasticToggle
+" let g:syntastic_check_on_open = 1
+" let g:syntastic_check_on_wq = 1
+" }}}
+"
+" => Autocomplete {{{
+nnoremap <leader>jg :YcmCompleter GoTo<CR>
+nnoremap <leader>jd :YcmCompleter GetDoc<CR>
+nnoremap <leader>jr :YcmCompleter GoToReferences<CR>
+nnoremap <leader>jt :YcmCompleter GetType<CR>
 " }}}
 
 " => Ctags {{{
@@ -230,8 +245,11 @@ set mouse=a  " on OSX press ALT and click
 
 " jump to the last position when reopening a file
 if has("autocmd")
-  au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
-    \| exe "normal! g'\"" | endif
+  augroup LastPosition
+    au!
+    au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
+      \| exe "normal! g'\"" | endif
+  augroup END
 endif
 
 " Text wrapping
@@ -270,7 +288,25 @@ catch
 endtry
 
 " Show bad whitespace
-highlight BadWhitespace ctermbg=red guibg=darkred
-au BufRead,BufNewFile *.py,*.pyw,*.c,*.h,*.go,*.js,*.yml,*.yaml,*.json,*.tf match BadWhitespace /\s\+$/
+highlight ExtraWhitespace ctermbg=red guibg=darkred
+augroup WhitespaceMatch
+  " Remove ALL autocommands for the WhitespaceMatch group.
+  autocmd!
+  autocmd BufWinEnter * let w:whitespace_match_number =
+        \ matchadd('ExtraWhitespace', '\s\+$')
+  autocmd InsertEnter * call s:ToggleWhitespaceMatch('i')
+  autocmd InsertLeave * call s:ToggleWhitespaceMatch('n')
+augroup END
+function! s:ToggleWhitespaceMatch(mode)
+  let pattern = (a:mode == 'i') ? '\s\+\%#\@<!$' : '\s\+$'
+  if exists('w:whitespace_match_number')
+    call matchdelete(w:whitespace_match_number)
+    call matchadd('ExtraWhitespace', pattern, 10, w:whitespace_match_number)
+  else
+    " Something went wrong, try to be graceful.
+    let w:whitespace_match_number =  matchadd('ExtraWhitespace', pattern)
+  endif
+endfunction
+" au BufRead,BufNewFile *.py,*.pyw,*.c,*.h,*.go,*.js,*.yml,*.yaml,*.json,*.tf match BadWhitespace /\s\+$/
 
 " }}}
