@@ -45,6 +45,7 @@ cd "$(dirname "$0")"
 stow bash
 stow terminator
 stow vim
+stow nvim
 stow git
 
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
@@ -52,6 +53,13 @@ vim +PluginInstall +qall
 
 cd ~/.vim/bundle/YouCompleteMe
 python3 install.py --all
+
+# Nvim
+cd /tmp && curl -LO https://github.com/neovim/neovim/releases/download/stable/nvim.appimage
+sudo mv nvim.appimage /usr/local/share/
+sudo chmod +x /usr/local/share/nvim.appimage
+sudo ln -s /usr/local/share/nvim.appimage /usr/local/bin/nvim
+
 
 if ! [ -f /etc/bashrc ]; then
   sudo cp /etc/skel/.bashrc /etc/bashrc

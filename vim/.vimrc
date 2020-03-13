@@ -68,6 +68,10 @@ map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
 
+map <leader>j 10j
+map <leader>k 10k
+map <leader>l 10l
+map <leader>h 10h
 " Useful mappings for managing tabs
 map <leader>tn :tabnew<cr>
 map <leader>to :tabonly<cr>
@@ -106,6 +110,7 @@ set background=dark
 " colorscheme codedark
 colorscheme kuroi
 let g:vim_json_syntax_conceal = 0
+hi MatchParen guifg=NONE guibg=NONE gui=underline cterm=underline
 "}}}
 
 " => File Explorer {{{
@@ -218,10 +223,10 @@ nnoremap <leader>S :SyntasticReset<CR>
 " }}}
 "
 " => Autocomplete {{{
-nnoremap <leader>jg :YcmCompleter GoTo<CR>
-nnoremap <leader>jd :YcmCompleter GetDoc<CR>
-nnoremap <leader>jr :YcmCompleter GoToReferences<CR>
-nnoremap <leader>jt :YcmCompleter GetType<CR>
+nnoremap <leader>g :YcmCompleter GoTo<CR>
+nnoremap <leader>d :YcmCompleter GetDoc<CR>
+nnoremap <leader>r :YcmCompleter GoToReferences<CR>
+nnoremap <leader>t :YcmCompleter GetType<CR>
 " }}}
 
 " => Ctags {{{
@@ -273,7 +278,7 @@ augroup CursorLine
   au WinLeave * setlocal nocursorline
 augroup END
 
-nnoremap <leader>l :set cursorline!<CR>
+nnoremap <leader>cl :set cursorline!<CR>
 
 " Useful settings
 set history=700
