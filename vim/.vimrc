@@ -58,6 +58,7 @@ nnoremap <leader>il :IndentLinesToggle<CR>
 
 " Terraform related
 let g:terraform_align=1
+" let g:terraform_fold_sections=1
 let g:terraform_fmt_on_save=1
 " }}}
 
@@ -102,6 +103,10 @@ set laststatus=2
 " Format the status line
 "set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l\ \ Column:\ %c
 " }}}
+
+" => Terminal {{{
+tnoremap <Esc> <C-\><C-n>
+"}}}
 
 " => Colors {{{
 set termguicolors
@@ -212,21 +217,40 @@ let g:syntastic_warning_symbol = "▲"
 hi SyntasticStyleError guibg=NONE
 hi SyntasticStyleWarning guibg=NONE
 highlight SyntasticStyleErrorSign guifg=#ffcc00 guibg=NONE
-let b:syntastic_mode = "passive"
+let g:syntastic_mode_map = {
+  \ "mode": "passive",
+  \ "active_filetypes": [],
+  \ "passive_filetypes": [] }
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 nnoremap <leader>s :SyntasticCheck<CR>
 nnoremap <leader>S :SyntasticReset<CR>
-" augroup SyntasticToggle
-" let g:syntastic_check_on_open = 1
+" function SyntasticDetails()
+"   let b:syntastic_always_populate_loc_list = 1
+"   let b:syntastic_auto_loc_list = 1
+"   SyntasticCheck
+"   let b:syntastic_always_populate_loc_list = 0
+"   let b:syntastic_auto_loc_list = 0
+" endfunction
+" nnoremap <leader>sd :call SyntasticDetails()<CR>
+
+let g:syntastic_check_on_open = 1
 " let g:syntastic_check_on_wq = 1
 " }}}
-"
-" => Autocomplete {{{
+
+" => Autocomplete and snippets {{{
 nnoremap <leader>g :YcmCompleter GoTo<CR>
 nnoremap <leader>d :YcmCompleter GetDoc<CR>
 nnoremap <leader>r :YcmCompleter GoToReferences<CR>
 nnoremap <leader>t :YcmCompleter GetType<CR>
+let g:ycm_autoclose_preview_window_after_completion = 1
+let g:ycm_semantic_triggers = { 'python': ['re!(import\s+|from\s+(\w+\s+(import\s+(\w+,\s+)*)?)?)', '.'] }
+let g:ycm_key_invoke_completion = '<C-x><C-o>'
+
+let g:UltiSnipsExpandTrigger="<C-x><C-s>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+
 " }}}
 
 " => Ctags {{{
