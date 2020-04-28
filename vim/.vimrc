@@ -200,13 +200,19 @@ set pastetoggle=<F7> "F7 before pasting to preserve indentation
 
 vnoremap s c<C-r>0<ESC>
 
-inoremap <C-v> <ESC>"+p
+" Clipboard sharing based on OS type
+let uname = substitute(system('uname'), '\n', '', '')
+if uname == 'Linux'
+  inoremap <C-v> <ESC>"+p
 
-vnoremap <C-c> "+y
-augroup PersistentClipboard
-  autocmd!
-  autocmd VimLeave * call system("xclip -selection clipboard -i", getreg('+'))
-augroup END
+  vnoremap <C-c> "+y
+  augroup PersistentClipboard
+    autocmd!
+    autocmd VimLeave * call system("xclip -selection clipboard -i", getreg('+'))
+  augroup END
+elseif uname == 'Darwin'
+  set clipboard=unnamed
+endif
 " }}}
 
 " => Syntax {{{
