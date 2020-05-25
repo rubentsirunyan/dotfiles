@@ -125,6 +125,7 @@ let g:netrw_browse_split = 4
 let g:netrw_altv = 1
 let g:netrw_winsize = 25
 map <F2> :ToggleNERDTree<CR>
+map <leader>n :ToggleNERDTree<CR>
 let g:NTPNames = ['requirements.txt', 'requirements.yml', 'build.xml', 'pom.xml', 'Makefile', '.project', '.lvimrc', 'README.md', 'LICENSE']
 let g:NTPNamesDirs = ['.git', 'venv']
 " }}}
@@ -168,6 +169,8 @@ imap <c-x><c-f> <plug>(fzf-complete-path)
 imap <c-x><c-j> <plug>(fzf-complete-file-ag)
 imap <c-x><c-l> <plug>(fzf-complete-line)
 
+let g:fzf_command_prefix = 'Fz'
+
 nmap <c-t> :FzFiles<cr>
 nmap <leader>ag :FzAg<cr>
 nmap <leader>b :FzBuffers<cr>
@@ -178,7 +181,6 @@ nmap <leader>cc :FzCommands<cr>
 nmap <leader>ft :FzFiletypes<cr>
 nmap <leader>/ :FzLocate /<cr>
 
-let g:fzf_command_prefix = 'Fz'
 let g:fzf_colors =
 \ { 'fg':      ['fg', 'Normal'],
   \ 'bg':      ['bg', 'Normal'],
