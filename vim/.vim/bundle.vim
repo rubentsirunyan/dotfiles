@@ -18,7 +18,7 @@ Plugin 'tpope/vim-repeat'
 Plugin 'google/vim-searchindex.git'
 Plugin 'scrooloose/nerdtree'
 Plugin 'janlay/NERD-tree-project'
-set rtp+=~/.fzf
+set rtp+=/usr/local/opt/fzf
 Plugin 'junegunn/fzf.vim'
 " Plugin 'ivang/vim-autoclose'
 Plugin 'Raimondi/delimitMate'
