@@ -11,7 +11,7 @@ function bwunlock() {
 
 function bwc() {
   if hash bw 2>/dev/null; then
-    bwunlock && bw get item "$(bw list items |
+    bwunlock && bw sync && bw get item "$(bw list items |
                                jq '.[] | "\(.name) | username: \(.login.username) | id: \(.id)" ' |
                                fzf --height 50% "$@" --border |
                                awk '{print $(NF -0)}' |

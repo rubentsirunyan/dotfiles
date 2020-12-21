@@ -42,6 +42,7 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'tweekmonster/startuptime.vim'
+Plugin 'martinda/Jenkinsfile-vim-syntax'
 " Snippets
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'

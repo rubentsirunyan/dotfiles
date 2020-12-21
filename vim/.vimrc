@@ -247,6 +247,15 @@ let g:syntastic_check_on_open = 1
 " }}}
 
 " => Autocomplete and snippets {{{
+
+py3 << EOF
+import os
+import sys
+if 'VIRTUAL_ENV' in os.environ:
+  project_base_dir = os.environ['VIRTUAL_ENV']
+  activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
+  execfile(activate_this, dict(__file__=activate_this))
+EOF
 nnoremap <leader>g :YcmCompleter GoTo<CR>
 nnoremap <leader>d :YcmCompleter GetDoc<CR>
 nnoremap <leader>r :YcmCompleter GoToReferences<CR>

@@ -33,9 +33,13 @@ HISTFILE=~/.zsh_history     #Where to save history to disk
 SAVEHIST=50000               #Number of history entries to save to disk
 #HISTDUP=erase               #Erase duplicates in the history file
 setopt    appendhistory     #Append history to the history file (no overwriting)
-setopt    sharehistory      #Share history across terminals
-setopt    incappendhistory  #Immediately append to the history file, not just when a term is killed
+unsetopt share_history      # Do not share history across terminals
+# setopt    sharehistory      #Share history across terminals
+# setopt    incappendhistory  #Immediately append to the history file, not just when a term is killed
 
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+fi
 
 # https://github.com/ansible/ansible/issues/32499
 export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
