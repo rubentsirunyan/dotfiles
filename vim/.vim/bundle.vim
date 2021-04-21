@@ -1,4 +1,4 @@
-" Vundle 
+" Vundle
 "
 set nocompatible              " be iMproved, required
 filetype off                  " required
@@ -32,6 +32,7 @@ Plugin 'rubentsirunyan/jinja.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'elzr/vim-json'
 Plugin 'hashivim/vim-terraform'
+Plugin 'juliosueiras/vim-terraform-completion'
 " Plugin 'psf/black'
 " Plugin 'soramugi/auto-ctags.vim'
 Plugin 'tomasiser/vim-code-dark'
