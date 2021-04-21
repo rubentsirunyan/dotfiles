@@ -1,9 +1,13 @@
 [user]
   name = Ruben Tsirunyan
   email = rubentsirunyan@gmail.com
-#[includeIf "gitdir:~/Documents/<client>/"]
-#  path = .gitconfig-<client>
 [core]
   fileMode = false
+	editor = vim
+	autocrlf = false
 [push]
 	default = current
+[credentials]
+  helper = store
+#[includeIf "gitdir:~/Documents/<project>/"]
+#  path = .gitconfig-<project>

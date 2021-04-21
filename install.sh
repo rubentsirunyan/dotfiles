@@ -21,7 +21,7 @@ sudo apt install -y docky
 
 # Powerline
 pip3 install --user powerline-status
-sudo apt-get installi -y fonts-powerline
+sudo apt-get install -y fonts-powerline
 
 sudo apt install -y cmake build-essential python3-dev mono-complete
 
@@ -106,7 +106,7 @@ sudo apt install python-pip python3-pip python-dev
 
 # Ansible, Molecule
 
-pip install --user ansible
-pip install --user docker
-pip install --user molecule
-pip install --user molecule[docker]
+pip3 install --user ansible
+pip3 install --user docker
+pip3 install --user molecule
+pip3 install --user molecule[docker]

@@ -1,0 +1,8 @@
+[core]
+  fileMode = false
+  sshCommand = "ssh -i ~/.ssh/id_rsa_<project> -F /dev/null"
+[user]
+  name = <project username>
+  email = <project email>
+[credentials]
+  helper = store
