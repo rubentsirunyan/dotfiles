@@ -38,7 +38,9 @@ unsetopt share_history      # Do not share history across terminals
 # setopt    incappendhistory  #Immediately append to the history file, not just when a term is killed
 
 if command -v pyenv 1>/dev/null 2>&1; then
-  eval "$(pyenv init -)"
+  export PYENV_ROOT="$HOME/.pyenv"
+  export PATH="$PYENV_ROOT/bin:$PATH"
+  eval "$(pyenv init --path)"
 fi
 
 # https://github.com/ansible/ansible/issues/32499

@@ -350,9 +350,10 @@
 
   # Untracked files icon. It's really a question mark, your font isn't broken.
   # Change the value of this parameter to show a different icon.
-  typeset -g POWERLEVEL9K_VCS_UNTRACKED_ICON='❕'
-  typeset -g POWERLEVEL9K_VCS_STAGED_ICON='✙'
-  typeset -g POWERLEVEL9K_VCS_MODIFIED_ICON='❍'
+  typeset -g POWERLEVEL9K_VCS_UNTRACKED_ICON='﹖'
+  typeset -g POWERLEVEL9K_VCS_STAGED_ICON='±'
+  # typeset -g POWERLEVEL9K_VCS_MODIFIED_ICON='❍'
+  typeset -g POWERLEVEL9K_VCS_MODIFIED_ICON='∙'
   typeset -g POWERLEVEL9K_VCS_CONFLICTED_ICON='✖'
   typeset -g POWERLEVEL9K_VCS_STASHED_ICON='✱'
 
