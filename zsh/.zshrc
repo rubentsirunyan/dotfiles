@@ -18,7 +18,7 @@ plugins=(
   terraform
   vagrant
   virtualenv
-  zsh-vim-mode
+  vi-mode
   #zsh-autosuggestions
 )
 
@@ -34,8 +34,8 @@ SAVEHIST=50000               #Number of history entries to save to disk
 #HISTDUP=erase               #Erase duplicates in the history file
 setopt    appendhistory     #Append history to the history file (no overwriting)
 unsetopt share_history      # Do not share history across terminals
-# setopt    sharehistory      #Share history across terminals
-# setopt    incappendhistory  #Immediately append to the history file, not just when a term is killed
+setopt    sharehistory      #Share history across terminals
+setopt    incappendhistory  #Immediately append to the history file, not just when a term is killed
 
 if command -v pyenv 1>/dev/null 2>&1; then
   export PYENV_ROOT="$HOME/.pyenv"
@@ -56,3 +56,5 @@ source ~/.zsh/aliases.zsh
 # POWERLEVEL9K_DISABLE_RPROMPT=true
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh" || true

@@ -200,7 +200,8 @@ let g:fzf_colors =
 " => Copy & Paste, Clipboard {{{
 set pastetoggle=<F7> "F7 before pasting to preserve indentation
 
-vnoremap s c<C-r>0<ESC>
+" replace currently selected text with default register without yanking it
+vnoremap <leader>p "_dP
 
 " Clipboard sharing based on OS type
 let uname = substitute(system('uname'), '\n', '', '')
