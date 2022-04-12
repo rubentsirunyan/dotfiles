@@ -12,20 +12,19 @@
 
 2. Install Homebrew and the brew packages:
    - Install Homebrew
-    ```shell
-    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-    ```
+       ```shell
+       /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+       ```
 
    - Use [Homebrew Bundle](https://github.com/Homebrew/homebrew-bundle) to install the stuff listed in the `.Brewfile`:
-   ```shell
-   brew bundle --file=~/.dotfiles/homebrew/.Brewfile
-   ```
+       ```shell
+       brew bundle --file=~/.dotfiles/homebrew/.Brewfile
+       ```
 
-   After the `.Brewfile` is symlinked into `~/.Brewfile`, just use:
-
-   ```shell
-   brew bundle --global
-   ```
+   - After the `.Brewfile` is symlinked into `~/.Brewfile`, just use:
+       ```shell
+       brew bundle --global
+       ```
 
 3. Install Iterm2
 
