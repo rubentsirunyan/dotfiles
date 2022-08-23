@@ -47,8 +47,8 @@ if command -v pyenv 1>/dev/null 2>&1; then
   export PYENV_ROOT="$HOME/.pyenv"
   export PATH="$PYENV_ROOT/bin:$PATH"
   eval "$(pyenv init --path)"
-  alias python="$(pyenv which python3)"
-  alias pip="$(pyenv which pip3)"
+  # alias python="$(pyenv which python3)"
+  # alias pip="$(pyenv which pip3)"
 fi
 
 eval $(thefuck --alias)
