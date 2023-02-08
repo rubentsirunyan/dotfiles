@@ -118,6 +118,25 @@ let g:vim_json_syntax_conceal = 0
 hi MatchParen guifg=NONE guibg=NONE gui=underline cterm=underline
 "}}}
 
+" => Diff {{{
+set diffopt=vertical,filler,context:3,indent-heuristic,algorithm:patience,internal
+
+function! SetDiffColors() abort
+  highlight DiffAdd    cterm=bold ctermfg=10 ctermbg=17 gui=bold  guibg=#024516
+  highlight DiffDelete cterm=bold ctermfg=10 ctermbg=17 gui=bold  guibg=#520000
+  highlight DiffChange cterm=bold ctermfg=10 ctermbg=17 gui=bold  guibg=#7d5700
+  highlight DiffText   cterm=bold ctermfg=10 ctermbg=88 gui=bold  guifg=#e6af19 guibg=#002a5e
+endfunction
+
+if has("autocmd")
+  augroup DiffColors
+    au!
+    au BufEnter,BufNew * if &diff | :call SetDiffColors() | endif
+  augroup END
+endif
+
+" }}}
+
 " => File Explorer {{{
 let g:netrw_banner = 0
 let g:netrw_liststyle = 3
@@ -173,6 +192,7 @@ let g:fzf_command_prefix = 'Fz'
 
 nmap <c-t> :FzFiles<cr>
 nmap <leader>ag :FzAg<cr>
+nmap <leader>rg :FzRg<cr>
 nmap <leader>b :FzBuffers<cr>
 nmap <leader>gf :FzGFiles<cr>
 nmap <leader>gs :FzGFiles?<cr>

@@ -36,12 +36,12 @@ plugins=(
   terraform
   vagrant
   virtualenv
-  vi-mode
+  # vi-mode
   zsh-interactive-cd
 )
 
 export FZF_BASE=/usr/local/opt/fzf
-export FZF_DEFAULT_COMMAND=fzf
+# export FZF_DEFAULT_COMMAND=fzf
 
 if command -v pyenv 1>/dev/null 2>&1; then
   export PYENV_ROOT="$HOME/.pyenv"
