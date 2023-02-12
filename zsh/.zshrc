@@ -21,9 +21,11 @@ setopt    incappendhistory        #Immediately append to the history file, not j
 export ZSH="/Users/ruben_tsirunyan/.oh-my-zsh"
 
 ZSH_THEME="powerlevel10k/powerlevel10k"
+# ZSH_THEME="gruvbox"
 
 plugins=(
   aws
+  asdf
   brew
   docker
   git
@@ -31,27 +33,13 @@ plugins=(
   kubectl
   mvn
   pip
-  pipenv
-  pyenv
   terraform
-  vagrant
   virtualenv
   # vi-mode
   zsh-interactive-cd
 )
 
 export FZF_BASE=/usr/local/opt/fzf
-# export FZF_DEFAULT_COMMAND=fzf
-
-if command -v pyenv 1>/dev/null 2>&1; then
-  export PYENV_ROOT="$HOME/.pyenv"
-  export PATH="$PYENV_ROOT/bin:$PATH"
-  eval "$(pyenv init --path)"
-  # alias python="$(pyenv which python3)"
-  # alias pip="$(pyenv which pip3)"
-fi
-
-eval $(thefuck --alias)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -63,15 +51,11 @@ source $ZSH/oh-my-zsh.sh
 
 # https://github.com/ansible/ansible/issues/32499
 export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
+
 source ~/.zsh/fzf.zsh
 source ~/.zsh/git_fzf.zsh
 source ~/.zsh/bw_fzf.zsh
 
 source ~/.zsh/aliases.zsh
 
-# POWERLEVEL9K_MODE="awesome-fontconfig"
-# POWERLEVEL9K_DISABLE_RPROMPT=true
-
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh" || true

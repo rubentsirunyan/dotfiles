@@ -97,6 +97,11 @@ return packer.startup(function(use)
     commit = 'a55d0b62326341bf6ac0538d2d88836ac1cd77e5'
   } -- Theme inspired by Atom
 
+  use {
+    'ellisonleao/gruvbox.nvim',
+    commit = '73f009df5ed929a853244c413bb52c1d02c117ce'
+  } -- Gruvbox
+
   -- cmp plugins
   use {
     'hrsh7th/nvim-cmp',
@@ -152,6 +157,11 @@ return packer.startup(function(use)
       },
     }
   } -- enable LSP
+
+  use {
+    'jose-elias-alvarez/null-ls.nvim',
+    commit = '60b4a7167c79c7d04d1ff48b55f2235bf58158a7'
+  }
 
   -- Telescope
   use {
