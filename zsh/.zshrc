@@ -35,7 +35,7 @@ plugins=(
   pip
   terraform
   virtualenv
-  # vi-mode
+  vi-mode
   zsh-interactive-cd
 )
 
