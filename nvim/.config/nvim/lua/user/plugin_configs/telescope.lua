@@ -3,11 +3,10 @@ if not status_ok then
   return
 end
 
-telescope.load_extension('media_files')
-
 local actions = require "telescope.actions"
 
 telescope.setup {
+  hidden = true,
   defaults = {
 
     prompt_prefix = " ",
@@ -42,7 +41,7 @@ telescope.setup {
         ["<S-Tab>"] = actions.toggle_selection + actions.move_selection_better,
         ["<C-q>"] = actions.send_to_qflist + actions.open_qflist,
         ["<M-q>"] = actions.send_selected_to_qflist + actions.open_qflist,
-        ["<C-l>"] = actions.complete_tag,
+        ["<C-l>"] = false,
         ["<C-_>"] = actions.which_key, -- keys from pressing <C-/>
       },
 
@@ -90,15 +89,35 @@ telescope.setup {
   -- },
   extensions = {
     media_files = {
-        -- filetypes whitelist
-        -- defaults to {"png", "jpg", "mp4", "webm", "pdf"}
-        filetypes = {"png", "webp", "jpg", "jpeg"},
-        find_cmd = "rg" -- find command (defaults to `fd`)
-      }
-    -- Your extension configuration goes here:
-    -- extension_name = {
-    --   extension_config_key = value,
-    -- }
-    -- please take a look at the readme of the extension you want to configure
+      -- filetypes whitelist
+      -- defaults to {"png", "jpg", "mp4", "webm", "pdf"}
+      filetypes = {"png", "webp", "jpg", "jpeg"},
+      find_cmd = "rg" -- find command (defaults to `fd`)
+    },
+    projects = {},
+    file_browser = {
+      theme = "ivy",
+      hidden = true,
+      cwd_to_path = true,
+      auto_depth = true,
+      collapse_dirs = true,
+      -- disables netrw and use telescope-file-browser in its place
+      hijack_netrw = true,
+      mappings = {
+        ["i"] = {
+            ["<C-h>"] = require("telescope").extensions.file_browser.actions.goto_parent_dir,
+            ["<C-l>"] = require("telescope.actions").select_default
+        },
+        ["n"] = {
+            h = require("telescope").extensions.file_browser.actions.goto_parent_dir,
+            l = require("telescope.actions").select_default
+        },
+      },
+    },
   },
 }
+
+telescope.load_extension('media_files')
+telescope.load_extension('projects')
+telescope.load_extension('file_browser')
+

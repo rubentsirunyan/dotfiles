@@ -18,7 +18,9 @@ nvim_tree.setup {
     hijack_netrw = true,
     open_on_tab = false,
     hijack_cursor = false,
-    update_cwd = true,
+    sync_root_with_cwd = true,
+    respect_buf_cwd = true,
+    update_cwd = false,
     hijack_directories = {
         enable = true,
         auto_open = true,
