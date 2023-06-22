@@ -17,40 +17,33 @@ setopt    appendhistory           #Append history to the history file (no overwr
 setopt    sharehistory            #Share history across terminals
 setopt    incappendhistory        #Immediately append to the history file, not just when a term is killed
 
-# Path to your oh-my-zsh installation.
-export ZSH="/Users/ruben_tsirunyan/.oh-my-zsh"
+source ~/.config/zsh/antigen.zsh
 
-ZSH_THEME="powerlevel10k/powerlevel10k"
-# ZSH_THEME="gruvbox"
+antigen theme romkatv/powerlevel10k
 
-plugins=(
-  aws
-  asdf
-  brew
-  docker
-  git
-  fzf
-  kubectl
-  mvn
-  pip
-  terraform
-  virtualenv
-  vi-mode
-  zsh-interactive-cd
-)
+antigen bundle Aloxaf/fzf-tab
+antigen bundle aws
+antigen bundle asdf
+antigen bundle brew
+antigen bundle docker
+antigen bundle git
+antigen bundle fzf
+antigen bundle kubectl
+antigen bundle mvn
+antigen bundle pip
+antigen bundle terraform
+antigen bundle virtualenv
+antigen bundle vi-mode
+antigen bundle zsh-users/zsh-autosuggestions
+#antigen bundle zsh-interactive-cd
 
-export FZF_BASE=/usr/local/opt/fzf
-
-source $ZSH/oh-my-zsh.sh
-
-# User configuration
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
+antigen apply
 
 # https://github.com/ansible/ansible/issues/32499
 export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
+
+# zsh autoasuggestions color
+export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=60'
 
 source ~/.zsh/fzf.zsh
 source ~/.zsh/git_fzf.zsh
@@ -58,4 +51,9 @@ source ~/.zsh/bw_fzf.zsh
 
 source ~/.zsh/aliases.zsh
 
+
+export FZF_BASE=/usr/local/opt/fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# Customize p10k.
+[ -f ~/.p10k.zsh ] && source ~/.p10k.zsh
