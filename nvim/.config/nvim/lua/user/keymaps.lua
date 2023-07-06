@@ -54,18 +54,9 @@ vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist)
 vim.keymap.set("n", "<leader>F", vim.lsp.buf.format)
 
 -- Telescope
-vim.keymap.set(
-	"n",
-	"<leader>ff",
-	"<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>",
-	{ silent = true }
-)
-vim.keymap.set(
-	"n",
-	"<leader>gf",
-	"<cmd>lua require'telescope.builtin'.git_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>",
-	{ silent = true }
-)
+vim.keymap.set("n", "<leader>ff", "<cmd>Telescope file_browser<cr>", { silent = true })
+vim.keymap.set("n", "<leader>gf", "<cmd>Telescope git_files<cr>", { silent = true })
 vim.keymap.set("n", "<c-t>", "<cmd>Telescope live_grep<cr>", { silent = true })
 vim.keymap.set("n", "<leader>fp", "<cmd>Telescope projects<cr>", { silent = true })
-vim.keymap.set("n", "<leader>fb", "<cmd>Telescope file_browser<cr>", { silent = true })
+vim.keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<cr>", { silent = true })
+vim.keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<cr>", { silent = true })

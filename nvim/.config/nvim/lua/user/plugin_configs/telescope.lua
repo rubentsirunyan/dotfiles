@@ -8,7 +8,6 @@ local actions = require "telescope.actions"
 telescope.setup {
   hidden = true,
   defaults = {
-
     prompt_prefix = " ",
     selection_caret = " ",
     path_display = { "smart" },
@@ -78,15 +77,24 @@ telescope.setup {
       },
     },
   },
-  -- pickers = {
-    -- Default configuration for builtin pickers goes here:
-    -- picker_name = {
-    --   picker_config_key = value,
-    --   ...
-    -- }
-    -- Now the picker_config_key will be applied every time you call this
-    -- builtin picker
-  -- },
+  pickers = {
+    find_files = {
+      theme = "dropdown",
+      previewer = false
+    },
+    git_files = {
+      theme = "dropdown",
+      previewer = false
+    },
+    buffers = {
+      theme = "dropdown",
+      previewer = false
+    },
+    help_tags = {
+      theme = "dropdown",
+      previewer = false
+    },
+  },
   extensions = {
     media_files = {
       -- filetypes whitelist
@@ -96,13 +104,12 @@ telescope.setup {
     },
     projects = {},
     file_browser = {
-      theme = "ivy",
+      theme = "dropdown",
+      previewer = false,
       hidden = true,
       cwd_to_path = true,
       auto_depth = true,
-      collapse_dirs = true,
-      -- disables netrw and use telescope-file-browser in its place
-      hijack_netrw = true,
+      hijack_netrw = true, -- disables netrw and use telescope-file-browser in its place
       mappings = {
         ["i"] = {
             ["<C-h>"] = require("telescope").extensions.file_browser.actions.goto_parent_dir,
@@ -118,6 +125,6 @@ telescope.setup {
 }
 
 telescope.load_extension('media_files')
+-- telescope.load_extension('project')
 telescope.load_extension('projects')
 telescope.load_extension('file_browser')
-
