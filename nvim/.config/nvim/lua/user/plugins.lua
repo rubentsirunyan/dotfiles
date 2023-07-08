@@ -191,6 +191,25 @@ return packer.startup(function(use)
 		"nvim-treesitter/nvim-treesitter",
 		commit = "df6f3220890d8641067bfee0718244e46d9693dd",
 	})
+  use({
+    "nvim-treesitter/nvim-treesitter-context",
+    commit = "63f3ffc50b0afc59be1015153d00922498085be8"
+  })
+
+  -- Folding
+  use ({
+    "kevinhwang91/nvim-ufo",
+    commit = "43e39ec74cd57c45ca9d8229a796750f6083b850",
+    requires = {
+      'kevinhwang91/promise-async',
+      commit = "e94f35161b8c5d4a4ca3b6ff93dd073eb9214c0e"
+    }
+  })
+
+  -- Be Good!
+  use({
+    "ThePrimeagen/vim-be-good",
+  })
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins

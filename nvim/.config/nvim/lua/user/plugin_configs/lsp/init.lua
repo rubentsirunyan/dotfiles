@@ -54,10 +54,21 @@ end
 
 local opts = {}
 
+
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
+
+-- Needed for UFO
+-- Tell the server the capability of foldingRange,
+-- Neovim hasn't added foldingRange to default capabilities, users must add it manually
+capabilities.textDocument.foldingRange = {
+    dynamicRegistration = false,
+    lineFoldingOnly = true
+}
+
 for _, server in pairs(servers) do
 	opts = {
 		on_attach = on_attach,
-		capabilities = require('cmp_nvim_lsp').default_capabilities()
+		capabilities = capabilities
 	}
 
 	server = vim.split(server, "@")[1]

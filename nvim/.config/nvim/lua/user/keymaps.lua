@@ -16,6 +16,10 @@ vim.keymap.set("n", "<leader>k", "10k")
 vim.keymap.set("n", "<leader>h", "10h")
 vim.keymap.set("n", "<leader>l", "10l")
 
+-- Better half-page navigation
+vim.keymap.set("n", "<c-u>", "<c-u>zz")
+vim.keymap.set("n", "<c-d>", "<c-d>zz")
+
 -- Navigate buffers
 vim.keymap.set("n", "<S-l>", ":bnext<CR>", { silent = true })
 vim.keymap.set("n", "<S-h>", ":bprevious<CR>", { silent = true })
@@ -31,6 +35,11 @@ vim.keymap.set("i", "<S-Up>", "<ESC>:m .-2<CR>==gi")
 vim.keymap.set("i", "<S-Down>", "<ESC>:m .+1<CR>==gi")
 vim.keymap.set("v", "<S-Up>", ":m '<-2<CR>gv=gv")
 vim.keymap.set("v", "<S-Down>", ":m '>+1<CR>gv=gv")
+
+-- Folding
+-- Using ufo provider need remap `zR` and `zM`. If Neovim is 0.6.1, remap yourself
+vim.keymap.set('n', 'zR', require('ufo').openAllFolds)
+vim.keymap.set('n', 'zM', require('ufo').closeAllFolds)
 
 -- File tree
 vim.keymap.set("n", "<leader>n", ":NvimTreeToggle<CR>")
@@ -55,7 +64,7 @@ vim.keymap.set("n", "<leader>F", vim.lsp.buf.format)
 
 -- Telescope
 vim.keymap.set("n", "<leader>ff", "<cmd>Telescope file_browser<cr>", { silent = true })
-vim.keymap.set("n", "<leader>gf", "<cmd>Telescope git_files<cr>", { silent = true })
+vim.keymap.set("n", "<c-p>", "<cmd>Telescope git_files<cr>", { silent = true })
 vim.keymap.set("n", "<c-t>", "<cmd>Telescope live_grep<cr>", { silent = true })
 vim.keymap.set("n", "<leader>fp", "<cmd>Telescope projects<cr>", { silent = true })
 vim.keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<cr>", { silent = true })

@@ -1,5 +1,5 @@
-local configs = require("nvim-treesitter.configs")
-configs.setup {
+local treesitter = require("nvim-treesitter.configs")
+treesitter.setup {
   ensure_installed = "all",
   sync_install = false,
   ignore_install = { "" }, -- List of parsers to ignore installing
@@ -10,4 +10,10 @@ configs.setup {
 
   },
   indent = { enable = true, disable = { "yaml" } },
+}
+
+
+local context = require("treesitter-context")
+context.setup {
+  enable = true
 }
