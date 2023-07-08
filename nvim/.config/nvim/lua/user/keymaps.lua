@@ -64,7 +64,7 @@ vim.keymap.set("n", "<leader>F", vim.lsp.buf.format)
 
 -- Telescope
 vim.keymap.set("n", "<leader>ff", "<cmd>Telescope file_browser<cr>", { silent = true })
-vim.keymap.set("n", "<c-p>", "<cmd>Telescope git_files<cr>", { silent = true })
+vim.keymap.set("n", "<c-p>", "<cmd>lua project_files()<cr>", { silent = true })
 vim.keymap.set("n", "<c-t>", "<cmd>Telescope live_grep<cr>", { silent = true })
 vim.keymap.set("n", "<leader>fp", "<cmd>Telescope projects<cr>", { silent = true })
 vim.keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<cr>", { silent = true })

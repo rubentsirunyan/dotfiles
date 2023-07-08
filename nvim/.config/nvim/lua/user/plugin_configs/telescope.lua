@@ -79,10 +79,12 @@ telescope.setup {
   },
   pickers = {
     find_files = {
+      hidden = true,
       theme = "dropdown",
       previewer = false
     },
     git_files = {
+      show_untracked = true,
       theme = "dropdown",
       previewer = false
     },
@@ -123,6 +125,18 @@ telescope.setup {
     },
   },
 }
+
+-- Fall back to find_files if git_files can't find a .git directory
+_G.project_files = function()
+  local opts = {} -- define here if you want to define something
+  vim.fn.system('git rev-parse --is-inside-work-tree')
+  if vim.v.shell_error == 0 then
+    require"telescope.builtin".git_files(opts)
+  else
+    require"telescope.builtin".find_files(opts)
+  end
+end
+
 
 telescope.load_extension('media_files')
 -- telescope.load_extension('project')
