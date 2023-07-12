@@ -103,6 +103,19 @@ telescope.setup {
     },
   },
   extensions = {
+    undo = {
+      use_delta = true,
+      mappings = {
+        i = {
+          -- IMPORTANT: Note that telescope-undo must be available when telescope is configured if
+          -- you want to replicate these defaults and use the following actions. This means
+          -- installing as a dependency of telescope in it's `requirements` and loading this
+          -- extension from there instead of having the separate plugin definition as outlined
+          -- above.
+          ["<cr>"] = require("telescope-undo.actions").restore,
+        },
+      },
+    },
     media_files = {
       -- filetypes whitelist
       -- defaults to {"png", "jpg", "mp4", "webm", "pdf"}
@@ -116,7 +129,7 @@ telescope.setup {
       hidden = true,
       cwd_to_path = true,
       auto_depth = true,
-      hijack_netrw = true, -- disables netrw and use telescope-file-browser in its place
+      hijack_netrw = false, -- disables netrw and use telescope-file-browser in its place
       mappings = {
         ["i"] = {
             ["<C-h>"] = require("telescope").extensions.file_browser.actions.goto_parent_dir,
@@ -147,3 +160,4 @@ telescope.load_extension('media_files')
 -- telescope.load_extension('project')
 telescope.load_extension('projects')
 telescope.load_extension('file_browser')
+telescope.load_extension('undo')

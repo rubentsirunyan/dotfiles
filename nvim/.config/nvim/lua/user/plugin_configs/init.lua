@@ -1,5 +1,6 @@
 require('user.plugin_configs.lualine')
-require('user.plugin_configs.nvim-tree')
+require('user.plugin_configs.neo-tree')
+-- require('user.plugin_configs.nvim-tree')
 require('user.plugin_configs.telescope')
 require('user.plugin_configs.treesitter')
 require('user.plugin_configs.autopairs')
