@@ -1,7 +1,4 @@
-alias activate='. .venv/bin/activate'
+alias ls='ls --color=auto'
+alias ll='ls -lAFh'
 
-alias epic='cd ~/Documents/work/epic'
-alias wmg='cd ~/Documents/work/wmg'
-alias pm='cd ~/Documents/work/wmg-pm'
-alias bo='cd ~/Documents/work/buildoptima'
-alias tg='cd ~/Documents/work/trugreen'
+alias activate='. .venv/bin/activate'

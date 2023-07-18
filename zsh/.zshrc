@@ -6,6 +6,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 export ZSH_DISABLE_COMPFIX=true
+export EDITOR=vim
 
 # History
 export HISTSIZE=50000             #How many lines of history to keep in memory
@@ -54,6 +55,9 @@ source ~/.zsh/aliases.zsh
 
 export FZF_BASE=/usr/local/opt/fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# Zoxide init
+eval "$(zoxide init zsh)"
 
 # Customize p10k.
 [ -f ~/.p10k.zsh ] && source ~/.p10k.zsh
