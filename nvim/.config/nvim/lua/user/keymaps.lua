@@ -17,11 +17,12 @@ vim.keymap.set("n", "<c-u>", "<c-u>zz")
 vim.keymap.set("n", "<c-d>", "<c-d>zz")
 
 -- Toggle relative numbers
-vim.keymap.set({"n", "x"}, "<leader>r", ":set rnu!<CR>") -- TODO: Migrate to pure lua
+vim.keymap.set({"n", "x"}, "<leader>r", ":set rnu!<CR>", { desc = "Toggle [r]elative numbers"}) -- TODO: Migrate to pure lua
 
 -- Navigate buffers
-vim.keymap.set("n", "<S-l>", ":bnext<CR>", { silent = true })
-vim.keymap.set("n", "<S-h>", ":bprevious<CR>", { silent = true })
+vim.keymap.set("n", "<S-l>", ":bnext<CR>", { silent = true, desc = "Next buffer" })
+vim.keymap.set("n", "<S-h>", ":bprevious<CR>", { silent = true, desc = "Previous buffer" })
+vim.keymap.set("n", "<leader>q", "<cmd>:bd<cr>", { desc = "[Q]uit the current buffer" })
 
 -- Stay in indent mode
 vim.keymap.set("x", "<", "<gv", { silent = true })
@@ -41,35 +42,33 @@ vim.keymap.set("n", "zR", require("ufo").openAllFolds)
 vim.keymap.set("n", "zM", require("ufo").closeAllFolds)
 
 -- File tree
-vim.keymap.set("n", "<leader>n", ":Neotree toggle<CR>")
+vim.keymap.set("n", "<leader>n", ":Neotree toggle<CR>", { desc = "Toggle [N]eotree"})
 
 -- Misc
-vim.keymap.set(
-	"n",
-	"<leader>cd",
-	":cd %:p:h<cr>:pwd<cr>",
-	{ desc = "[ CD] Switch CWD to the directory of the open buffer" }
-)
-vim.keymap.set("x", "<leader>p", "\"_dP", { desc = "[ P]aste in place of the selected text without yanking it" })
+vim.keymap.set("x", "<leader>p", "\"_dP", { desc = "[P]aste in place of the selected text without yanking it" })
 
 -- Diagnostic keymaps
 vim.keymap.set("n", "[d", vim.diagnostic.goto_prev)
 vim.keymap.set("n", "]d", vim.diagnostic.goto_next)
-vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float)
-vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist)
-
-
-
-vim.keymap.set('n', '<leader>gd', vim.lsp.buf.definition)
 
 -- Formatting keymaps
 vim.keymap.set("n", "<leader>F", vim.lsp.buf.format)
 
 -- Telescope
-vim.keymap.set("n", "<leader>ff", "<cmd>Telescope file_browser<cr>", { silent = true })
-vim.keymap.set("n", "<c-p>", "<cmd>lua project_files()<cr>", { silent = true })
-vim.keymap.set("n", "<c-t>", "<cmd>Telescope live_grep<cr>", { silent = true })
-vim.keymap.set("n", "<leader>u", "<cmd>Telescope undo<cr>", { silent = true })
+-- vim.keymap.set("n", "<leader>ff", "<cmd>Telescope file_browser<cr>", { silent = true })
+vim.keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { silent = true })
+vim.keymap.set("n", "<leader>fg", "<cmd>Telescope live_grep<cr>", { silent = true })
+vim.keymap.set("n", "<leader>fu", "<cmd>Telescope undo<cr>", { silent = true })
 vim.keymap.set("n", "<leader>fp", "<cmd>Telescope projects<cr>", { silent = true })
 vim.keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<cr>", { silent = true })
+vim.keymap.set("n", "<leader>fk", "<cmd>Telescope keymaps<cr>", { silent = true })
 vim.keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<cr>", { silent = true })
+
+-- try with t prefix
+vim.keymap.set("n", "<leader>tf", "<cmd>Telescope find_files<cr>", { silent = true })
+vim.keymap.set("n", "<leader>tg", "<cmd>Telescope live_grep<cr>", { silent = true })
+vim.keymap.set("n", "<leader>tu", "<cmd>Telescope undo<cr>", { silent = true })
+vim.keymap.set("n", "<leader>tp", "<cmd>Telescope projects<cr>", { silent = true })
+vim.keymap.set("n", "<leader>tb", "<cmd>Telescope buffers<cr>", { silent = true })
+vim.keymap.set("n", "<leader>tk", "<cmd>Telescope keymaps<cr>", { silent = true })
+vim.keymap.set("n", "<leader>th", "<cmd>Telescope help_tags<cr>", { silent = true })

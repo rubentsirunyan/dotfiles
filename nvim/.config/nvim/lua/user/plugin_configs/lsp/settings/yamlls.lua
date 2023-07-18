@@ -22,10 +22,21 @@ return {
         '!Transform mapping',
         '!Ref scalar',
       },
-      schemas = {
-        ["https://json.schemastore.org/github-workflow.json"] = "/.github/workflows/*",
-        ["https://raw.githubusercontent.com/aws/serverless-application-model/main/samtranslator/schema/schema.json"] = {"/**)/cloudformation/*.yaml", "/**/cloudformation/*.yml"}
-      }
+      schemaStore = {
+        -- built-in schemastore must be disabled to use
+        -- the schemastore plugin
+        enable = false,
+      },
+      schemas = require('schemastore').yaml.schemas {
+        extra = {
+          {
+            description = "Custom Cloudformation file match",
+            fileMatch = {"/**/cloudformation/*.yaml", "/**/cloudformation/*.yml"},
+            name = "cloudformation.schema.json",
+            url = "https://raw.githubusercontent.com/awslabs/goformation/master/schema/cloudformation.schema.json",
+          }
+        }
+      },
     }
   }
 }

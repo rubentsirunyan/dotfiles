@@ -1,25 +1,19 @@
 -- Bootstrap lazy
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
-  vim.fn.system({
-    "git",
-    "clone",
-    "--filter=blob:none",
-    "https://github.com/folke/lazy.nvim.git",
-    "--branch=stable", -- latest stable release
-    lazypath,
-  })
+	vim.fn.system({
+		"git",
+		"clone",
+		"--filter=blob:none",
+		"https://github.com/folke/lazy.nvim.git",
+		"--branch=stable", -- latest stable release
+		lazypath,
+	})
 end
 
 vim.opt.rtp:prepend(lazypath)
 
-
 local plugins = {
-	-- {
-	-- 	"wbthomason/packer.nvim",
-	-- 	commit = "1d0cf98a561f7fd654c970c49f917d74fafe1530",
-	-- }, -- Have packer manage itself
-
 	{
 		"nvim-lua/plenary.nvim",
 		commit = "9a0d3bf7b832818c042aaf30f692b081ddd58bd9",
@@ -61,18 +55,19 @@ local plugins = {
 	{
 		"nvim-neo-tree/neo-tree.nvim",
 		commit = "7f6fa04dbd8e8c79d1af33bc90e856b65d8641da",
-    dependencies = {
-      {
-        "kyazdani42/nvim-web-devicons",
-        commit = "ade34ca7d19543904b28b903e606be8930fb9ee3",
-      },
-      {
-        "MunifTanjim/nui.nvim",
-        commit = "d146966a423e60699b084eeb28489fe3b6427599"
-      },
-    }
+		dependencies = {
+			{
+				"kyazdani42/nvim-web-devicons",
+				commit = "ade34ca7d19543904b28b903e606be8930fb9ee3",
+			},
+			{
+				"MunifTanjim/nui.nvim",
+				commit = "d146966a423e60699b084eeb28489fe3b6427599",
+			},
+		},
 	},
 
+	-- Projects
 	{
 		"ahmedkhalf/project.nvim",
 		commit = "685bc8e3890d2feb07ccf919522c97f7d33b94e4",
@@ -155,16 +150,29 @@ local plugins = {
 		commit = "9ad7503c32545ee6e8000e52d9ae4a93d49231fb",
 	},
 
+	-- LSP progress
+	-- {
+	-- 	"nvim-lua/lsp-status.nvim",
+	-- 	commit = "54f48eb5017632d81d0fd40112065f1d062d0629",
+	-- 	config = function()
+	-- 		require("lsp-status").register_progress()
+	-- 	end
+	-- },
+
+  {
+    "b0o/schemastore.nvim",
+    commit = "cd5c2a0db954011fcbeac7bbbc0c7ae9e23626e3",
+  },
 	-- Telescope
 	{
 		"nvim-telescope/telescope.nvim",
 		commit = "203bf5609137600d73e8ed82703d6b0e320a5f36",
-    dependencies = {
-      {
-        "debugloop/telescope-undo.nvim",
-        commit = "3dec002ea3e7952071d26fbb5d01e2038a58a554",
-      }
-    }
+		dependencies = {
+			{
+				"debugloop/telescope-undo.nvim",
+				commit = "3dec002ea3e7952071d26fbb5d01e2038a58a554",
+			},
+		},
 	},
 	{
 		"nvim-telescope/telescope-media-files.nvim",
@@ -181,27 +189,27 @@ local plugins = {
 		-- commit = "df6f3220890d8641067bfee0718244e46d9693dd",
 		commit = "3af1220e18034eb2ce7d1c8e77055bc3bf3c1c36",
 	},
-  {
-    "nvim-treesitter/nvim-treesitter-context",
-    commit = "63f3ffc50b0afc59be1015153d00922498085be8"
-  },
+	{
+		"nvim-treesitter/nvim-treesitter-context",
+		commit = "63f3ffc50b0afc59be1015153d00922498085be8",
+	},
 
-  -- Folding
-  {
-    "kevinhwang91/nvim-ufo",
-    commit = "43e39ec74cd57c45ca9d8229a796750f6083b850",
-    dependencies = {
-      {
-        'kevinhwang91/promise-async',
-        commit = "e94f35161b8c5d4a4ca3b6ff93dd073eb9214c0e"
-      }
-    }
-  },
+	-- Folding
+	{
+		"kevinhwang91/nvim-ufo",
+		commit = "43e39ec74cd57c45ca9d8229a796750f6083b850",
+		dependencies = {
+			{
+				"kevinhwang91/promise-async",
+				commit = "e94f35161b8c5d4a4ca3b6ff93dd073eb9214c0e",
+			},
+		},
+	},
 
-  -- Be Good!
-  {
-    "ThePrimeagen/vim-be-good",
-  },
+	-- Be Good!
+	{
+		"ThePrimeagen/vim-be-good",
+	},
 }
 
 local opts = {}
