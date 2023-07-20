@@ -18,33 +18,18 @@ setopt    appendhistory           #Append history to the history file (no overwr
 setopt    sharehistory            #Share history across terminals
 setopt    incappendhistory        #Immediately append to the history file, not just when a term is killed
 
-source ~/.config/zsh/antigen.zsh
-
-antigen theme romkatv/powerlevel10k
-
-antigen bundle Aloxaf/fzf-tab
-antigen bundle aws
-antigen bundle asdf
-antigen bundle brew
-antigen bundle docker
-antigen bundle git
-antigen bundle fzf
-antigen bundle kubectl
-antigen bundle mvn
-antigen bundle pip
-antigen bundle terraform
-antigen bundle virtualenv
-antigen bundle vi-mode
-antigen bundle zsh-users/zsh-autosuggestions
-#antigen bundle zsh-interactive-cd
-
-antigen apply
-
-# https://github.com/ansible/ansible/issues/32499
-export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
+# Lazy-load antidote and generate the static load file only when needed
+zsh_plugins=${ZDOTDIR:-$HOME}/.zsh_plugins
+if [[ ! ${zsh_plugins}.zsh -nt ${zsh_plugins}.txt ]]; then
+  (
+    source $(brew --prefix)/opt/antidote/share/antidote/antidote.zsh
+    antidote bundle <${zsh_plugins}.txt >${zsh_plugins}.zsh
+  )
+fi
+source ${zsh_plugins}.zsh
 
 # zsh autoasuggestions color
-export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=60'
+# export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=60'
 
 source ~/.zsh/fzf.zsh
 source ~/.zsh/git_fzf.zsh
