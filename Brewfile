@@ -1,6 +1,8 @@
 tap "homebrew/bundle"
 tap "homebrew/cask-fonts"
 tap "homebrew/core"
+# Plugin manager for zsh, inspired by antigen and antibody
+brew "antidote"
 # Automatic configure script builder
 brew "autoconf"
 # Tool for generating GNU Standards-compliant Makefiles
@@ -13,10 +15,10 @@ brew "unixodbc"
 brew "asdf"
 # Use AWS IAM credentials to authenticate to Kubernetes
 brew "aws-iam-authenticator"
-# Authenticate with AWS using your Okta credentials
-brew "aws-okta"
 # Clone of cat(1) with syntax highlighting and Git integration
 brew "bat"
+# Platform built on V8 to build network applications
+brew "node"
 # Secure and free password manager for all of your devices
 brew "bitwarden-cli"
 # Cross-platform make
@@ -27,6 +29,8 @@ brew "fzf"
 brew "htop"
 # Lightweight and flexible command-line JSON processor
 brew "jq"
+# Network authentication protocol
+brew "krb5"
 # Bare libuv bindings for lua
 brew "luv"
 # 'traceroute' and 'ping' in a single tool
@@ -44,12 +48,16 @@ brew "stow"
 brew "tcptraceroute"
 # Terminal multiplexer
 brew "tmux"
+# Manage complex tmux sessions easily
+brew "tmuxinator"
 # Display directories as trees (with optional color/HTML output)
 brew "tree"
 # Executes a program periodically, showing output fullscreen
 brew "watch"
 # General-purpose data compression with high compression ratio
 brew "xz"
+# Shell extension to navigate your filesystem faster
+brew "zoxide"
 # App to build and share containerized applications and microservices
 cask "docker"
 # Tool to hide status bar icons
