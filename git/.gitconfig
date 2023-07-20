@@ -11,3 +11,7 @@
   helper = store
 #[includeIf "gitdir:~/Documents/<project>/"]
 #  path = .gitconfig-<project>
+[diff]
+    tool = vimdiff
+[merge]
+    tool = vimdiff
