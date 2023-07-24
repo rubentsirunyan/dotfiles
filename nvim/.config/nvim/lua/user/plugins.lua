@@ -50,7 +50,10 @@ local plugins = {
 		"lewis6991/gitsigns.nvim",
 		commit = "ec4742a7eebf68bec663041d359b95637242b5c3",
 	},
-
+  {
+    "kdheepak/lazygit.nvim",
+    commit = "146c6294bf0b4db1572fa7232039aaa9003a52b9",
+  },
 	-- File tree
 	{
 		"nvim-neo-tree/neo-tree.nvim",

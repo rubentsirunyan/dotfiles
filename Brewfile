@@ -1,6 +1,7 @@
 tap "homebrew/bundle"
 tap "homebrew/cask-fonts"
 tap "homebrew/core"
+tap "jesseduffield/lazygit"
 # Plugin manager for zsh, inspired by antigen and antibody
 brew "antidote"
 # Automatic configure script builder
@@ -37,6 +38,8 @@ brew "luv"
 brew "mtr"
 # Ambitious Vim-fork focused on extensibility and agility
 brew "neovim"
+# Cryptography and SSL/TLS Toolkit
+brew "openssl@1.1"
 # Manage compile and link flags for libraries
 brew "pkg-config"
 # Search tool like grep and The Silver Searcher
@@ -58,6 +61,8 @@ brew "watch"
 brew "xz"
 # Shell extension to navigate your filesystem faster
 brew "zoxide"
+# A simple terminal UI for git commands, written in Go
+brew "jesseduffield/lazygit/lazygit"
 # App to build and share containerized applications and microservices
 cask "docker"
 # Tool to hide status bar icons
