@@ -5,7 +5,7 @@ local servers = {
   "terraformls",
   "dockerls",
 	"pyright",
-	"sumneko_lua",
+	"lua_ls",
   "jdtls", -- java
   "tsserver",
 }

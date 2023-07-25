@@ -130,15 +130,15 @@ local plugins = {
 	-- LSP
 	{
 		"neovim/nvim-lspconfig",
-		commit = "d3c82d2f9a6fd91ec1ffee645664d2cc57e706d9",
+		commit = "6f426c34c8e21af2f934e56be9d1198a507ecc9f",
 		dependencies = {
 			{
 				"williamboman/mason.nvim",
-				commit = "6f8f1ab3f4c5193578797b0d89afa7c497398bb1",
+				commit = "3f6b544c75c01549f7a2a9e395e0f1cea42b25dd",
 			},
 			{
 				"williamboman/mason-lspconfig.nvim",
-				commit = "53f3a8bdcb77d4a95b082fd57e12173f353c6c3e",
+				commit = "e86a4c84ff35240639643ffed56ee1c4d55f538e",
 			},
 		},
 	},
@@ -150,7 +150,7 @@ local plugins = {
 
 	{
 		"jay-babu/mason-null-ls.nvim",
-		commit = "9ad7503c32545ee6e8000e52d9ae4a93d49231fb",
+		commit = "ae0c5fa57468ac65617f1bf821ba0c3a1e251f0c",
 	},
 
 	-- LSP progress
