@@ -1,0 +1,14 @@
+python 3.11.2 2.7.18 system
+nodejs 19.6.0
+golang 1.20
+java openjdk-17.0.2 adoptopenjdk-8.0.362+9
+terraform 1.3.8 0.13.5
+tflint 0.45.0
+terragrunt 0.43.2
+postgres 14.3
+packer 1.8.6
+terraform-ls 0.31.1
+minikube 1.30.1
+kubectl 1.23.17
+gcloud 436.0.0
+kind 0.20.0
