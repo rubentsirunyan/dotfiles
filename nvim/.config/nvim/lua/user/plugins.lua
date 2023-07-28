@@ -30,7 +30,7 @@ local plugins = {
 	}, -- Autopairs, integrates with both cmp and treesitter
 	{
 		"numToStr/Comment.nvim",
-		commit = "eab2c83a0207369900e92783f56990808082eac2",
+    	-- commit = "eab2c83a0207369900e92783f56990808082eac2",
 	}, -- Easily comment stuff
 	{
 		"akinsho/bufferline.nvim",
@@ -142,12 +142,13 @@ local plugins = {
 			},
 		},
 	},
-
+	{
+		"theprimeagen/harpoon"
+	},
 	{
 		"jose-elias-alvarez/null-ls.nvim",
 		commit = "60b4a7167c79c7d04d1ff48b55f2235bf58158a7",
 	},
-
 	{
 		"jay-babu/mason-null-ls.nvim",
 		commit = "ae0c5fa57468ac65617f1bf821ba0c3a1e251f0c",

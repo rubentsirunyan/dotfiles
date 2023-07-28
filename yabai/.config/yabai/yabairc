@@ -23,6 +23,22 @@ yabai -m config mouse_action2 resize
 # when window is dropped in center of another window, swap them (on edges it will split it)
 yabai -m mouse_drop_action swap
 
-yabai -m rule --add app="^System Settings$" manage=off
-yabai -m rule --add app="^Calculator$" manage=off
-yabai -m rule --add app="^Karabiner-Elements$" manage=off
+yabai -m rule --add app=".*" space=5
+yabai -m rule --add app="^kitty$" space=^1
+yabai -m rule --add app="^Firefox Developer Edition$" space=^2
+yabai -m rule --add app="^Firefox$" space=6
+yabai -m rule --add app="^Telegram$" space=6
+yabai -m rule --add app="^Mail$" space=3
+yabai -m rule --add app="^Signal$" space=3
+yabai -m rule --add app="^Obsidian$" space=4
+yabai -m rule --add app="^Todoist$" space=4
+yabai -m rule --add app="^Calendar$" space=4
+yabai -m rule --add app="^Bitwarden$" space=7
+
+yabai -m rule --add app='^System Settings$' manage=off
+yabai -m rule --add app='^Calculator$' manage=off
+yabai -m rule --add app='^Karabiner-Elements$' manage=off
+yabai -m rule --add title=' Preferences$' manage=off
+yabai -m rule --add app='Finder' manage=off
+yabai -m rule --add app='System Information' manage=off
+

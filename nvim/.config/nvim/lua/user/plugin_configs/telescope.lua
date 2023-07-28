@@ -14,21 +14,18 @@ telescope.setup {
 
     mappings = {
       i = {
-        ["<C-n>"] = actions.cycle_history_next,
-        ["<C-p>"] = actions.cycle_history_prev,
+        ['<C-p>'] = require('telescope.actions.layout').toggle_preview,
 
         ["<C-j>"] = actions.move_selection_next,
         ["<C-k>"] = actions.move_selection_previous,
-
-        ["<C-c>"] = actions.close,
-
         ["<Down>"] = actions.move_selection_next,
         ["<Up>"] = actions.move_selection_previous,
 
+        ["<C-c>"] = actions.close,
+
+
         ["<CR>"] = actions.select_default,
-        ["<C-x>"] = actions.select_horizontal,
-        ["<C-v>"] = actions.select_vertical,
-        ["<C-t>"] = actions.select_tab,
+        ["<C-s>"] = actions.select_vertical,
 
         ["<C-u>"] = actions.preview_scrolling_up,
         ["<C-d>"] = actions.preview_scrolling_down,
@@ -47,9 +44,7 @@ telescope.setup {
       n = {
         ["<esc>"] = actions.close,
         ["<CR>"] = actions.select_default,
-        ["<C-x>"] = actions.select_horizontal,
-        ["<C-v>"] = actions.select_vertical,
-        ["<C-t>"] = actions.select_tab,
+        ["<C-s>"] = actions.select_vertical,
 
         ["<Tab>"] = actions.toggle_selection + actions.move_selection_worse,
         ["<S-Tab>"] = actions.toggle_selection + actions.move_selection_better,
@@ -104,6 +99,8 @@ telescope.setup {
   },
   extensions = {
     undo = {
+      theme = "dropdown",
+      previewer = false,
       use_delta = true,
       mappings = {
         i = {
@@ -123,6 +120,7 @@ telescope.setup {
       find_cmd = "rg" -- find command (defaults to `fd`)
     },
     projects = {},
+    harpoon = {},
     file_browser = {
       theme = "dropdown",
       previewer = false,
@@ -161,3 +159,4 @@ telescope.load_extension('media_files')
 telescope.load_extension('projects')
 telescope.load_extension('file_browser')
 telescope.load_extension('undo')
+telescope.load_extension('harpoon')

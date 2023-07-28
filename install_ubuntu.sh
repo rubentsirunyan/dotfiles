@@ -23,10 +23,9 @@ git clone --depth=1 https://github.com/mattmc3/antidote.git ${ZDOTDIR:-~}/.antid
 stow zsh
 chsh -s $(which zsh)
 
-
 # fzf
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-~/.fzf/install
+~/.fzf/install --key-bindings --completion --no-update-rc
 
 # tmux
 sudo apt install -y tmux
@@ -41,3 +40,4 @@ asdf install
 
 # nvim
 sudo snap install nvim --classic # apt neovim is very old, so it needs to be installed via snap
+stow nvim

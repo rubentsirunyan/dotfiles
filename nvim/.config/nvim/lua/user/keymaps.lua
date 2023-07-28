@@ -54,6 +54,15 @@ vim.keymap.set("n", "]d", vim.diagnostic.goto_next)
 -- Formatting keymaps
 vim.keymap.set("n", "<leader>F", vim.lsp.buf.format)
 
+-- Harpoon
+vim.keymap.set("n", "<leader>a", require("harpoon.mark").add_file)
+vim.keymap.set("n", "<C-e>", require("harpoon.ui").toggle_quick_menu)
+
+vim.keymap.set("n", "<leader>1", function() require("harpoon.ui").nav_file(1) end)
+vim.keymap.set("n", "<leader>2", function() require("harpoon.ui").nav_file(2) end)
+vim.keymap.set("n", "<leader>3", function() require("harpoon.ui").nav_file(3) end)
+vim.keymap.set("n", "<leader>4", function() require("harpoon.ui").nav_file(4) end)
+
 -- Telescope
 -- vim.keymap.set("n", "<leader>ff", "<cmd>Telescope file_browser<cr>", { silent = true })
 vim.keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { silent = true })
@@ -63,6 +72,7 @@ vim.keymap.set("n", "<leader>fp", "<cmd>Telescope projects<cr>", { silent = true
 vim.keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<cr>", { silent = true })
 vim.keymap.set("n", "<leader>fk", "<cmd>Telescope keymaps<cr>", { silent = true })
 vim.keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<cr>", { silent = true })
+vim.keymap.set("n", "<leader>fm", "<cmd>Telescope harpoon marks<cr>", { silent = true })
 
 -- try with t prefix
 vim.keymap.set("n", "<leader>tf", "<cmd>Telescope find_files<cr>", { silent = true })
