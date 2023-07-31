@@ -1,8 +1,8 @@
 python 3.11.2 2.7.18 system
 nodejs 19.6.0
 golang 1.20
-java openjdk-17.0.2 adoptopenjdk-8.0.362+9
-terraform 1.3.8 0.13.5
+java openjdk-17.0.2
+terraform 1.5.4
 tflint 0.45.0
 terragrunt 0.43.2
 postgres 14.3
