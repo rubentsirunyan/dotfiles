@@ -1,7 +1,15 @@
 tap "homebrew/bundle"
 tap "koekeishiya/formulae"
+# Opinionated way of installing Argo CD and managing GitOps repositories
+brew "argocd-autopilot"
 # Secure and free password manager for all of your devices
 brew "bitwarden-cli"
+# GNU Pretty Good Privacy (PGP) package
+brew "gnupg"
+# Improved top (interactive process viewer)
+brew "htop"
+# Lightweight and flexible command-line JSON processor
+brew "jq"
 # Ambitious Vim-fork focused on extensibility and agility
 brew "neovim"
 # Search tool like grep and The Silver Searcher
@@ -26,5 +34,3 @@ cask "dropzone"
 cask "karabiner-elements"
 # GPU-based terminal emulator
 cask "kitty"
-# Detects which app receives a keyboard shortcut (hotkey)
-cask "shortcutdetective"
