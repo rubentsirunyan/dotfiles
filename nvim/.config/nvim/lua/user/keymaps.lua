@@ -57,11 +57,13 @@ vim.keymap.set("n", "<leader>F", vim.lsp.buf.format)
 -- Harpoon
 vim.keymap.set("n", "<leader>a", require("harpoon.mark").add_file)
 vim.keymap.set("n", "<C-e>", require("harpoon.ui").toggle_quick_menu)
-
 vim.keymap.set("n", "<leader>1", function() require("harpoon.ui").nav_file(1) end)
 vim.keymap.set("n", "<leader>2", function() require("harpoon.ui").nav_file(2) end)
 vim.keymap.set("n", "<leader>3", function() require("harpoon.ui").nav_file(3) end)
 vim.keymap.set("n", "<leader>4", function() require("harpoon.ui").nav_file(4) end)
+
+-- LazyGit
+vim.keymap.set("n", "<leader>lg", ":LazyGit<CR>")
 
 -- Telescope
 -- vim.keymap.set("n", "<leader>ff", "<cmd>Telescope file_browser<cr>", { silent = true })

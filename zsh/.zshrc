@@ -6,7 +6,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 export ZSH_DISABLE_COMPFIX=true
-export EDITOR=vim
+export EDITOR=nvim
 
 # History
 export HISTSIZE=50000             #How many lines of history to keep in memory
@@ -43,6 +43,9 @@ export FZF_BASE=/usr/local/opt/fzf
 
 # Zoxide init
 eval "$(zoxide init zsh)"
+
+
+export PATH=$HOME/.tmux/plugins/t-smart-tmux-session-manager/bin:$PATH
 
 # Customize p10k.
 [ -f ~/.p10k.zsh ] && source ~/.p10k.zsh
