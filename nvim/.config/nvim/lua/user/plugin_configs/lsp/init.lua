@@ -8,6 +8,7 @@ local servers = {
 	"lua_ls",
   "jdtls", -- java
   "tsserver",
+  "bashls",
 }
 
 require('mason').setup()

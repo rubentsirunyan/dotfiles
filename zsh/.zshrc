@@ -34,6 +34,7 @@ source ${zsh_plugins}.zsh
 source ~/.zsh/fzf.zsh
 source ~/.zsh/git_fzf.zsh
 source ~/.zsh/bw_fzf.zsh
+source ~/.zsh/gpg.zsh
 
 source ~/.zsh/aliases.zsh
 

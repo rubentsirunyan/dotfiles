@@ -40,6 +40,9 @@ null_ls.setup({
 
     -- Terraform
 		formatting.terraform_fmt,
+
+    -- Bash
+		formatting.beautysh,
 	},
 })
 

@@ -34,14 +34,15 @@ yabai -m rule --add app="^Obsidian$" space=4
 yabai -m rule --add app="^Todoist$" space=4
 yabai -m rule --add app="^Calendar$" space=4
 yabai -m rule --add app="^Bitwarden$" space=7
+yabai -m rule --add app="^Telegram$" space=8
 yabai -m rule --add app="^Spotify$" space=7
 yabai -m rule --add app="^Finder$" space=3
 
-# yabai -m rule --add app='^System Settings$' manage=off
+yabai -m rule --add app='^System Settings$' manage=off
 yabai -m rule --add app='^Calculator$' manage=off
 yabai -m rule --add app='^Karabiner-Elements$' manage=off
-# yabai -m rule --add title=' Preferences$' manage=off
+yabai -m rule --add title=' Preferences$' manage=off
 # yabai -m rule --add app='Finder' manage=off
-# yabai -m rule --add app='System Information' manage=off
+yabai -m rule --add app='System Information' manage=off
 # yabai -m rule --add app='^Raycast$' manage=off
 
