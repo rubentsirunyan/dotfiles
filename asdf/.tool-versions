@@ -15,3 +15,4 @@ helm 3.12.2
 istioctl 1.18.2
 kubeseal 0.23.1
 argocd 2.8.2
+awscli 2.13.27

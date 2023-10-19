@@ -45,7 +45,7 @@ vim.keymap.set("n", "zM", require("ufo").closeAllFolds)
 vim.keymap.set("n", "<leader>n", ":Neotree toggle<CR>", { desc = "Toggle [N]eotree"})
 
 -- Misc
-vim.keymap.set("x", "<leader>p", "\"_dP", { desc = "[P]aste in place of the selected text without yanking it" })
+vim.keymap.set("x", "<leader>p", "\"_dp", { desc = "[P]aste in place of the selected text without yanking it" })
 
 -- Diagnostic keymaps
 vim.keymap.set("n", "[d", vim.diagnostic.goto_prev)
