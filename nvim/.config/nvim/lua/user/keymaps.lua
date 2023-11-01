@@ -42,7 +42,7 @@ vim.keymap.set("n", "zR", require("ufo").openAllFolds)
 vim.keymap.set("n", "zM", require("ufo").closeAllFolds)
 
 -- File tree
-vim.keymap.set("n", "<leader>n", ":Neotree toggle<CR>", { desc = "Toggle [N]eotree"})
+vim.keymap.set("n", "<leader>n", ":Neotree toggle reveal_force_cwd<CR>", { desc = "Toggle [N]eotree"})
 
 -- Misc
 vim.keymap.set("x", "<leader>p", "\"_dp", { desc = "[P]aste in place of the selected text without yanking it" })

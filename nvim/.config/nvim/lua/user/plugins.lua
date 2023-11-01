@@ -57,7 +57,7 @@ local plugins = {
 	-- File tree
 	{
 		"nvim-neo-tree/neo-tree.nvim",
-		commit = "7f6fa04dbd8e8c79d1af33bc90e856b65d8641da",
+		commit = "76dd1b49c302620f2e11946ac7a7201105180be2",
 		dependencies = {
 			{
 				"kyazdani42/nvim-web-devicons",

@@ -5,7 +5,7 @@ java openjdk-17.0.2
 terraform 1.5.4
 tflint 0.45.0
 terragrunt 0.43.2
-postgres 14.3
+postgres 15.3
 packer 1.8.6
 terraform-ls 0.31.1
 minikube 1.30.1
@@ -16,3 +16,4 @@ istioctl 1.18.2
 kubeseal 0.23.1
 argocd 2.8.2
 awscli 2.13.27
+yarn 1.22.19

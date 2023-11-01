@@ -108,7 +108,9 @@ neo_tree.setup {
     },
     -- This will find and focus the file in the active buffer every
     -- time the current file is changed while the tree is open.
-    follow_current_file = true,
+    follow_current_file = {
+      enabled = true
+    },
     group_empty_dirs = false, -- when true, empty folders will be grouped together
     -- netrw disabled, opening a directory opens neo-tree
     -- in whatever position is specified in window.position
