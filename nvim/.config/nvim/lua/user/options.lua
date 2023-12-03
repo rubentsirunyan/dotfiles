@@ -5,6 +5,7 @@ vim.o.numberwidth = 2 -- set number column width {default 4}
 
 -- Cursor
 vim.o.scrolloff = 10 -- keep the cursor in the center
+vim.o.cursorline = true -- highlight the cursor line
 
 -- Enable mouse mode
 vim.o.mouse = 'a' -- allow the mouse to be used in neovim
@@ -55,12 +56,8 @@ vim.o.termguicolors = true -- enables 24-bit RGB color in the TUI
 vim.o.completeopt = 'menuone,noselect' -- list of options for Insert mode completion
 
 -- Folding
--- vim.o.foldmethod = 'expr' -- fold method
--- vim.o.foldexpr = 'nvim_treesitter#foldexpr()' -- set fold expression to treesitter
--- vim.o.foldlevel = 99 -- open all folds by default
-
 vim.o.foldcolumn = '1' -- Show fold sidebar. '0' is not bad
 vim.o.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
 vim.o.foldlevelstart = 99
 vim.o.foldenable = true
-vim.o.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]] -- Use nicer characters for fold sidebar
+vim.o.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:⏵]] -- Use nicer characters for fold sidebar

@@ -4,11 +4,11 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 require('user.plugins')
-require('user.options')
-require('user.keymaps')
 require('user.autocommands')
 require('user.colorscheme')
 require('user.plugin_configs')
+require('user.keymaps')
+require('user.options')
 
 
 -- The line beneath this is called `modeline`. See `:help modeline`

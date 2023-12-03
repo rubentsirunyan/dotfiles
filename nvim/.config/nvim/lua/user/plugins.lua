@@ -16,25 +16,25 @@ vim.opt.rtp:prepend(lazypath)
 local plugins = {
 	{
 		"nvim-lua/plenary.nvim",
-		commit = "9a0d3bf7b832818c042aaf30f692b081ddd58bd9",
+		commit = "55d9fe89e33efd26f532ef20223e5f9430c8b0c0",
 	}, -- Useful lua functions used ny lots of plugins
 
 	{
 		"nvim-lualine/lualine.nvim",
-		commit = "0050b308552e45f7128f399886c86afefc3eb988",
+		commit = "2248ef254d0a1488a72041cfb45ca9caada6d994",
 	}, -- Fancier statusline
 
 	{
 		"windwp/nvim-autopairs",
-		commit = "28f57e6a6f0b37ec52c257230990b81afa1863e4",
+		commit = "0f04d78619cce9a5af4f355968040f7d675854a1",
 	}, -- Autopairs, integrates with both cmp and treesitter
 	{
 		"numToStr/Comment.nvim",
-    	-- commit = "eab2c83a0207369900e92783f56990808082eac2",
+		commit = "0236521ea582747b58869cb72f70ccfa967d2e89",
 	}, -- Easily comment stuff
 	{
 		"akinsho/bufferline.nvim",
-		commit = "c7492a76ce8218e3335f027af44930576b561013",
+		commit = "1a3397556d194bb1f2cc530b07124ccc512c5501",
 	}, -- Bufferline
 	{
 		"christoomey/vim-tmux-navigator",
@@ -42,30 +42,30 @@ local plugins = {
 	}, -- tmux navigations
 	{
 		"kylechui/nvim-surround",
-		commit = "ad56e6234bf42fb7f7e4dccc7752e25abd5ec80e",
+		commit = "0855a89e00a5822c3a482a82e5223fcf2e9ede13",
 	}, -- Add/delete/change surrounding pairs
 
 	-- Git
 	{
 		"lewis6991/gitsigns.nvim",
-		commit = "ec4742a7eebf68bec663041d359b95637242b5c3",
+		commit = "6ef8c54fb526bf3a0bc4efb0b2fe8e6d9a7daed2",
 	},
-  {
-    "kdheepak/lazygit.nvim",
-    commit = "146c6294bf0b4db1572fa7232039aaa9003a52b9",
-  },
+	{
+		"kdheepak/lazygit.nvim",
+		commit = "146c6294bf0b4db1572fa7232039aaa9003a52b9",
+	},
 	-- File tree
 	{
 		"nvim-neo-tree/neo-tree.nvim",
-		commit = "76dd1b49c302620f2e11946ac7a7201105180be2",
+		commit = "230ff118613fa07138ba579b89d13ec2201530b9",
 		dependencies = {
 			{
 				"kyazdani42/nvim-web-devicons",
-				commit = "ade34ca7d19543904b28b903e606be8930fb9ee3",
+				commit = "5efb8bd06841f91f97c90e16de85e96d57e9c862",
 			},
 			{
 				"MunifTanjim/nui.nvim",
-				commit = "d146966a423e60699b084eeb28489fe3b6427599",
+				commit = "1d044afde83e73c56de8e176615a4a6e7c8cf0e3",
 			},
 		},
 	},
@@ -78,19 +78,14 @@ local plugins = {
 
 	-- Colorschemes
 	{
-		"navarasu/onedark.nvim",
-		commit = "a55d0b62326341bf6ac0538d2d88836ac1cd77e5",
-	}, -- Theme inspired by Atom
-
-	{
 		"ellisonleao/gruvbox.nvim",
-		commit = "73f009df5ed929a853244c413bb52c1d02c117ce",
+		commit = "0940564208a490c173216c3b7d2188b0a5ad3491",
 	}, -- Gruvbox
 
 	-- cmp plugins
 	{
 		"hrsh7th/nvim-cmp",
-		commit = "cfafe0a1ca8933f7b7968a287d39904156f2c57d",
+		commit = "0b751f6beef40fd47375eaf53d3057e0bfa317e4",
 	}, -- The completion plugin
 	{
 		"hrsh7th/cmp-buffer",
@@ -102,19 +97,19 @@ local plugins = {
 	}, -- path completions
 	{
 		"hrsh7th/cmp-cmdline",
-		commit = "23c51b2a3c00f6abc4e922dbd7c3b9aca6992063",
+		commit = "8ee981b4a91f536f52add291594e89fb6645e451",
 	}, -- cmdline completions
 	{
 		"saadparwaiz1/cmp_luasnip",
-		commit = "18095520391186d634a0045dacaa346291096566",
+		commit = "05a9ab28b53f71d1aece421ef32fee2cb857a843",
 	}, -- snippet completions
 	{
 		"hrsh7th/cmp-nvim-lsp",
-		commit = "0e6b2ed705ddcff9738ec4ea838141654f12eeef",
+		commit = "44b16d11215dce86f253ce0c30949813c0a90765",
 	},
 	{
 		"hrsh7th/cmp-nvim-lua",
-		commit = "f3491638d123cfd2c8048aefaf66d246ff250ca6",
+		commit = "f12408bdb54c39c23e67cab726264c10db33ada8",
 	},
 
 	-- snippets
@@ -124,27 +119,26 @@ local plugins = {
 	}, --snippet engine
 	{
 		"rafamadriz/friendly-snippets",
-		commit = "a6f7a1609addb4e57daa6bedc300f77f8d225ab7",
+		commit = "53d3df271d031c405255e99410628c26a8f0d2b0",
 	}, -- a bunch of snippets to use
 
 	-- LSP
 	{
 		"neovim/nvim-lspconfig",
-		commit = "6f426c34c8e21af2f934e56be9d1198a507ecc9f",
+		commit = "694aaec65733e2d54d393abf80e526f86726c988",
 		dependencies = {
 			{
 				"williamboman/mason.nvim",
-				commit = "3f6b544c75c01549f7a2a9e395e0f1cea42b25dd",
+				commit = "41e75af1f578e55ba050c863587cffde3556ffa6",
 			},
 			{
 				"williamboman/mason-lspconfig.nvim",
-				commit = "e86a4c84ff35240639643ffed56ee1c4d55f538e",
+				commit = "4eb8e15e3c0757303d4c6dea64d2981fc679e990",
 			},
 		},
 	},
-	{
-		"theprimeagen/harpoon"
-	},
+
+  -- Null-LS
 	{
 		"jose-elias-alvarez/null-ls.nvim",
 		commit = "60b4a7167c79c7d04d1ff48b55f2235bf58158a7",
@@ -163,10 +157,16 @@ local plugins = {
 	-- 	end
 	-- },
 
-  {
-    "b0o/schemastore.nvim",
-    commit = "cd5c2a0db954011fcbeac7bbbc0c7ae9e23626e3",
-  },
+	-- Harpoon
+	{
+		"theprimeagen/harpoon",
+    commit = "581da797f9d66485f841525af596255270c2bcf5",
+	},
+
+	{
+		"b0o/schemastore.nvim",
+		commit = "cd5c2a0db954011fcbeac7bbbc0c7ae9e23626e3",
+	},
 	-- Telescope
 	{
 		"nvim-telescope/telescope.nvim",
@@ -190,8 +190,7 @@ local plugins = {
 	-- Treesitter
 	{
 		"nvim-treesitter/nvim-treesitter",
-		-- commit = "df6f3220890d8641067bfee0718244e46d9693dd",
-		commit = "3af1220e18034eb2ce7d1c8e77055bc3bf3c1c36",
+		commit = "80a16deb5146a3eb4648effccda1ab9f45e43e76",
 	},
 	{
 		"nvim-treesitter/nvim-treesitter-context",
@@ -205,9 +204,14 @@ local plugins = {
 		dependencies = {
 			{
 				"kevinhwang91/promise-async",
-				commit = "e94f35161b8c5d4a4ca3b6ff93dd073eb9214c0e",
+				commit = "94f6f03c6c1e2aab551aacdf0c1e597a7269abb6",
 			},
 		},
+	},
+
+	-- Profiler
+	{
+		"stevearc/profile.nvim",
 	},
 
 	-- Be Good!
