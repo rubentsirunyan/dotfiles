@@ -17,3 +17,5 @@ kubeseal 0.23.1
 argocd 2.8.2
 awscli 2.13.27
 yarn 1.22.19
+aws-sam-cli 1.99.0
+direnv 2.33.0

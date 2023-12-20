@@ -190,11 +190,11 @@ local plugins = {
 	-- Treesitter
 	{
 		"nvim-treesitter/nvim-treesitter",
-		commit = "80a16deb5146a3eb4648effccda1ab9f45e43e76",
+		commit = "0dfbf5e48e8551212c2a9f1c74cb080c8e76b5d1",
 	},
 	{
 		"nvim-treesitter/nvim-treesitter-context",
-		commit = "63f3ffc50b0afc59be1015153d00922498085be8",
+		commit = "c9f2b429a1d63023f7a33b5404616f4cd2a109c5",
 	},
 
 	-- Folding
