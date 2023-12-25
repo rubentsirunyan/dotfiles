@@ -19,3 +19,5 @@ awscli 2.13.27
 yarn 1.22.19
 aws-sam-cli 1.99.0
 direnv 2.33.0
+talosctl 1.6.0
+mongosh 2.1.1
