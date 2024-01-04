@@ -138,7 +138,7 @@ local plugins = {
 		},
 	},
 
-  -- Null-LS
+	-- Null-LS
 	{
 		"jose-elias-alvarez/null-ls.nvim",
 		commit = "60b4a7167c79c7d04d1ff48b55f2235bf58158a7",
@@ -160,7 +160,7 @@ local plugins = {
 	-- Harpoon
 	{
 		"theprimeagen/harpoon",
-    commit = "581da797f9d66485f841525af596255270c2bcf5",
+		commit = "581da797f9d66485f841525af596255270c2bcf5",
 	},
 
 	{
@@ -190,7 +190,8 @@ local plugins = {
 	-- Treesitter
 	{
 		"nvim-treesitter/nvim-treesitter",
-		commit = "0dfbf5e48e8551212c2a9f1c74cb080c8e76b5d1",
+		commit = "0da349ed303bea955942f409d29059cdb89dbe2c",
+		build = ":TSUpdate",
 	},
 	{
 		"nvim-treesitter/nvim-treesitter-context",
