@@ -73,7 +73,6 @@ cmp.setup {
         end
       end,
       s = cmp.mapping.confirm({ select = true }),
-      c = cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = true }),
     }),
     ['<Tab>'] = cmp.mapping(function(fallback)
       if cmp.visible() then
@@ -90,6 +89,7 @@ cmp.setup {
     end, {
       'i',
       's',
+      'c',
     }),
     ['<S-Tab>'] = cmp.mapping(function(fallback)
       if cmp.visible() then
@@ -102,6 +102,7 @@ cmp.setup {
     end, {
       'i',
       's',
+      'c',
     }),
   },
   formatting = {
@@ -137,3 +138,19 @@ cmp.setup {
     native_menu = false,
   },
 }
+
+cmp.setup.cmdline({ '/', '?' }, {
+  mapping = cmp.mapping.preset.cmdline(),
+  sources = {
+    { name = 'buffer' }
+  }
+})
+
+cmp.setup.cmdline(':', {
+  mapping = cmp.mapping.preset.cmdline(),
+  sources = cmp.config.sources({
+    { name = 'path' }
+  }, {
+    { name = 'cmdline' }
+  })
+})
