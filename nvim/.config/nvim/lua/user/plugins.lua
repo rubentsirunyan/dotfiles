@@ -138,6 +138,11 @@ local plugins = {
 		},
 	},
 
+	{
+		"j-hui/fidget.nvim",
+		commit = "a4a7edfea37e557dbff5509ee374ffb57051bba9",
+	},
+
 	-- Null-LS
 	{
 		"jose-elias-alvarez/null-ls.nvim",
