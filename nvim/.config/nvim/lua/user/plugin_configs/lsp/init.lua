@@ -23,12 +23,14 @@ local on_attach = function(_, bufnr)
   vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
 
   local bufopts = { noremap=true, silent=true, buffer=bufnr }
-  vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, bufopts)
-  vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
-  vim.keymap.set('n', 'gr', require('telescope.builtin').lsp_references, bufopts)
-  vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, bufopts)
-  vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
-  vim.keymap.set('n', 'gl', vim.diagnostic.open_float, bufopts)
+  -- vim.tbl_extend is used to extend the bufopts table with a desc key for each mapping.
+  -- The "keep" argument ensures that the original bufopts table is not modified and that the desc key is added uniquely for each mapping.
+  vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, vim.tbl_extend("keep", bufopts, { desc = "LSP - [g]o to [d]eclaration"}))
+  vim.keymap.set('n', 'gd', vim.lsp.buf.definition, vim.tbl_extend("keep", bufopts, { desc = "LSP - [g]o to [d]definition"}))
+  vim.keymap.set('n', 'gr', require('telescope.builtin').lsp_references, vim.tbl_extend("keep", bufopts, { desc = "LSP - [g]o to [r]eferences"}))
+  vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, vim.tbl_extend("keep", bufopts, { desc = "LSP - [g]o to [i]mplementation"}))
+  vim.keymap.set('n', 'K', vim.lsp.buf.hover, vim.tbl_extend("keep", bufopts, { desc = "LSP - open hover information"}))
+  vim.keymap.set('n', 'gl', vim.diagnostic.open_float, vim.tbl_extend("keep", bufopts, { desc = "LSP - open diagnostics in a floating window"}))
 end
 
 vim.fn.sign_define('DiagnosticSignError', { texthl = 'DiagnosticSignError', text = '', numhl = '' })

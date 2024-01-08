@@ -5,7 +5,8 @@ vim.o.numberwidth = 2 -- set number column width {default 4}
 
 -- Cursor
 vim.o.scrolloff = 10 -- keep the cursor in the center
-vim.o.cursorline = true -- highlight the cursor line
+vim.o.cursorline = true -- enable the cursor line
+vim.o.cursorlineopt = "number" -- highlight only the line number and not the whole line
 
 -- Enable mouse mode
 vim.o.mouse = 'a' -- allow the mouse to be used in neovim

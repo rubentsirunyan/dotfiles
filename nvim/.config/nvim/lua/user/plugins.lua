@@ -23,6 +23,10 @@ local plugins = {
 		"nvim-lualine/lualine.nvim",
 		commit = "2248ef254d0a1488a72041cfb45ca9caada6d994",
 	}, -- Fancier statusline
+	{
+		"WhoIsSethDaniel/lualine-lsp-progress.nvim",
+		commit = "d76634e491076e45f465b31849d6ec320b436abb",
+	},
 
 	{
 		"windwp/nvim-autopairs",
@@ -201,6 +205,18 @@ local plugins = {
 	{
 		"nvim-treesitter/nvim-treesitter-context",
 		commit = "c9f2b429a1d63023f7a33b5404616f4cd2a109c5",
+	},
+  {
+    "nvim-treesitter/nvim-treesitter-textobjects",
+    commit = "85b9d0cbd4ff901abcda862b50dbb34e0901848b"
+  },
+	-- {
+	-- 	"theHamsta/nvim-treesitter-pairs",
+	-- 	commit = "f8c195d4d8464cba6971bf8de2d6a5c8c109b37a",
+	-- },
+	{
+		"RRethy/vim-illuminate",
+		commit = "3bd2ab64b5d63b29e05691e624927e5ebbf0fb86",
 	},
 
 	-- Folding
