@@ -1,3 +1,4 @@
+require('user.plugin_configs.lsp_status')
 require('user.plugin_configs.lualine')
 require('user.plugin_configs.neo-tree')
 require('user.plugin_configs.telescope')

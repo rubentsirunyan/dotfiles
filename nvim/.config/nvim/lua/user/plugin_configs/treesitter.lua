@@ -5,6 +5,16 @@ treesitter.setup {
   ignore_install = { "" }, -- List of parsers to ignore installing
   highlight = {
     enable = true, -- false will disable the whole extension
+    disable = function(lang, bufnr)
+        if vim.bo.filetype == 'help' then
+            return true
+        elseif vim.bo.filetype == 'lua' then
+            return true
+        else
+            return false
+        end
+    end,
+
   },
   indent = { enable = true, disable = { "yaml" } },
 

@@ -22,11 +22,18 @@ local plugins = {
 	{
 		"nvim-lualine/lualine.nvim",
 		commit = "2248ef254d0a1488a72041cfb45ca9caada6d994",
+    dependencies = {
+      -- LSP progress
+      {
+        "linrongbin16/lsp-progress.nvim",
+        commit = "509b17fb21455fadc4702c991d411739c593c0d2",
+      },
+    }
 	}, -- Fancier statusline
-	{
-		"WhoIsSethDaniel/lualine-lsp-progress.nvim",
-		commit = "d76634e491076e45f465b31849d6ec320b436abb",
-	},
+	-- {
+	-- 	"WhoIsSethDaniel/lualine-lsp-progress.nvim",
+	-- 	commit = "d76634e491076e45f465b31849d6ec320b436abb",
+	-- },
 
 	{
 		"windwp/nvim-autopairs",
@@ -156,15 +163,6 @@ local plugins = {
 		"jay-babu/mason-null-ls.nvim",
 		commit = "ae0c5fa57468ac65617f1bf821ba0c3a1e251f0c",
 	},
-
-	-- LSP progress
-	-- {
-	-- 	"nvim-lua/lsp-status.nvim",
-	-- 	commit = "54f48eb5017632d81d0fd40112065f1d062d0629",
-	-- 	config = function()
-	-- 		require("lsp-status").register_progress()
-	-- 	end
-	-- },
 
 	-- Harpoon
 	{
