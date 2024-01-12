@@ -192,6 +192,10 @@ local plugins = {
 		"nvim-telescope/telescope-file-browser.nvim",
 		commit = "a18f78121d74c4fae9edd29e138a918a8ede2a70",
 	},
+  {
+    "1riz/telescope-macros.nvim",
+    commit = "22f75816c905f2beab3ee2c7ad115f8e0e397cad",
+  },
 
 	-- Treesitter
 	{

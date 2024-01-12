@@ -42,7 +42,7 @@ telescope.setup {
       },
 
       n = {
-        ["<esc>"] = actions.close,
+        ["q"] = actions.close,
         ["<CR>"] = actions.select_default,
         ["<C-s>"] = actions.select_vertical,
 
@@ -100,8 +100,8 @@ telescope.setup {
   extensions = {
     undo = {
       theme = "dropdown",
-      previewer = false,
-      use_delta = true,
+      -- previewer = true,
+      use_delta = false,
       mappings = {
         i = {
           -- IMPORTANT: Note that telescope-undo must be available when telescope is configured if
@@ -160,3 +160,4 @@ telescope.load_extension('projects')
 telescope.load_extension('file_browser')
 telescope.load_extension('undo')
 telescope.load_extension('harpoon')
+telescope.load_extension('macros')

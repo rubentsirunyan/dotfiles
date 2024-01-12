@@ -39,6 +39,7 @@
   "promise-async": { "branch": "main", "commit": "94f6f03c6c1e2aab551aacdf0c1e597a7269abb6" },
   "schemastore.nvim": { "branch": "main", "commit": "cd5c2a0db954011fcbeac7bbbc0c7ae9e23626e3" },
   "telescope-file-browser.nvim": { "branch": "master", "commit": "a18f78121d74c4fae9edd29e138a918a8ede2a70" },
+  "telescope-macros.nvim": { "branch": "main", "commit": "22f75816c905f2beab3ee2c7ad115f8e0e397cad" },
   "telescope-media-files.nvim": { "branch": "master", "commit": "513e4ee385edd72bf0b35a217b7e39f84b6fe93c" },
   "telescope-undo.nvim": { "branch": "main", "commit": "3dec002ea3e7952071d26fbb5d01e2038a58a554" },
   "telescope.nvim": { "branch": "master", "commit": "203bf5609137600d73e8ed82703d6b0e320a5f36" },

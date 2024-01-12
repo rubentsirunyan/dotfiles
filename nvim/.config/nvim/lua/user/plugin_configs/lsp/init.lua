@@ -31,6 +31,9 @@ local on_attach = function(_, bufnr)
   vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, vim.tbl_extend("keep", bufopts, { desc = "LSP - [g]o to [i]mplementation"}))
   vim.keymap.set('n', 'K', vim.lsp.buf.hover, vim.tbl_extend("keep", bufopts, { desc = "LSP - open hover information"}))
   vim.keymap.set('n', 'gl', vim.diagnostic.open_float, vim.tbl_extend("keep", bufopts, { desc = "LSP - open diagnostics in a floating window"}))
+  vim.keymap.set("n", "g[", vim.diagnostic.goto_prev, vim.tbl_extend("keep", bufopts, { desc = "LSP - [g]o to previous diagnostic message"}))
+  vim.keymap.set("n", "g]", vim.diagnostic.goto_next, vim.tbl_extend("keep", bufopts, { desc = "LSP - [g]o to next diagnostic message"}))
+
 end
 
 vim.fn.sign_define('DiagnosticSignError', { texthl = 'DiagnosticSignError', text = '', numhl = '' })
