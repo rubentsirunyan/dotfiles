@@ -44,7 +44,7 @@ require("lsp-progress").setup({
                 end
             end
             if #builder > 0 then
-                return "| " .. sign .. " LSP:" .. " " .. table.concat(builder, " ")
+                return sign .. " LSP:" .. " " .. table.concat(builder, " ")
             end
         end
         return ""
