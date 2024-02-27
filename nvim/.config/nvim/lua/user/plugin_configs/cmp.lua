@@ -137,6 +137,7 @@ cmp.setup {
     ghost_text = false,
     native_menu = false,
   },
+  preselect = cmp.PreselectMode.None -- Some LSPs (like gopls) preselect an item. This disables that behavior.
 }
 
 cmp.setup.cmdline({ '/', '?' }, {

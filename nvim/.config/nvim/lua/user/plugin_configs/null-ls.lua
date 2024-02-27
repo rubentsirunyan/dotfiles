@@ -43,6 +43,10 @@ null_ls.setup({
 
     -- Bash
 		formatting.beautysh,
+
+    -- Go
+    formatting.gofmt,
+    formatting.goimports,
 	},
 })
 

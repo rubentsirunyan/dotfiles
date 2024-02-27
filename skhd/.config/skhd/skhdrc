@@ -1,20 +1,16 @@
-# open terminal and Firefox with shortcuts
-alt - return : open -a Kitty
-cmd + alt - return : open -a Firefox
-
 # cycle through windows
 #alt - tab : yabai -m window --focus next || yabai -m window --focus stack.next || yabai -m window --focus stack.first || yabai -m window --focus first
 #alt + shift - tab : yabai -m window --focus prev || yabai -m window --focus stack.prev || yabai -m window --focus stack.last || yabai -m window --focus last
 
 # change window focus within space
-cmd + alt + shift + ctrl - j : yabai -m window --focus stack.next || yabai -m window --focus stack.first || yabai -m window --focus south || yabai -m window --focus first
-cmd + alt + shift + ctrl - k : yabai -m window --focus stack.prev || yabai -m window --focus stack.last || yabai -m window --focus north || yabai -m window --focus last
-cmd + alt + shift + ctrl - h : yabai -m window --focus stack.prev || yabai -m window --focus stack.last || yabai -m window --focus west || yabai -m window --focus last
-cmd + alt + shift + ctrl - l : yabai -m window --focus stack.next || yabai -m window --focus stack.first || yabai -m window --focus east || yabai -m window --focus first
-
+# cmd + alt + shift + ctrl - j : yabai -m window --focus stack.next || yabai -m window --focus stack.first || yabai -m window --focus south || yabai -m window --focus first
+# cmd + alt + shift + ctrl - k : yabai -m window --focus stack.prev || yabai -m window --focus stack.last || yabai -m window --focus north || yabai -m window --focus last
+# cmd + alt + shift + ctrl - h : yabai -m window --focus stack.prev || yabai -m window --focus stack.last || yabai -m window --focus west || yabai -m window --focus last
+# cmd + alt + shift + ctrl - l : yabai -m window --focus stack.next || yabai -m window --focus stack.first || yabai -m window --focus east || yabai -m window --focus first
+#
 # change focus between external displays (left and right)
-cmd + alt + shift + ctrl - n: yabai -m display --focus west
-cmd + alt + shift + ctrl - m: yabai -m display --focus east
+# cmd + alt + shift + ctrl - n: yabai -m display --focus west
+# cmd + alt + shift + ctrl - m: yabai -m display --focus east
 
 # rotate layout clockwise
 shift + alt - r : yabai -m space --rotate 270

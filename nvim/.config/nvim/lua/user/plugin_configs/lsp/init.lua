@@ -11,6 +11,7 @@ local servers = {
   "gradle_ls",
   "tsserver",
   "bashls",
+  "gopls",
 }
 
 require('mason').setup()

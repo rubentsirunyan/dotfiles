@@ -1,6 +1,6 @@
 python 3.11.2 2.7.18 system
 nodejs 20.2.0 19.6.0
-golang 1.20
+golang 1.22.0
 java openjdk-17.0.2
 terraform 1.5.4
 tflint 0.45.0
@@ -21,3 +21,4 @@ aws-sam-cli 1.99.0
 direnv 2.33.0
 talosctl 1.6.0
 mongosh 2.1.1
+gradle 8.5

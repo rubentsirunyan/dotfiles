@@ -19,6 +19,7 @@ setopt    appendhistory           #Append history to the history file (no overwr
 #unsetopt share_history           # Do not share history across terminals
 setopt    sharehistory            #Share history across terminals
 setopt    incappendhistory        #Immediately append to the history file, not just when a term is killed
+setopt    globdots        # Lets files beginning with a . be matched without explicitly specifying the dot.
 
 # Lazy-load antidote and generate the static load file only when needed
 zsh_plugins=${ZDOTDIR:-$HOME}/.zsh_plugins
