@@ -122,6 +122,22 @@ local plugins = {
 		commit = "f12408bdb54c39c23e67cab726264c10db33ada8",
 	},
 
+  -- lspkind - Add symbols to autocomplete
+  {
+    "onsails/lspkind.nvim",
+    commit = "1735dd5a5054c1fb7feaf8e8658dbab925f4f0cf",
+  },
+
+  -- codeium
+  {
+		"Exafunction/codeium.nvim",
+		commit = "cd5913ff5481229b15186293d1d46dd9500789f9",
+    dependencies = {
+        "nvim-lua/plenary.nvim",
+        "hrsh7th/nvim-cmp",
+    },
+	},
+
 	-- snippets
 	{
 		"L3MON4D3/LuaSnip",
