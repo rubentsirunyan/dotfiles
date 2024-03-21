@@ -1,0 +1,237 @@
+;; edn spec https://github.com/edn-format/edn
+;; !  | means mandatory
+;; #  | means optional
+;; C  | left_command
+;; T  | left_control
+;; O  | left_option
+;; S  | left_shift
+;; F  | fn
+;; Q  | right_command
+;; W  | right_control
+;; E  | right_option
+;; R  | right_shift
+;; P  | caps_lock
+;; !! | mandatory command + control + optional + shift (hyper)
+;; ## | optional any
+
+;; examples
+
+;; !CTSequal_sign  | mandatory command control shift =
+;;                 | which is command control +
+;; !O#Sright_arrow | mandatory option optional any right_arrow
+
+;; karabiner definition of mandatory and optional
+;; https://karabiner-elements.pqrs.org/docs/json/complex-modifications-manipulator-definition/from/modifiers/
+
+{
+  :profiles {
+    :Default {
+      :default true ;; "default true means" rules default goes into this rule if no profiles specified
+      ;; simultaneous key press threshold
+      ;; simlayer is implemented with to_if_alone and simultaneous key press feature
+      :sim     250
+      ;; to_delayed_action_delay_milliseconds
+      ;; checkout karabiner's documentation
+      ;; https://pqrs.org/osx/karabiner/json.html
+      ;; basically it means time after which the key press is count delayed
+      :delay   500
+      ;; https://pqrs.org/osx/karabiner/json.html#to-if-alone
+      ;; to_if_alone_timeout_milliseconds
+      ;; affects to_if_alone behavior
+      ;; simlayer is implemented with to_if_alone and simultaneous key press feature
+      :alone   1000
+      ;; to_if_held_down_threshold_milliseconds
+      ;; check the doc, I don't know what does this mean.
+      ;; maybe press this many milliseconds counts a "held" ?
+      :held    500
+    }
+  }
+
+  :applications {
+    :terminals [
+      "^com\\.apple\\.Terminal$",
+      "^com\\.googlecode\\.iterm2$",
+      "^co\\.zeit\\.hyperterm$",
+      "^co\\.zeit\\.hyper$",
+      "^io\\.alacritty$",
+      "^net\\.kovidgoyal\\.kitty$",
+    ]
+  }
+
+  :tos {
+    :lazy-left-control {
+      :key :left_control
+      :lazy true
+    }
+    :lazy-hyper {
+      :key :!CTOleft_shift
+      :lazy true
+    }
+  }
+
+  :simlayers {
+    :vi-mode {
+      :key :v
+      :condi :!terminals
+      :modi {
+        :mandatory [
+          :left_control
+          :left_shift
+          :left_option
+          :left_command
+        ]
+      }
+    }
+    ; :vi-visual-mode {
+    ;   :key :v
+    ;   :condi :!terminals
+    ;   :modi {:mandatory [:left_shift]}
+    ; }
+    :o-layer {
+      :key :o 
+      :modi {
+        :mandatory [
+          :left_control
+          :left_shift
+          :left_option
+          :left_command
+        ]
+      }
+    }
+    :w-layer {
+      :key :w
+      :modi {
+        :mandatory [
+          :left_control
+          :left_shift
+          :left_option
+          :left_command
+        ]
+      }
+    }
+    :s-layer {
+      :key :s
+      :modi {
+        :mandatory [
+          :left_control
+          :left_shift
+          :left_option
+          :left_command
+        ]
+      }
+    }
+    :d-layer {
+      :key :d
+      :modi {
+        :mandatory [
+          :left_control
+          :left_shift
+          :left_option
+          :left_command
+        ]
+      }
+    }
+    :r-layer {
+      :key :r
+      :modi {
+        :mandatory [
+          :left_control
+          :left_shift
+          :left_option
+          :left_command
+        ]
+      }
+    }
+    :space-layer {
+      :key :spacebar
+      :modi {
+        :mandatory [
+          :left_control
+          :left_shift
+          :left_option
+          :left_command
+        ]
+      }
+    }
+  }
+  :main [
+    {:des "Change tab to hyper if pressed with other keys and tab if pressed alone"
+     :rules [
+      [:tab :lazy-hyper nil {:alone :tab}]
+    ]}
+    {:des "Change caps_lock to control if pressed with other keys and escape if pressed alone"
+     :rules [
+      [:caps_lock :lazy-left-control nil {:alone :escape}]
+    ]}
+    {:des "Change escape to hyper if pressed with other keys and escape if pressed alone"
+     :rules [
+      [:escape :lazy-hyper nil {:alone :!Tspacebar}]
+    ]}
+    {:des "Change right_shift + left_shift to caps_lock"
+     :rules [
+      [:!S#Pright_shift :caps_lock]
+      [:!R#Pleft_shift :caps_lock]
+    ]}
+    {:des "Vi Mode"
+     :rules [
+      [:##j :down_arrow :vi-mode]
+      [:##k :up_arrow :vi-mode]
+      [:##h :left_arrow :vi-mode]
+      [:##l :right_arrow :vi-mode]
+      [:##b :!Oleft_arrow :vi-mode]
+      [:##w :!Oright_arrow :vi-mode]
+      [:##0 :!Ta :vi-mode]
+      [:!S4 :!Te :vi-mode]
+    ]}
+    ; {:des "Vi Visual Mode"
+    ;  :rules [
+    ;   [:##j :!Sdown_arrow :vi-visual-mode]
+    ;   [:##k :!Sup_arrow :vi-visual-mode]
+    ;   [:##h :!Sleft_arrow :vi-visual-mode]
+    ;   [:##l :!Sright_arrow :vi-visual-mode]
+    ;   [:##b :!SOleft_arrow :vi-visual-mode]
+    ;   [:##w :!SOright_arrow :vi-visual-mode]
+    ;   [:##0 :!SCleft_arrow :vi-visual-mode]
+    ;   [:##4 :!SCright_arrow :vi-visual-mode]
+    ;   [:##open_bracket :!SOup_arrow :vi-visual-mode]
+    ;   [:##close_bracket :!SOdown_arrow :vi-visual-mode]
+    ; ]}
+    {:des "Space layer"
+     :rules [
+      [:l :!Tspacebar :space-layer]
+    ]}
+    {:des "[O]pen layer"
+     :rules [
+      [:t "open -a 'Kitty.app'" :o-layer]
+      [:f "open -a 'Firefox.app'" :o-layer]
+      [:m "open -a 'Telegram.app'" :o-layer]
+      [:s "open -a 'Spotify.app'" :o-layer]
+      [:l "open -a 'Todoist.app'" :o-layer]
+      [:n "open -a 'Obsidian.app'" :o-layer]
+    ]}
+    {:des "[W]indow layer"
+     :rules [
+      [:j "/opt/homebrew/bin/yabai -m window --focus stack.next || /opt/homebrew/bin/yabai -m window --focus stack.first || /opt/homebrew/bin/yabai -m window --focus south || /opt/homebrew/bin/yabai -m window --focus first" :w-layer]
+      [:k "/opt/homebrew/bin/yabai -m window --focus stack.prev || /opt/homebrew/bin/yabai -m window --focus stack.last || /opt/homebrew/bin/yabai -m window --focus north || /opt/homebrew/bin/yabai -m window --focus last" :w-layer]
+      [:h "/opt/homebrew/bin/yabai -m window --focus stack.prev || /opt/homebrew/bin/yabai -m window --focus stack.last || /opt/homebrew/bin/yabai -m window --focus west || /opt/homebrew/bin/yabai -m window --focus last" :w-layer]
+      [:l "/opt/homebrew/bin/yabai -m window --focus stack.next || /opt/homebrew/bin/yabai -m window --focus stack.first || /opt/homebrew/bin/yabai -m window --focus east || /opt/homebrew/bin/yabai -m window --focus first" :w-layer]
+    ]}
+    {:des "[S]pace layer"
+     :rules [
+      [:j :!Tdown_arrow :s-layer]
+      [:k :!Tup_arrow :s-layer]
+      [:h "/opt/homebrew/bin/yabai -m space --focus prev"  :s-layer]
+      [:l "/opt/homebrew/bin/yabai -m space --focus nex"  :s-layer]
+    ]}
+    {:des "[D]isplay layer"
+     :rules [
+      [:j "/opt/homebrew/bin/yabai -m display --focus south" :d-layer]
+      [:k "/opt/homebrew/bin/yabai -m display --focus north" :d-layer]
+      [:h "/opt/homebrew/bin/yabai -m display --focus west" :d-layer]
+      [:l "/opt/homebrew/bin/yabai -m display --focus east" :d-layer]
+    ]}
+    {:des "[R]aycast layer"
+     :rules [
+      [:c "Open raycast://extensions/raycast/raycast/confetti" :r-layer]
+    ]}
+]}

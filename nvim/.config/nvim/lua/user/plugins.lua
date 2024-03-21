@@ -129,14 +129,14 @@ local plugins = {
   },
 
   -- codeium
-  {
-		"Exafunction/codeium.nvim",
-		commit = "cd5913ff5481229b15186293d1d46dd9500789f9",
-    dependencies = {
-        "nvim-lua/plenary.nvim",
-        "hrsh7th/nvim-cmp",
-    },
-	},
+ --  {
+	-- 	"Exafunction/codeium.nvim",
+	-- 	commit = "cd5913ff5481229b15186293d1d46dd9500789f9",
+ --    dependencies = {
+ --        "nvim-lua/plenary.nvim",
+ --        "hrsh7th/nvim-cmp",
+ --    },
+	-- },
 
 	-- snippets
 	{

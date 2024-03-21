@@ -6,6 +6,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 export XDG_CONFIG_HOME="$HOME/.config" # Added for lazygit https://github.com/jesseduffield/lazygit/blob/master/docs/Config.md
+export GOKU_EDN_CONFIG_FILE="$HOME/.config/goku/karabiner.edn" # Goku config file location
 
 export ZSH_DISABLE_COMPFIX=true
 export EDITOR=nvim
