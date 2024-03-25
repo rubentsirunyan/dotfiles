@@ -221,7 +221,7 @@
       [:j :!Tdown_arrow :s-layer]
       [:k :!Tup_arrow :s-layer]
       [:h "/opt/homebrew/bin/yabai -m space --focus prev"  :s-layer]
-      [:l "/opt/homebrew/bin/yabai -m space --focus nex"  :s-layer]
+      [:l "/opt/homebrew/bin/yabai -m space --focus next"  :s-layer]
     ]}
     {:des "[D]isplay layer"
      :rules [
