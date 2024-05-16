@@ -122,20 +122,20 @@ local plugins = {
 		commit = "f12408bdb54c39c23e67cab726264c10db33ada8",
 	},
 
-  -- lspkind - Add symbols to autocomplete
-  {
-    "onsails/lspkind.nvim",
-    commit = "1735dd5a5054c1fb7feaf8e8658dbab925f4f0cf",
-  },
+	-- lspkind - Add symbols to autocomplete
+	{
+		"onsails/lspkind.nvim",
+		commit = "1735dd5a5054c1fb7feaf8e8658dbab925f4f0cf",
+	},
 
-  -- codeium
- --  {
+	-- codeium
+	--  {
 	-- 	"Exafunction/codeium.nvim",
 	-- 	commit = "cd5913ff5481229b15186293d1d46dd9500789f9",
- --    dependencies = {
- --        "nvim-lua/plenary.nvim",
- --        "hrsh7th/nvim-cmp",
- --    },
+	--    dependencies = {
+	--        "nvim-lua/plenary.nvim",
+	--        "hrsh7th/nvim-cmp",
+	--    },
 	-- },
 
 	-- snippets
@@ -208,10 +208,10 @@ local plugins = {
 		"nvim-telescope/telescope-file-browser.nvim",
 		commit = "a18f78121d74c4fae9edd29e138a918a8ede2a70",
 	},
-  {
-    "1riz/telescope-macros.nvim",
-    commit = "22f75816c905f2beab3ee2c7ad115f8e0e397cad",
-  },
+	{
+		"1riz/telescope-macros.nvim",
+		commit = "22f75816c905f2beab3ee2c7ad115f8e0e397cad",
+	},
 
 	-- Treesitter
 	{
@@ -247,7 +247,32 @@ local plugins = {
 			},
 		},
 	},
-
+	{
+		"kristijanhusak/vim-dadbod-ui",
+		commit = "23ed6edb60dcef9b30b741ca4b00ac4637da7d69",
+		dependencies = {
+			{
+				"tpope/vim-dadbod",
+				commit = "37523ffe0849b51db07fa7f48430c2aca5420a0e",
+				lazy = true,
+			},
+			{
+        "kristijanhusak/vim-dadbod-completion",
+        ft = { "sql", "mysql", "plsql" },
+        lazy = true,
+      },
+		},
+		cmd = {
+			"DBUI",
+			"DBUIToggle",
+			"DBUIAddConnection",
+			"DBUIFindBuffer",
+		},
+		init = function()
+			-- Your DBUI configuration
+			vim.g.db_ui_use_nerd_fonts = 1
+		end,
+	},
 	-- Profiler
 	{
 		"stevearc/profile.nvim",

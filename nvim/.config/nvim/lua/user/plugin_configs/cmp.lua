@@ -86,7 +86,6 @@ cmp.setup({
 			mode = "symbol",
 			maxwidth = 50,
 			ellipsis_char = "...",
-			symbol_map = { Codeium = "" },
 			before = function(entry, vim_item)
 				vim_item.menu = ({
 					nvim_lsp = "[LSP]",
@@ -94,6 +93,7 @@ cmp.setup({
 					codeium = "[Codeium]",
 					buffer = "[Buffer]",
 					path = "[Path]",
+          ["vim-dadbod-completion"] = "[DB]",
 				})[entry.source.name]
 				return vim_item
 			end,
@@ -118,6 +118,13 @@ cmp.setup({
 		native_menu = false,
 	},
 	preselect = cmp.PreselectMode.None, -- Some LSPs (like gopls) preselect an item. This disables that behavior.
+})
+
+cmp.setup.filetype({ "sql" }, {
+	sources = {
+		{ name = "vim-dadbod-completion" },
+		{ name = "buffer" },
+	},
 })
 
 cmp.setup.cmdline({ "/", "?" }, {

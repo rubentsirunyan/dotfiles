@@ -31,18 +31,18 @@ yabai -m config mouse_action2 resize
 # yabai -m mouse_drop_action swap
 
 yabai -m space 1 --label terminal
-yabai -m space 2 --label browser
-yabai -m space 3 --label misc
+yabai -m space 2 --label work-browser
+yabai -m space 3 --label personal-browser
 yabai -m space 4 --label notes
 yabai -m space 5 --label virtualization
 yabai -m space 6 --label communication
-yabai -m space 7 --label personal
+yabai -m space 7 --label personal-2
 yabai -m space 8 --label passwords
 
 yabai -m rule --add app="^kitty$" space=terminal
 yabai -m rule --add app="^Firefox Developer Edition$" space=browser
-yabai -m rule --add app="^Firefox$" space=browser
-yabai -m rule --add app="^Finder$" space=misc
+yabai -m rule --add app="^Firefox$" space=personal-browser
+# yabai -m rule --add app="^Finder$" manage=off
 yabai -m rule --add app="^Obsidian$" space=notes
 yabai -m rule --add app="^Todoist$" space=notes
 yabai -m rule --add app="^Calendar$" space=notes
@@ -50,8 +50,8 @@ yabai -m rule --add app="^UTM$" space=virtualization manage=off
 yabai -m rule --add app="^Mail$" space=communication
 yabai -m rule --add app="^Signal$" space=communication
 yabai -m rule --add app="^Element$" space=communication
-yabai -m rule --add app="^Telegram$" space=personal
-yabai -m rule --add app="^Spotify$" space=personal
+yabai -m rule --add app="^Telegram$" space=personal-2
+yabai -m rule --add app="^Spotify$" space=personal-2
 yabai -m rule --add app="^Bitwarden$" space=passwords
 
 yabai -m rule --add app='^System Settings$' manage=off

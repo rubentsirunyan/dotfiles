@@ -131,6 +131,17 @@
         ]
       }
     }
+    :m-layer {
+      :key :m
+      :modi {
+        :mandatory [
+          :left_control
+          :left_shift
+          :left_option
+          :left_command
+        ]
+      }
+    }
     :r-layer {
       :key :r
       :modi {
@@ -199,6 +210,9 @@
     {:des "Space layer"
      :rules [
       [:l :!Tspacebar :space-layer]
+      [:t "/opt/homebrew/bin/yabai -m space --layout bsp"  :space-layer]
+      [:s "/opt/homebrew/bin/yabai -m space --layout stack"  :space-layer]
+      [:f "/opt/homebrew/bin/yabai -m space --layout float"  :space-layer]
     ]}
     {:des "[O]pen layer"
      :rules [
@@ -230,6 +244,9 @@
       [:h "/opt/homebrew/bin/yabai -m display --focus west" :d-layer]
       [:l "/opt/homebrew/bin/yabai -m display --focus east" :d-layer]
     ]}
+    ; {:des "Window [M]anager layer"
+    ;  :rules [
+    ; ]}
     {:des "[R]aycast layer"
      :rules [
       [:c "Open raycast://extensions/raycast/raycast/confetti" :r-layer]
