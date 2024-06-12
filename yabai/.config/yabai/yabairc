@@ -38,6 +38,7 @@ yabai -m space 5 --label virtualization
 yabai -m space 6 --label communication
 yabai -m space 7 --label personal-2
 yabai -m space 8 --label passwords
+yabai -m space 9 --label calendar
 
 yabai -m rule --add app="^kitty$" space=terminal
 yabai -m rule --add app="^Firefox Developer Edition$" space=browser
@@ -45,7 +46,6 @@ yabai -m rule --add app="^Firefox$" space=personal-browser
 # yabai -m rule --add app="^Finder$" manage=off
 yabai -m rule --add app="^Obsidian$" space=notes
 yabai -m rule --add app="^Todoist$" space=notes
-yabai -m rule --add app="^Calendar$" space=notes
 yabai -m rule --add app="^UTM$" space=virtualization manage=off
 yabai -m rule --add app="^Mail$" space=communication
 yabai -m rule --add app="^Signal$" space=communication
@@ -53,6 +53,7 @@ yabai -m rule --add app="^Element$" space=communication
 yabai -m rule --add app="^Telegram$" space=personal-2
 yabai -m rule --add app="^Spotify$" space=personal-2
 yabai -m rule --add app="^Bitwarden$" space=passwords
+yabai -m rule --add app="^Calendar$" space=calendar
 
 yabai -m rule --add app='^System Settings$' manage=off
 yabai -m rule --add app='^Calculator$' manage=off
@@ -60,4 +61,4 @@ yabai -m rule --add app='^Karabiner-Elements$' manage=off
 yabai -m rule --add title=' Preferences$' manage=off
 yabai -m rule --add app='System Information' manage=off
 # yabai -m rule --add app='^Raycast$' manage=off
-
+yabai -m rule --apply
