@@ -120,7 +120,7 @@ telescope.setup {
       find_cmd = "rg" -- find command (defaults to `fd`)
     },
     projects = {},
-    harpoon = {},
+    -- harpoon = {},
     file_browser = {
       theme = "dropdown",
       previewer = false,
@@ -159,5 +159,5 @@ telescope.load_extension('media_files')
 telescope.load_extension('projects')
 telescope.load_extension('file_browser')
 telescope.load_extension('undo')
-telescope.load_extension('harpoon')
+-- telescope.load_extension('harpoon')
 telescope.load_extension('macros')

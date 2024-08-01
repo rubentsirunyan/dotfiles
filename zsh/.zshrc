@@ -39,9 +39,9 @@ source ~/.zsh/fzf.zsh
 source ~/.zsh/git_fzf.zsh
 source ~/.zsh/bw_fzf.zsh
 source ~/.zsh/gpg.zsh
-
 source ~/.zsh/aliases.zsh
 
+source ~/.zsh/work.zsh
 
 export FZF_BASE=/usr/local/opt/fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

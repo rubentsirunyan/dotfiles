@@ -7,7 +7,6 @@ local servers = {
 	"pyright",
 	"lua_ls",
   "jdtls", -- java
-  "kotlin_language_server",
   "gradle_ls",
   "tsserver",
   "bashls",
