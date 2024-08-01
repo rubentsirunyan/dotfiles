@@ -70,6 +70,7 @@
   }
 
   :simlayers {
+    :space-mode {:key :spacebar}
     :vi-mode {
       :key :v
       :condi :!terminals
@@ -166,6 +167,13 @@
     }
   }
   :main [
+    ; {:des "tap backslash to set backslash-layer to 1"
+    ;    :rules [[:backslash ["backslash-layer" 1]]
+    ;    :backslash-layer ;; when "in-alfred" is 1
+    ;    [:l ["/opt/homebrew/bin/yabai -m window --display east" ["backslash-layer" 0]]]
+    ;    [:h ["/opt/homebrew/bin/yabai -m window --display west" ["backslash-layer" 0]]]
+    ;    [:m [:m ["backslash-layer" 0]]]
+    ; ]}
     {:des "Change tab to hyper if pressed with other keys and tab if pressed alone"
      :rules [
       [:tab :lazy-hyper nil {:alone :tab}]
@@ -230,17 +238,30 @@
       [:h "/opt/homebrew/bin/yabai -m window --focus stack.prev || /opt/homebrew/bin/yabai -m window --focus stack.last || /opt/homebrew/bin/yabai -m window --focus west || /opt/homebrew/bin/yabai -m window --focus last" :w-layer]
       [:l "/opt/homebrew/bin/yabai -m window --focus stack.next || /opt/homebrew/bin/yabai -m window --focus stack.first || /opt/homebrew/bin/yabai -m window --focus east || /opt/homebrew/bin/yabai -m window --focus first" :w-layer]
     ]}
+
+     ; :rules [[:backslash ["backslash-layer" 1]]
+     ; :backslash-layer ;; when "in-alfred" is 1
+     ;  ; [:l ["/opt/homebrew/bin/yabai -m window --display east" ["backslash-layer" 0]]]
+     ;  ; [:h ["/opt/homebrew/bin/yabai -m window --display west" ["backslash-layer" 0]]]
+    ; {:des "new m layer"
+    ;  :rules [
+    ;     [:period ["m-layer" 1] nil
+    ;                 {:delay {:canceled ["m-layer" 0] :invoked ["m-layer" 0]}}]
+    ;     [:1 ["/opt/homebrew/bin/yabai -m window --space 1"] ["m-layer" 1]]
+    ;     [:2 ["/opt/homebrew/bin/yabai -m window --space 2"] ["m-layer" 1]]
+    ;  ]}
+
     {:des "[M]ove layer"
      :rules [
-      [:1 "/opt/homebrew/bin/yabai -m window --space 1" :m-layer]
-      [:2 "/opt/homebrew/bin/yabai -m window --space 2" :m-layer]
-      [:3 "/opt/homebrew/bin/yabai -m window --space 3" :m-layer]
-      [:4 "/opt/homebrew/bin/yabai -m window --space 4" :m-layer]
-      [:5 "/opt/homebrew/bin/yabai -m window --space 5" :m-layer]
-      [:6 "/opt/homebrew/bin/yabai -m window --space 6" :m-layer]
-      [:7 "/opt/homebrew/bin/yabai -m window --space 7" :m-layer]
-      [:8 "/opt/homebrew/bin/yabai -m window --space 8" :m-layer]
-      [:9 "/opt/homebrew/bin/yabai -m window --space 9" :m-layer]
+      [:1 "/opt/homebrew/bin/yabai -m window --space 1 --focus" :m-layer]
+      [:2 "/opt/homebrew/bin/yabai -m window --space 2 --focus" :m-layer]
+      [:3 "/opt/homebrew/bin/yabai -m window --space 3 --focus" :m-layer]
+      [:4 "/opt/homebrew/bin/yabai -m window --space 4 --focus" :m-layer]
+      [:5 "/opt/homebrew/bin/yabai -m window --space 5 --focus" :m-layer]
+      [:6 "/opt/homebrew/bin/yabai -m window --space 6 --focus" :m-layer]
+      [:7 "/opt/homebrew/bin/yabai -m window --space 7 --focus" :m-layer]
+      [:8 "/opt/homebrew/bin/yabai -m window --space 8 --focus" :m-layer]
+      [:9 "/opt/homebrew/bin/yabai -m window --space 9 --focus" :m-layer]
     ]}
     {:des "[S]pace layer"
      :rules [

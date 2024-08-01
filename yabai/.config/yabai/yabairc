@@ -66,11 +66,11 @@ yabai -m config mouse_action2 resize
 # yabai -m space 7 --label personal-2
 # yabai -m space 8 --label passwords
 # yabai -m space 9 --label calendar
-setup_space 1 terminal 1 stack
-setup_space 2 work-browser 1 stack
-setup_space 3 personal-browser 1 stack
+setup_space 1 terminal 1 bsp
+setup_space 2 work-browser 1 bsp
+setup_space 3 personal-browser 1 bsp
 setup_space 4 notes 1 bsp
-setup_space 5 misc1 1 stack
+setup_space 5 misc1 1 bsp
 setup_space 6 misc2 1 bsp
 setup_space 7 email 1 bsp
 setup_space 8 communication 1 bsp
