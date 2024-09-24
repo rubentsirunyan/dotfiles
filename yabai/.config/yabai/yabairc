@@ -81,6 +81,7 @@ yabai -m rule --add app=".*" space=misc1
 yabai -m rule --add app="^kitty$" space=terminal
 yabai -m rule --add app="^Firefox Developer Edition$" space=work-browser
 yabai -m rule --add app="^Firefox$" space=personal-browser
+yabai -m rule --add app="^Zen Browser$" space=personal-browser
 # yabai -m rule --add app="^Finder$" manage=off
 yabai -m rule --add app="^Obsidian$" space=notes
 yabai -m rule --add app="^Todoist$" space=notes
@@ -107,4 +108,4 @@ yabai -m rule --add app='^Raycast$' manage=off
 #
 yabai -m rule --apply
 
-borders active_color=0xffb19c16 inactive_color=0xff494d64 width=5.0 &
+borders active_color=0xffb19c16 inactive_color=0xff494d64 width=7.0 &

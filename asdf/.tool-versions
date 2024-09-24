@@ -29,3 +29,4 @@ maven 3.9.6
 k9s 0.32.4
 velero 1.14.0
 neovim 0.10.1
+trivy 0.54.1
