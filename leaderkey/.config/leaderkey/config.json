@@ -4,87 +4,88 @@
     {
       "label" : "Open",
       "type" : "group",
+      "key" : "o",
       "actions" : [
         {
+          "value" : "/Applications/Kitty.app",
           "key" : "t",
           "label" : "Kitty",
-          "type" : "application",
-          "value" : "/Applications/Kitty.app"
+          "type" : "application"
         },
         {
-          "value" : "/Applications/Spotify.app",
+          "type" : "application",
           "key" : "s",
           "label" : "Spotify",
-          "type" : "application"
+          "value" : "/Applications/Spotify.app"
         },
         {
-          "key" : "l",
           "value" : "/Applications/Todoist.app",
-          "label" : "Todoist",
-          "type" : "application"
+          "key" : "l",
+          "type" : "application",
+          "label" : "Todoist"
         },
         {
           "value" : "/Applications/Obsidian.app",
-          "key" : "n",
           "label" : "Obsidian",
+          "key" : "n",
           "type" : "application"
         }
-      ],
-      "key" : "o"
+      ]
     },
     {
       "actions" : [
         {
-          "value" : "raycast://extensions/raycast/emoji-symbols/search-emoji-symbols",
-          "label" : "Emoji",
+          "key" : "e",
           "type" : "url",
-          "key" : "e"
+          "value" : "raycast://extensions/raycast/emoji-symbols/search-emoji-symbols",
+          "label" : "Emoji"
         },
         {
-          "key" : "c",
-          "type" : "url",
+          "value" : "raycast://confetti",
           "label" : "Confetti",
-          "value" : "raycast://confetti"
+          "type" : "url",
+          "key" : "c"
         }
       ],
-      "type" : "group",
+      "key" : "r",
       "label" : "Raycast",
-      "key" : "r"
+      "type" : "group"
     },
     {
-      "key" : "l",
       "type" : "group",
       "actions" : [
         {
           "key" : "t",
+          "label" : "Tiling",
           "value" : "/opt/homebrew/bin/yabai -m space --layout bsp",
+          "type" : "command"
+        },
+        {
           "type" : "command",
-          "label" : "Tiling"
-        },
-        {
           "label" : "Stack",
-          "value" : "/opt/homebrew/bin/yabai -m space --layout stack",
           "key" : "s",
-          "type" : "command"
+          "value" : "/opt/homebrew/bin/yabai -m space --layout stack"
         },
         {
-          "value" : "/opt/homebrew/bin/yabai -m space --layout float",
           "key" : "f",
-          "label" : "Float",
-          "type" : "command"
+          "type" : "command",
+          "value" : "/opt/homebrew/bin/yabai -m space --layout float",
+          "label" : "Float"
         }
       ],
-      "label" : "Layout"
+      "label" : "Layout",
+      "key" : "l"
     },
     {
       "label" : "Focus window",
+      "key" : "w",
       "type" : "group",
       "actions" : [
         {
           "key" : "j",
-          "label" : "",
           "type" : "command",
-          "value" : "/opt/homebrew/bin/yabai -m window --focus stack.next || /opt/homebrew/bin/yabai -m window --focus stack.first || /opt/homebrew/bin/yabai -m window --focus south || /opt/homebrew/bin/yabai -m window --focus first"
+          "value" : "/opt/homebrew/bin/yabai -m window --focus stack.next || /opt/homebrew/bin/yabai -m window --focus stack.first || /opt/homebrew/bin/yabai -m window --focus south || /opt/homebrew/bin/yabai -m window --focus first",
+          "label" : ""
         },
         {
           "type" : "command",
@@ -93,40 +94,39 @@
           "key" : "k"
         },
         {
-          "type" : "command",
           "key" : "h",
-          "value" : "/opt/homebrew/bin/yabai -m window --focus stack.prev || /opt/homebrew/bin/yabai -m window --focus stack.last || /opt/homebrew/bin/yabai -m window --focus west || /opt/homebrew/bin/yabai -m window --focus last",
-          "label" : ""
+          "label" : "",
+          "type" : "command",
+          "value" : "/opt/homebrew/bin/yabai -m window --focus stack.prev || /opt/homebrew/bin/yabai -m window --focus stack.last || /opt/homebrew/bin/yabai -m window --focus west || /opt/homebrew/bin/yabai -m window --focus last"
         },
         {
-          "value" : "/opt/homebrew/bin/yabai -m window --focus stack.next || /opt/homebrew/bin/yabai -m window --focus stack.first || /opt/homebrew/bin/yabai -m window --focus east || /opt/homebrew/bin/yabai -m window --focus first",
-          "key" : "l",
+          "type" : "command",
           "label" : "",
-          "type" : "command"
+          "value" : "/opt/homebrew/bin/yabai -m window --focus stack.next || /opt/homebrew/bin/yabai -m window --focus stack.first || /opt/homebrew/bin/yabai -m window --focus east || /opt/homebrew/bin/yabai -m window --focus first",
+          "key" : "l"
         }
-      ],
-      "key" : "w"
+      ]
     },
     {
-      "label" : "Focus display",
       "type" : "group",
+      "key" : "d",
       "actions" : [
         {
+          "label" : "",
+          "value" : "/opt/homebrew/bin/yabai -m display --focus north",
           "key" : "j",
-          "label" : "",
-          "type" : "command",
-          "value" : "/opt/homebrew/bin/yabai -m display --focus north"
+          "type" : "command"
         },
         {
-          "type" : "command",
+          "key" : "k",
+          "label" : "",
           "value" : "/opt/homebrew/bin/yabai -m display --focus south",
-          "label" : "",
-          "key" : "k"
+          "type" : "command"
         },
         {
+          "value" : "/opt/homebrew/bin/yabai -m display --focus west",
           "type" : "command",
           "key" : "h",
-          "value" : "/opt/homebrew/bin/yabai -m display --focus west",
           "label" : ""
         },
         {
@@ -136,45 +136,48 @@
           "type" : "command"
         }
       ],
-      "key" : "d"
+      "label" : "Focus display"
     },
     {
+      "key" : "m",
+      "label" : "Move window to space",
+      "type" : "group",
       "actions" : [
         {
+          "label" : "",
           "type" : "command",
           "value" : "/opt/homebrew/bin/yabai -m window --space next --focus",
-          "key" : "l",
-          "label" : ""
+          "key" : "l"
         },
         {
-          "type" : "command",
           "value" : "/opt/homebrew/bin/yabai -m window --space prev --focus",
           "key" : "h",
-          "label" : ""
-        },
-        {
           "type" : "command",
-          "value" : "/opt/homebrew/bin/yabai -m window --space 1 --focus",
-          "key" : "1",
           "label" : ""
         },
         {
-          "value" : "/opt/homebrew/bin/yabai -m window --space 2 --focus",
-          "label" : "",
+          "key" : "1",
+          "value" : "/opt/homebrew/bin/yabai -m window --space 1 --focus",
+          "type" : "command",
+          "label" : ""
+        },
+        {
           "key" : "2",
+          "label" : "",
+          "value" : "/opt/homebrew/bin/yabai -m window --space 2 --focus",
           "type" : "command"
         },
         {
-          "type" : "command",
-          "label" : "",
+          "key" : "3",
           "value" : "/opt/homebrew/bin/yabai -m window --space 3 --focus",
-          "key" : "3"
+          "type" : "command",
+          "label" : ""
         },
         {
-          "value" : "/opt/homebrew/bin/yabai -m window --space 4 --focus",
+          "label" : "",
           "type" : "command",
           "key" : "4",
-          "label" : ""
+          "value" : "/opt/homebrew/bin/yabai -m window --space 4 --focus"
         },
         {
           "type" : "command",
@@ -183,64 +186,61 @@
           "key" : "5"
         },
         {
+          "type" : "command",
+          "label" : "",
           "value" : "/opt/homebrew/bin/yabai -m window --space 6 --focus",
-          "key" : "6",
+          "key" : "6"
+        },
+        {
+          "label" : "",
+          "key" : "7",
+          "value" : "/opt/homebrew/bin/yabai -m window --space 7 --focus",
+          "type" : "command"
+        },
+        {
+          "key" : "8",
+          "value" : "/opt/homebrew/bin/yabai -m window --space 8 --focus",
           "type" : "command",
           "label" : ""
         },
         {
-          "key" : "7",
-          "label" : "",
-          "type" : "command",
-          "value" : "/opt/homebrew/bin/yabai -m window --space 7 --focus"
-        },
-        {
-          "type" : "command",
-          "value" : "/opt/homebrew/bin/yabai -m window --space 8 --focus",
-          "label" : "",
-          "key" : "8"
-        },
-        {
-          "key" : "9",
           "label" : "",
           "value" : "/opt/homebrew/bin/yabai -m window --space 9 --focus",
+          "key" : "9",
           "type" : "command"
         }
-      ],
-      "key" : "m",
-      "label" : "Move window to space",
-      "type" : "group"
+      ]
     },
     {
-      "label" : "Move window to display",
-      "type" : "group",
+      "key" : "M",
       "actions" : [
         {
           "key" : "j",
-          "label" : "",
           "type" : "command",
-          "value" : "/opt/homebrew/bin/yabai -m window --display north --focus"
-        },
-        {
-          "type" : "command",
-          "value" : "/opt/homebrew/bin/yabai -m window --display south --focus",
-          "label" : "",
-          "key" : "k"
-        },
-        {
-          "type" : "command",
-          "key" : "h",
-          "value" : "/opt/homebrew/bin/yabai -m window --display west --focus",
+          "value" : "/opt/homebrew/bin/yabai -m window --display north --focus",
           "label" : ""
         },
         {
-          "value" : "/opt/homebrew/bin/yabai -m window --display east --focus",
+          "label" : "",
+          "type" : "command",
+          "value" : "/opt/homebrew/bin/yabai -m window --display south --focus",
+          "key" : "k"
+        },
+        {
+          "value" : "/opt/homebrew/bin/yabai -m window --display west --focus",
+          "label" : "",
+          "key" : "h",
+          "type" : "command"
+        },
+        {
           "key" : "l",
           "label" : "",
-          "type" : "command"
+          "type" : "command",
+          "value" : "/opt/homebrew/bin/yabai -m window --display east --focus"
         }
       ],
-      "key" : "M"
-    },
+      "type" : "group",
+      "label" : "Move window to display"
+    }
   ]
 }
