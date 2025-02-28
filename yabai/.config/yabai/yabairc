@@ -81,7 +81,7 @@ yabai -m rule --add app=".*" space=misc1
 yabai -m rule --add app="^kitty$" space=terminal
 yabai -m rule --add app="^Firefox Developer Edition$" space=work-browser
 yabai -m rule --add app="^Firefox$" space=personal-browser
-yabai -m rule --add app="^Zen Browser$" space=personal-browser
+yabai -m rule --add app="^Zen$" space=personal-browser
 # yabai -m rule --add app="^Finder$" manage=off
 yabai -m rule --add app="^Obsidian$" space=notes
 yabai -m rule --add app="^Todoist$" space=notes
@@ -93,6 +93,7 @@ yabai -m rule --add app="^Telegram$" space=misc2
 yabai -m rule --add app="^Spotify$" space=misc2
 yabai -m rule --add app="^Bitwarden$" space=misc2
 yabai -m rule --add app="^Calendar$" space=email
+yabai -m rule --add title='^Spotify MiniPlayer$' space=display2
 
 yabai -m rule --add app='^System Settings$' manage=off
 yabai -m rule --add app='^Calculator$' manage=off
@@ -101,6 +102,7 @@ yabai -m rule --add title=' Preferences$' manage=off
 yabai -m rule --add app='System Information' manage=off
 yabai -m rule --add app="^Firefox$" title="^Picture-in-Picture$" manage=off
 yabai -m rule --add app='^Raycast$' manage=off
+yabai -m rule --add app='^iPhone Mirroring$' manage=off
 
 # yabai -m config window_opacity on
 # yabai -m config active_window_opacity 1.0
