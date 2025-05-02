@@ -7,8 +7,7 @@ local servers = {
 	"pyright",
 	"lua_ls",
   "jdtls", -- java
-  "gradle_ls",
-  "tsserver",
+  -- "tsserver",
   "bashls",
   "gopls",
 }
@@ -36,15 +35,19 @@ local on_attach = function(_, bufnr)
 
 end
 
-vim.fn.sign_define('DiagnosticSignError', { texthl = 'DiagnosticSignError', text = '', numhl = '' })
-vim.fn.sign_define('DiagnosticSignWarn', { texthl = 'DiagnosticSignWarn', text = '', numhl = '' })
-vim.fn.sign_define('DiagnosticSignHint', { texthl = 'DiagnosticSignHint', text = '', numhl = '' })
-vim.fn.sign_define('DiagnosticSignInfo', { texthl = 'DiagnosticSignInfo', text = '', numhl = '' })
-
 vim.diagnostic.config({
   virtual_text = false,
   update_in_insert = true,
   severity_sort = true,
+  signs = {
+    -- use whatever icons you like here
+    text = {
+      [vim.diagnostic.severity.ERROR] = "",
+      [vim.diagnostic.severity.WARN]  = "",
+      [vim.diagnostic.severity.INFO]  = "",
+      [vim.diagnostic.severity.HINT]  = "",
+    },
+  },
   float = {
     focusable = false,
     style = "minimal",

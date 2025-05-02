@@ -64,19 +64,19 @@ local plugins = {
 		"kdheepak/lazygit.nvim",
 		-- commit = "146c6294bf0b4db1572fa7232039aaa9003a52b9",
 	},
-  {
-    "sindrets/diffview.nvim",
-    -- commit = "4516612fe98ff56ae0415a259ff6361a89419b0a",
-  },
-  {
-    "tpope/vim-fugitive",
-    -- commit = "8c8cdf4405cb8bdb70dd9812a33bb52363a87dbc",
-  },
-  {
-    "NeogitOrg/neogit",
+	{
+		"sindrets/diffview.nvim",
+		-- commit = "4516612fe98ff56ae0415a259ff6361a89419b0a",
+	},
+	{
+		"tpope/vim-fugitive",
+		-- commit = "8c8cdf4405cb8bdb70dd9812a33bb52363a87dbc",
+	},
+	{
+		"NeogitOrg/neogit",
 		-- tag = "v0.0.1",
-    config = true,
-  },
+		config = true,
+	},
 	-- File tree
 	{
 		"nvim-neo-tree/neo-tree.nvim",
@@ -177,19 +177,19 @@ local plugins = {
 		},
 	},
 
-  {
-    "linux-cultist/venv-selector.nvim",
-    -- commit = "d946b1e86212f38ff9c42e3b622a8178bbc93461",
-    branch = "regexp",
-    event = 'VeryLazy',
-    config = function()
-      require('venv-selector').setup {
-        -- Your options go here
-        -- name = "venv",
-        -- auto_refresh = false
-      }
-    end,
-  },
+	{
+		"linux-cultist/venv-selector.nvim",
+		-- commit = "d946b1e86212f38ff9c42e3b622a8178bbc93461",
+		branch = "regexp",
+		event = "VeryLazy",
+		config = function()
+			require("venv-selector").setup({
+				-- Your options go here
+				-- name = "venv",
+				-- auto_refresh = false
+			})
+		end,
+	},
 
 	{
 		"j-hui/fidget.nvim",
@@ -198,7 +198,11 @@ local plugins = {
 
 	-- Null-LS
 	{
-		"jose-elias-alvarez/null-ls.nvim",
+		-- "jose-elias-alvarez/null-ls.nvim",
+		"nvimtools/none-ls.nvim",
+		dependencies = {
+			"nvimtools/none-ls-extras.nvim",
+		},
 		-- commit = "60b4a7167c79c7d04d1ff48b55f2235bf58158a7",
 	},
 	{
@@ -284,10 +288,10 @@ local plugins = {
 				lazy = true,
 			},
 			{
-        "kristijanhusak/vim-dadbod-completion",
-        ft = { "sql", "mysql", "plsql" },
-        lazy = true,
-      },
+				"kristijanhusak/vim-dadbod-completion",
+				ft = { "sql", "mysql", "plsql" },
+				lazy = true,
+			},
 		},
 		cmd = {
 			"DBUI",
@@ -300,16 +304,16 @@ local plugins = {
 			vim.g.db_ui_use_nerd_fonts = 1
 		end,
 	},
-  -- {
-  --   "rmagatti/auto-session",
-  --   commit = "af2219b9fa99c1d7ac409bd9eac094c459d3f52d",
-  -- },
+	-- {
+	--   "rmagatti/auto-session",
+	--   commit = "af2219b9fa99c1d7ac409bd9eac094c459d3f52d",
+	-- },
 	-- Profiler
 	{
 		"stevearc/profile.nvim",
 	},
 
-  { dir = "~/Documents/work/me/dirdiff.nvim" },
+	{ dir = "~/Documents/work/me/dirdiff.nvim" },
 
 	-- {
 	-- 	"cossonleo/dirdiff.nvim",
