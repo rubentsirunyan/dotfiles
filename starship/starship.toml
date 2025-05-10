@@ -1,0 +1,105 @@
+add_newline = false
+format = """
+$directory$git_branch$git_status$git_state
+$character"""
+
+right_format = """
+$status\
+$jobs\
+$c\
+$cpp\
+$rust\
+$golang\
+$nodejs\
+$php\
+$java\
+$kotlin\
+$haskell\
+$python\
+$kubernetes\
+$docker_context\
+"""
+
+[directory]
+style               = "blue"
+truncation_length   = 3           # max number of path segments
+truncation_symbol   = "…/"
+read_only           = " "        # padlock icon if not writable
+
+[git_branch]
+style               = "bold purple"
+symbol = " "
+
+[git_status]
+style               = "bold purple"
+format = '([\[$all_status$ahead_behind\]]($style) )'	
+staged       = "[ ](blue)"
+modified     = "[∙ ](yellow)"
+untracked    = "[? ](bright-black)"
+conflicted   = "[ ](red)"
+stashed      = "[ ](magenta)"
+ahead        = "[↑ ${count}](green)"
+behind       = "[↓ ${count}](green)"
+
+[git_state]
+format              = " [$state( $progress_current/$progress_total)]"
+
+[status]
+disabled            = false        # show on non-zero exit
+symbol              = "✘"          # use the same error icon
+
+[jobs]
+threshold           = 1            # only show when ≥1 job
+symbol              = "⏳ "         # hourglass
+format              = "[$symbol$jobs] "
+
+[nodejs]
+symbol = ""
+format = '[ $symbol( $version) ]($style)'
+
+[c]
+symbol = " "
+format = '[ $symbol( $version) ]($style)'
+
+[cpp]
+symbol = " "
+format = '[ $symbol( $version) ]($style)'
+
+[rust]
+symbol = ""
+format = '[ $symbol( $version) ]($style)'
+
+[golang]
+symbol = ""
+format = '[ $symbol( $version) ]($style)'
+
+[php]
+symbol = ""
+format = '[ $symbol( $version) ]($style)'
+
+[java]
+symbol = ""
+format = '[ $symbol( $version) ]($style)'
+
+[kotlin]
+symbol = ""
+format = '[ $symbol( $version) ]($style)'
+
+[haskell]
+symbol = ""
+format = '[ $symbol( $version) ]($style)'
+
+[python]
+symbol = ""
+format = '[ $symbol( $version) ]($style)'
+
+[docker_context]
+symbol = ""
+format = '[ $symbol( $version) ]($style)'
+
+[conda]
+format = '[ $symbol( $version) ]($style)'
+
+[kubernetes]
+disabled = false
+format = '[$symbol$context( \($namespace\))]($style)'	

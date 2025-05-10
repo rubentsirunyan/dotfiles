@@ -64,4 +64,5 @@ vim.o.foldenable = true
 vim.o.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:⏵]] -- Use nicer characters for fold sidebar
 
 -- Python path
-vim.g.python3_host_prog  = '~/.asdf/shims/python'
+-- vim.g.python3_host_prog  = '~/.asdf/shims/python'
+vim.g.python3_host_prog = vim.fn.exepath('python3')

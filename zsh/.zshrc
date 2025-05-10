@@ -1,9 +1,9 @@
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
+# if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+#   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+# fi
 
 export XDG_CONFIG_HOME="$HOME/.config" # Added for lazygit https://github.com/jesseduffield/lazygit/blob/master/docs/Config.md
 export GOKU_EDN_CONFIG_FILE="$XDG_CONFIG_HOME/goku/karabiner.edn" # Goku config file location. This actually doesn't work because seems like brew (and launchd in general) services ignore env vars set here. So the goku config file is at its default location at $XDG_CONFIG_HOME/.config/karabiner.edn
@@ -22,7 +22,7 @@ setopt    sharehistory            #Share history across terminals
 setopt    incappendhistory        #Immediately append to the history file, not just when a term is killed
 setopt    globdots        # Lets files beginning with a . be matched without explicitly specifying the dot.
 
-# Lazy-load antidote and generate the static load file only when needed
+Lazy-load antidote and generate the static load file only when needed
 zsh_plugins=${ZDOTDIR:-$HOME}/.zsh_plugins
 if [[ ! ${zsh_plugins}.zsh -nt ${zsh_plugins}.txt ]]; then
   (
@@ -48,9 +48,10 @@ export FZF_BASE=/usr/local/opt/fzf
 
 # Zoxide init
 eval "$(zoxide init zsh)"
-
+eval "$(starship init zsh)"
+export STARSHIP_CONFIG=~/.config/starship/starship.toml
 
 export PATH=$HOME/.tmux/plugins/t-smart-tmux-session-manager/bin:$PATH
 
 # Customize p10k.
-[ -f ~/.p10k.zsh ] && source ~/.p10k.zsh
+# [ -f ~/.p10k.zsh ] && source ~/.p10k.zsh

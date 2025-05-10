@@ -35,3 +35,5 @@ mc 2024-11-17T19-35-25Z
 mongodb-database-tools 0.8.9
 wrk 4.2.0
 k6 0.58.0
+yamllint 1.37.0
+starship 1.23.0
