@@ -69,10 +69,6 @@ local plugins = {
 		-- commit = "4516612fe98ff56ae0415a259ff6361a89419b0a",
 	},
 	{
-		"tpope/vim-fugitive",
-		-- commit = "8c8cdf4405cb8bdb70dd9812a33bb52363a87dbc",
-	},
-	{
 		"NeogitOrg/neogit",
 		-- tag = "v0.0.1",
 		config = true,
