@@ -51,7 +51,10 @@ vim.keymap.set("x", "<leader>p", "\"_dp", { desc = "[P]aste in place of the sele
 vim.keymap.set("n", "<leader>F", vim.lsp.buf.format, { desc = "[F]ormat the curernt buffer"})
 
 -- LazyGit
-vim.keymap.set("n", "<leader>g", ":LazyGit<CR>", { desc = "Open Lazy[G]it" })
+-- vim.keymap.set("n", "<leader>g", ":LazyGit<CR>", { desc = "Open Lazy[G]it" })
+vim.keymap.set("n", "<leader>gs", ":Neogit<CR>", { desc = "Open Neo[G]it [S]status" })
+vim.keymap.set("n", "<leader>gc", ":Neogit commit<CR>", { desc = "Neo[G]it [C]commit" })
+vim.keymap.set("n", "<leader>gfh", ":Telescope git_bcommits<CR>", { desc = "Telescope [G]it [F]ile [H]istory" })
 
 -- Telescope
 vim.keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { silent = true })
