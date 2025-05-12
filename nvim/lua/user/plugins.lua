@@ -71,7 +71,7 @@ local plugins = {
 	{
 		"NeogitOrg/neogit",
 		-- tag = "v0.0.1",
-		config = true,
+		-- config = true,
 	},
 	-- File tree
 	{
