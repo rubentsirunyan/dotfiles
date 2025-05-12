@@ -150,6 +150,13 @@ run = 'move-node-to-workspace 7'
 if.app-id = 'com.apple.iCal'
 run = 'move-node-to-workspace 7'
 
+[[on-window-detected]]
+if.app-id = 'org.whispersystems.signal-desktop'
+run = 'move-node-to-workspace 8'
+
+[[on-window-detected]]
+if.app-id = 'im.riot.app'
+run = 'move-node-to-workspace 8'
 
 [[on-window-detected]]
 if.app-id = 'com.spotify.client'
@@ -171,3 +178,12 @@ run = 'move-node-to-workspace 4'
 if.app-id = 'com.todoist.mac.Todoist'
 run = 'move-node-to-workspace 4'
 
+[[on-window-detected]]
+if.app-id = 'com.utmapp.UTM'
+check-further-callbacks = true
+run = 'move-node-to-workspace 9'
+
+[[on-window-detected]]
+if.app-id = 'com.utmapp.UTM'
+if.window-title-regex-substring = '^macOS$'
+run = 'move-node-to-workspace 10'

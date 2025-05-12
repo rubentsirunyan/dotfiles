@@ -23,11 +23,12 @@ setopt    incappendhistory        #Immediately append to the history file, not j
 setopt    globdots        # Lets files beginning with a . be matched without explicitly specifying the dot.
 
 # Lazy-load antidote and generate the static load file only when needed
+zsh_plugins_list=${XDG_CONFIG_HOME}/zsh/plugins.list
 zsh_plugins=${ZDOTDIR:-$HOME}/.zsh_plugins
-if [[ ! ${zsh_plugins}.zsh -nt ${zsh_plugins}.txt ]]; then
+if [[ ! ${zsh_plugins}.zsh -nt ${zsh_plugins_list} ]]; then
   (
     source ${ZDOTDIR:-~}/.antidote/antidote.zsh
-    antidote bundle <${zsh_plugins}.txt >${zsh_plugins}.zsh
+    antidote bundle <${zsh_plugins_list} >${zsh_plugins}.zsh
   )
 fi
 source ${zsh_plugins}.zsh
@@ -35,13 +36,13 @@ source ${zsh_plugins}.zsh
 # zsh autoasuggestions color
 # export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=60'
 
-source ~/.zsh/fzf.zsh
-source ~/.zsh/git_fzf.zsh
-source ~/.zsh/bw_fzf.zsh
-source ~/.zsh/gpg.zsh
-source ~/.zsh/aliases.zsh
+source ${XDG_CONFIG_HOME}/zsh/fzf.zsh
+source ${XDG_CONFIG_HOME}/zsh/git_fzf.zsh
+source ${XDG_CONFIG_HOME}/zsh/bw_fzf.zsh
+source ${XDG_CONFIG_HOME}/zsh/gpg.zsh
+source ${XDG_CONFIG_HOME}/zsh/aliases.zsh
 
-source ~/.zsh/work.zsh
+# source ~/.zsh/work.zsh
 
 export FZF_BASE=/usr/local/opt/fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
