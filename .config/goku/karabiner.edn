@@ -29,7 +29,7 @@
       :default true ;; "default true means" rules default goes into this rule if no profiles specified
       ;; simultaneous key press threshold
       ;; simlayer is implemented with to_if_alone and simultaneous key press feature
-      :sim     50
+      :sim     48
       ;; to_delayed_action_delay_milliseconds
       ;; checkout karabiner's documentation
       ;; https://pqrs.org/osx/karabiner/json.html
@@ -91,10 +91,10 @@
      :rules [
       [:##caps_lock :lazy-left-control nil {:alone :escape}]
     ]}
-    {:des "Change escape to hyper if pressed with other keys and escape if pressed alone"
-     :rules [
-      [:escape :lazy-hyper nil {:alone :escape}]
-    ]}
+    ; {:des "Change escape to hyper if pressed with other keys and escape if pressed alone"
+    ;  :rules [
+    ;   [:escape :lazy-hyper nil {:alone :escape}]
+    ; ]}
     {:des "Change right_shift + left_shift to caps_lock"
      :rules [
       [:!S#Pright_shift :caps_lock]
