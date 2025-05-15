@@ -61,7 +61,7 @@ non-empty-workspaces-root-containers-layout-on-startup = 'smart'
     alt-shift-k = 'move up'
     alt-shift-l = 'move right'
 
-    alt-f = 'fullscreen'
+    alt-z = 'fullscreen'
 
     alt-minus = 'resize smart -50'
     alt-equal = 'resize smart +50'

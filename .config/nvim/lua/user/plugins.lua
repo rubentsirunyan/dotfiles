@@ -239,6 +239,21 @@ local plugins = {
 		"1riz/telescope-macros.nvim",
 		-- commit = "22f75816c905f2beab3ee2c7ad115f8e0e397cad",
 	},
+	{
+		"folke/noice.nvim",
+		event = "VeryLazy",
+		opts = {
+			-- add any options here
+		},
+		dependencies = {
+			-- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
+			"MunifTanjim/nui.nvim",
+			-- OPTIONAL:
+			--   `nvim-notify` is only needed, if you want to use the notification view.
+			--   If not available, we use `mini` as the fallback
+			"rcarriga/nvim-notify",
+		},
+	},
 
 	-- Treesitter
 	{
@@ -318,6 +333,11 @@ local plugins = {
 	-- Be Good!
 	{
 		"ThePrimeagen/vim-be-good",
+	},
+	{
+		"m4xshen/hardtime.nvim",
+		dependencies = { "MunifTanjim/nui.nvim" },
+		event = "BufEnter",
 	},
 }
 

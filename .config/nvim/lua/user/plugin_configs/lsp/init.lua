@@ -14,7 +14,8 @@ local servers = {
 
 require('mason').setup()
 require('mason-lspconfig').setup({
-  ensure_installed = servers
+  ensure_installed = servers,
+  automatic_enable = false
 })
 
 local on_attach = function(_, bufnr)
@@ -26,13 +27,15 @@ local on_attach = function(_, bufnr)
   -- The "keep" argument ensures that the original bufopts table is not modified and that the desc key is added uniquely for each mapping.
   vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, vim.tbl_extend("keep", bufopts, { desc = "LSP - [g]o to [d]eclaration"}))
   vim.keymap.set('n', 'gd', vim.lsp.buf.definition, vim.tbl_extend("keep", bufopts, { desc = "LSP - [g]o to [d]definition"}))
+  vim.keymap.set('n', 'gtd', require('telescope.builtin').lsp_type_definitions, vim.tbl_extend("keep", bufopts, { desc = "LSP - [g]o to [t]ype [d]efinitions"}))
   vim.keymap.set('n', 'gr', require('telescope.builtin').lsp_references, vim.tbl_extend("keep", bufopts, { desc = "LSP - [g]o to [r]eferences"}))
-  vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, vim.tbl_extend("keep", bufopts, { desc = "LSP - [g]o to [i]mplementation"}))
+  vim.keymap.set('n', 'gi', require('telescope.builtin').lsp_implementations, vim.tbl_extend("keep", bufopts, { desc = "LSP - [g]o to [i]mplementation"}))
+  vim.keymap.set('n', 'gc', require('telescope.builtin').lsp_incoming_calls, vim.tbl_extend("keep", bufopts, { desc = "LSP - [g]o to incoming [c]alls"}))
+  vim.keymap.set('n', 'gC', require('telescope.builtin').lsp_outgoing_calls, vim.tbl_extend("keep", bufopts, { desc = "LSP - [g]o to outgoing [c]alls"}))
   vim.keymap.set('n', 'K', vim.lsp.buf.hover, vim.tbl_extend("keep", bufopts, { desc = "LSP - open hover information"}))
   vim.keymap.set('n', 'gl', vim.diagnostic.open_float, vim.tbl_extend("keep", bufopts, { desc = "LSP - open diagnostics in a floating window"}))
   vim.keymap.set("n", "g[", vim.diagnostic.goto_prev, vim.tbl_extend("keep", bufopts, { desc = "LSP - [g]o to previous diagnostic message"}))
   vim.keymap.set("n", "g]", vim.diagnostic.goto_next, vim.tbl_extend("keep", bufopts, { desc = "LSP - [g]o to next diagnostic message"}))
-
 end
 
 vim.diagnostic.config({
