@@ -65,7 +65,7 @@ vim.keymap.set("n", "<leader>gh", "<cmd>Telescope git_bcommits<CR>", { desc = "T
 
 -- Telescope
 vim.keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { silent = true })
-vim.keymap.set("n", "<leader>fg", "<cmd>Telescope live_grep<cr>", { silent = true })
+vim.keymap.set("n", "<leader>fg", ":lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>", { silent = true })
 vim.keymap.set("n", "<leader>fu", "<cmd>Telescope undo<cr>", { silent = true })
 vim.keymap.set("n", "<leader>fp", "<cmd>Telescope projects<cr>", { silent = true })
 vim.keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<cr>", { silent = true })

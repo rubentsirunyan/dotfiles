@@ -29,9 +29,9 @@ local plugins = {
 	{
 		"LunarVim/bigfile.nvim",
 	},
-  {
-    "echasnovski/mini.nvim"
-  },
+	{
+		"echasnovski/mini.nvim",
+	},
 	{
 		"numToStr/Comment.nvim",
 	}, -- Easily comment stuff
@@ -128,8 +128,7 @@ local plugins = {
 		branch = "regexp",
 		event = "VeryLazy",
 		config = function()
-			require("venv-selector").setup({
-			})
+			require("venv-selector").setup({})
 		end,
 	},
 
@@ -167,6 +166,9 @@ local plugins = {
 		"nvim-telescope/telescope-file-browser.nvim",
 	},
 	{
+		"nvim-telescope/telescope-live-grep-args.nvim",
+	},
+	{
 		"1riz/telescope-macros.nvim",
 	},
 	{
@@ -175,7 +177,15 @@ local plugins = {
 		opts = {},
 		dependencies = {
 			"MunifTanjim/nui.nvim",
-			"rcarriga/nvim-notify",
+			{
+				"rcarriga/nvim-notify",
+				config = function()
+					require("notify").setup({
+						-- other stuff
+						background_colour = "#000000",
+					})
+				end,
+			},
 		},
 	},
 	-- Treesitter
