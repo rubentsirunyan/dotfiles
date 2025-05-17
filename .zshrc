@@ -23,16 +23,23 @@ setopt    incappendhistory        #Immediately append to the history file, not j
 setopt    globdots        # Lets files beginning with a . be matched without explicitly specifying the dot.
 
 # Lazy-load antidote and generate the static load file only when needed
+ANTIDOTE_PATH=$(
+  nix-instantiate \
+    --eval-only \
+    --expr '(import <nixpkgs> {}).antidote.outPath' \
+    --raw
+)
+source "${ANTIDOTE_PATH}/share/antidote/antidote.zsh"
+
+# --- Static plugin list ---
 zsh_plugins_list=${XDG_CONFIG_HOME}/zsh/plugins.list
 zsh_plugins=${ZDOTDIR:-$HOME}/.zsh_plugins
-if [[ ! ${zsh_plugins}.zsh -nt ${zsh_plugins_list} ]]; then
-  (
-    source ${ZDOTDIR:-~}/.antidote/antidote.zsh
-    antidote bundle <${zsh_plugins_list} >${zsh_plugins}.zsh
-  )
-fi
-source ${zsh_plugins}.zsh
 
+if [[ ! ${zsh_plugins}.zsh -nt ${zsh_plugins_list} ]]; then
+  antidote bundle <${zsh_plugins_list} >${zsh_plugins}.zsh
+fi
+
+source ${zsh_plugins}.zsh
 # zsh autoasuggestions color
 # export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=60'
 
@@ -44,9 +51,17 @@ source ${XDG_CONFIG_HOME}/zsh/aliases.zsh
 
 # source ~/.zsh/work.zsh
 
-export FZF_BASE=/usr/local/opt/fzf
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# export FZF_BASE=/usr/local/opt/fzf
+# [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+FZF_ZSH_PATH=$(
+  nix-instantiate \
+    --eval-only \
+    --expr '(import <nixpkgs> {}).fzf-zsh.outPath' \
+    --raw
+)
+
+source $FZF_ZSH_PATH/share/zsh/plugins/fzf-zsh/fzf-zsh.plugin.zsh
 # Zoxide init
 eval "$(zoxide init zsh)"
 eval "$(starship init zsh)"
