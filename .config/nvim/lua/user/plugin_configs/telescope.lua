@@ -139,14 +139,13 @@ telescope.setup({
 			},
 		},
 		live_grep_args = {
-			auto_quoting = false, -- enable/disable auto-quoting
-			additional_args = function(opts)
+			auto_quoting = true, -- enable/disable auto-quoting
+			additional_args = function()
 				return { "--hidden" }
 			end,
 			-- define mappings, e.g.
 			mappings = { -- extend mappings
 				i = {
-					["<C-k>"] = require("telescope-live-grep-args.actions").quote_prompt(),
 					["<C-i>"] = require("telescope-live-grep-args.actions").quote_prompt({ postfix = " --iglob " }),
 					-- freeze the current list and start a fuzzy search in the frozen list
 					["<C-f>"] = require("telescope-live-grep-args.actions").to_fuzzy_refine,
