@@ -1,5 +1,6 @@
-0. xcode-select --install
-1. Give terminal full disk access
-2. mkdir ~/nix && cd ~/nix
-3. nix flake init -t nix-darwin/master --experimental-features 'nix-command flakes'
-4. nix run --experimental-features 'nix-command flakes' nix-darwin -- switch --flake ~/nix#macbook-pro-m
+- sh <(curl --proto '=https' --tlsv1.2 -L https://nixos.org/nix/install)
+- /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+- sudo nix --extra-experimental-features "nix-command flakes" run nix-darwin/master#darwin-rebuild --  switch --flake ~/dotfiles/nix#macbook-pro-m
+- cd ~/dotfiles && stow .
+- cut -d' ' -f1 ~/.tool-versions | xargs -n1 asdf plugin add
+- asdf install
