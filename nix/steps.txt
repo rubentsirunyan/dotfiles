@@ -1,0 +1,5 @@
+0. xcode-select --install
+1. Give terminal full disk access
+2. mkdir ~/nix && cd ~/nix
+3. nix flake init -t nix-darwin/master --experimental-features 'nix-command flakes'
+4. nix run --experimental-features 'nix-command flakes' nix-darwin -- switch --flake ~/nix#macbook-pro-m
