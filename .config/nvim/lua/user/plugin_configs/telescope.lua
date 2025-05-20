@@ -74,6 +74,7 @@ telescope.setup({
 	pickers = {
 		find_files = {
 			hidden = true,
+			no_ignore = true,
 			-- theme = "dropdown",
 			-- previewer = false,
 		},
@@ -141,7 +142,11 @@ telescope.setup({
 		live_grep_args = {
 			auto_quoting = true, -- enable/disable auto-quoting
 			additional_args = function()
-				return { "--hidden" }
+        return {
+          "--hidden",             -- include dotfiles
+          "--no-ignore",          -- skip .gitignore / .ignore
+          "--glob", "!.git/*",    -- still hide the .git folder itself
+        }
 			end,
 			-- define mappings, e.g.
 			mappings = { -- extend mappings

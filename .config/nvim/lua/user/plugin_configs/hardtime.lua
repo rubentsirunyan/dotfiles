@@ -1,4 +1,5 @@
 require("hardtime").setup({
+  restriction_mode = 'hint',
    ui = {
       enter = true,
       focusable = true,

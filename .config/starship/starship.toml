@@ -43,7 +43,8 @@ ahead        = "[↑ ${count}](green)"
 behind       = "[↓ ${count}](green)"
 
 [git_state]
-format              = " [$state( $progress_current/$progress_total)]"
+format = '\([$state( $progress_current/$progress_total)]($style)\) '	
+
 
 [status]
 disabled            = false        # show on non-zero exit
