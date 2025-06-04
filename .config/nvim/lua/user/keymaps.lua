@@ -74,3 +74,7 @@ vim.keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<cr>", { silent = tru
 vim.keymap.set("n", "<leader>fm", "<cmd>Telescope harpoon marks<cr>", { silent = true })
 vim.keymap.set("n", "<leader>fds", "<cmd>Telescope lsp_document_symbols<cr>", { silent = true })
 vim.keymap.set("n", "<leader>fws", "<cmd>Telescope lsp_workspace_symbols<cr>", { silent = true })
+
+-- Noice
+vim.keymap.set("n", "<leader>ND", "<cmd>Noice dismiss<cr>", { silent = true, desc = "[D]ismiss [N]oice notifications"})
+

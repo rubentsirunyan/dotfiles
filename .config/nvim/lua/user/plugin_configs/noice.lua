@@ -1,25 +1,25 @@
-require("noice").setup({
-	lmessages = {
-    enabled      = true,        -- enable the Noice messages UI
-    view_history = "split",     -- use a split for `:messages`
-  },sp = {
-		-- override markdown rendering so that **cmp** and other plugins use **Treesitter**
+require('noice').setup({
+	messages = {
+		enabled = true,
+	},
+	views = {
+		notify = {
+			replace = true,
+		},
+	},
+	lsp = {
+		progress = {
+			enabled = true,
+			format = "lsp_progress",
+			format_done = "lsp_progress_done",
+			-- throttle = 1000 / 30,
+			view = "notify",
+		},
+		-- override markdown rendering so that **cmp** and other plugins use **treesitter**
 		override = {
 			["vim.lsp.util.convert_input_to_markdown_lines"] = true,
 			["vim.lsp.util.stylize_markdown"] = true,
-			["cmp.entry.get_documentation"] = true, -- requires hrsh7th/nvim-cmp
+			["cmp.entry.get_documentation"] = true,
 		},
-	},
-	-- you can enable a preset for easier configuration
-	presets = {
-		bottom_search = true, -- use a classic bottom cmdline for search
-		command_palette = true, -- position the cmdline and popupmenu together
-		long_message_to_split = true, -- long messages will be sent to a split
-		inc_rename = false, -- enables an input dialog for inc-rename.nvim
-		lsp_doc_border = false, -- add a border to hover docs and signature help
-	},
-	messages = {
-		enabled = true, -- enable the Noice messages UI
-		view_history = "split", -- use a split for `:messages`
 	},
 })
