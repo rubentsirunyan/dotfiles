@@ -32,15 +32,15 @@ style               = "bold purple"
 symbol = " "
 
 [git_status]
-style               = "bold purple"
-format = '([\[$all_status$ahead_behind\]]($style) )'	
-staged       = "[](blue)"
-modified     = "[∙](yellow)"
-untracked    = "[?](bright-black)"
-conflicted   = "[](red)"
-stashed      = "[](magenta)"
-ahead        = "[↑ ${count}](green)"
-behind       = "[↓ ${count}](green)"
+style        = "bold purple"
+format       = '([\[$all_status$ahead_behind \]]($style))'	
+staged       = "[ ${count}](blue)"
+modified     = "[ ∙${count}](yellow)"
+untracked    = "[ ?${count}](bright-black)"
+conflicted   = "[ ${count}](red)"
+stashed      = "[ ${count}](magenta)"
+ahead        = "[ ↑${count}](green)"
+behind       = "[ ↓${count}](green)"
 
 [git_state]
 format = '\([$state( $progress_current/$progress_total)]($style)\) '	
