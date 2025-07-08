@@ -4,6 +4,7 @@ if not status_ok then
 end
 
 local actions = require("telescope.actions")
+local previewers = require('telescope.previewers')
 
 telescope.setup({
 	hidden = true,
@@ -83,6 +84,9 @@ telescope.setup({
 			-- theme = "dropdown",
 			-- previewer = false,
 		},
+    -- git_commits = {
+    --   previewer = previewers.git_commit_diff.new(),
+    -- },
 		live_grep = {
 			additional_args = function(opts)
 				return { "--hidden" }

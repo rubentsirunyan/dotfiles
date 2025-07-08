@@ -4,3 +4,5 @@ font-size = 20
 
 # ── Theme
 theme       = GruvboxDark
+
+# initial-command = /opt/homebrew/bin/tmux

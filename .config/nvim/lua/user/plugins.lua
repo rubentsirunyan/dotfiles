@@ -171,28 +171,28 @@ local plugins = {
 	{
 		"1riz/telescope-macros.nvim",
 	},
-	{
-		"folke/noice.nvim",
-		event = "VeryLazy",
-		dependencies = {
-			"MunifTanjim/nui.nvim",
-			{
-				"rcarriga/nvim-notify",
-				config = function()
-					require("notify").setup({
-						background_colour = "#000000",
-						top_down = false,
-						render = "wrapped-compact",
-						stages = "slide",
-						-- don't focus on the notification window when jumping between windows
-						on_open = function(win)
-							vim.api.nvim_win_set_config(win, { focusable = false })
-						end,
-					})
-				end,
-			},
-		},
-	},
+	-- {
+	-- 	"folke/noice.nvim",
+	-- 	event = "VeryLazy",
+	-- 	dependencies = {
+	-- 		"MunifTanjim/nui.nvim",
+	-- 		{
+	-- 			"rcarriga/nvim-notify",
+	-- 			config = function()
+	-- 				require("notify").setup({
+	-- 					background_colour = "#000000",
+	-- 					top_down = false,
+	-- 					render = "wrapped-compact",
+	-- 					stages = "slide",
+	-- 					-- don't focus on the notification window when jumping between windows
+	-- 					on_open = function(win)
+	-- 						vim.api.nvim_win_set_config(win, { focusable = false })
+	-- 					end,
+	-- 				})
+	-- 			end,
+	-- 		},
+	-- 	},
+	-- },
 	-- Treesitter
 	{
 		"nvim-treesitter/nvim-treesitter",
