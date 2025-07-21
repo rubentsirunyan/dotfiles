@@ -39,7 +39,7 @@ source ${zsh_plugins}.zsh
 source ${XDG_CONFIG_HOME}/zsh/fzf.zsh
 source ${XDG_CONFIG_HOME}/zsh/git_fzf.zsh
 source ${XDG_CONFIG_HOME}/zsh/bw_fzf.zsh
-source ${XDG_CONFIG_HOME}/zsh/gpg.zsh
+# source ${XDG_CONFIG_HOME}/zsh/gpg.zsh
 source ${XDG_CONFIG_HOME}/zsh/aliases.zsh
 
 # source ~/.zsh/work.zsh
