@@ -96,6 +96,7 @@ non-empty-workspaces-root-containers-layout-on-startup = 'smart'
     alt-shift-semicolon = 'mode service'
     alt-r = 'mode resize'
     alt-shift-backslash = 'mode join'
+    alt-d = 'mode display'
 
 [mode.service.binding]
     shift-r = [
@@ -127,6 +128,13 @@ non-empty-workspaces-root-containers-layout-on-startup = 'smart'
     j = ['join-with down', 'mode main']
     k = ['join-with up', 'mode main']
     l = ['join-with right', 'mode main']
+
+[mode.display.binding]
+    alt-h = ['focus-monitor left', 'mode main']
+    alt-j = ['focus-monitor down', 'mode main']
+    alt-k = ['focus-monitor up', 'mode main']
+    alt-l = ['focus-monitor right', 'mode main']
+    esc = ['mode main']
 
 [[on-window-detected]]
 if.app-id = 'com.mitchellh.ghostty'
@@ -167,6 +175,10 @@ if.app-id = 'com.bitwarden.desktop'
 run = 'move-node-to-workspace 6'
 
 [[on-window-detected]]
+if.app-id = 'org.keepassxc.keepassxc'
+run = 'move-node-to-workspace 6'
+
+[[on-window-detected]]
 if.app-id = 'com.openai.chat'
 run = 'move-node-to-workspace 5'
 
@@ -187,3 +199,7 @@ run = 'move-node-to-workspace 9'
 if.app-id = 'com.utmapp.UTM'
 if.window-title-regex-substring = '^macOS$'
 run = 'move-node-to-workspace 10'
+
+[[on-window-detected]]
+if.app-id = 'org.openvpn.client.app'
+run = 'move-node-to-workspace 11'

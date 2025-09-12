@@ -52,7 +52,14 @@ eval "$(zoxide init zsh)"
 eval "$(starship init zsh)"
 export STARSHIP_CONFIG=~/.config/starship/starship.toml
 
+export PATH="$HOME/.local/bin:$PATH"
 export PATH=$HOME/.tmux/plugins/t-smart-tmux-session-manager/bin:$PATH
+export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 
 # Customize p10k.
 # [ -f ~/.p10k.zsh ] && source ~/.p10k.zsh
+# The following lines have been added by Docker Desktop to enable Docker CLI completions.
+fpath=(/Users/ruben.tsirunyan/.docker/completions $fpath)
+autoload -Uz compinit
+compinit
+# End of Docker CLI completions
