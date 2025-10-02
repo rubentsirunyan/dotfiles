@@ -3,6 +3,6 @@ font-family = MesloLGS NF
 font-size = 20
 
 # ── Theme
-theme       = GruvboxDark
+theme       = Gruvbox Dark
 
 # initial-command = /opt/homebrew/bin/tmux
