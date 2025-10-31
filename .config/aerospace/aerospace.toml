@@ -1,11 +1,13 @@
 after-login-command = []
-after-startup-command = []
+after-startup-command = [
+  'exec-and-forget borders active_color=0xfffcba03 inactive_color=0xff494d64 width=5.0'
+]
 
 start-at-login = true
 
 # Normalizations. See: https://nikitabobko.github.io/AeroSpace/guide#normalization
-enable-normalization-flatten-containers = true
-enable-normalization-opposite-orientation-for-nested-containers = true
+# enable-normalization-flatten-containers = true
+# enable-normalization-opposite-orientation-for-nested-containers = true
 
 accordion-padding = 30
 
@@ -48,6 +50,9 @@ non-empty-workspaces-root-containers-layout-on-startup = 'smart'
 
     # All possible commands: https://nikitabobko.github.io/AeroSpace/commands
 
+    cmd-h = [] # Disable "hide application"
+    cmd-alt-h = [] # Disable "hide others"
+
     alt-t = 'layout tiles horizontal vertical'
     alt-s = 'layout accordion horizontal vertical'
 
@@ -66,7 +71,6 @@ non-empty-workspaces-root-containers-layout-on-startup = 'smart'
     alt-minus = 'resize smart -50'
     alt-equal = 'resize smart +50'
 
-
     alt-1 = 'workspace 1'
     alt-2 = 'workspace 2'
     alt-3 = 'workspace 3'
@@ -77,6 +81,8 @@ non-empty-workspaces-root-containers-layout-on-startup = 'smart'
     alt-8 = 'workspace 8'
     alt-9 = 'workspace 9'
     alt-0 = 'workspace 10'
+    alt-c = 'workspace C'
+    alt-e = 'workspace E'
 
     alt-shift-1 = 'move-node-to-workspace --focus-follows-window 1'
     alt-shift-2 = 'move-node-to-workspace --focus-follows-window 2'
@@ -88,6 +94,8 @@ non-empty-workspaces-root-containers-layout-on-startup = 'smart'
     alt-shift-8 = 'move-node-to-workspace --focus-follows-window 8'
     alt-shift-9 = 'move-node-to-workspace --focus-follows-window 9'
     alt-shift-0 = 'move-node-to-workspace --focus-follows-window 10'
+    alt-shift-c = 'move-node-to-workspace --focus-follows-window C'
+    alt-shift-e = 'move-node-to-workspace --focus-follows-window e'
 
     alt-tab = 'workspace-back-and-forth'
     alt-shift-tab = 'move-node-to-monitor --wrap-around --focus-follows-window next'
@@ -152,11 +160,11 @@ run = "move-node-to-workspace 3"
 
 [[on-window-detected]]
 if.app-id = 'com.apple.mail'
-run = 'move-node-to-workspace 7'
+run = 'move-node-to-workspace E'
 
 [[on-window-detected]]
 if.app-id = 'com.apple.iCal'
-run = 'move-node-to-workspace 7'
+run = 'move-node-to-workspace C'
 
 [[on-window-detected]]
 if.app-id = 'org.whispersystems.signal-desktop'
@@ -184,11 +192,17 @@ run = 'move-node-to-workspace 5'
 
 [[on-window-detected]]
 if.app-id = 'md.obsidian'
+if.window-title-regex-substring = '.* - work - Obsidian .*'
 run = 'move-node-to-workspace 4'
 
 [[on-window-detected]]
+if.app-id = 'md.obsidian'
+if.window-title-regex-substring = '.* - Main - Obsidian .*'
+run = 'move-node-to-workspace 7'
+
+[[on-window-detected]]
 if.app-id = 'com.todoist.mac.Todoist'
-run = 'move-node-to-workspace 4'
+run = 'move-node-to-workspace 7'
 
 [[on-window-detected]]
 if.app-id = 'com.utmapp.UTM'

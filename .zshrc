@@ -6,7 +6,11 @@
 # fi
 
 export XDG_CONFIG_HOME="$HOME/.config" # Added for lazygit https://github.com/jesseduffield/lazygit/blob/master/docs/Config.md
-export GOKU_EDN_CONFIG_FILE="$XDG_CONFIG_HOME/goku/karabiner.edn" # Goku config file location. This actually doesn't work because seems like brew (and launchd in general) services ignore env vars set here. So the goku config file is at its default location at $XDG_CONFIG_HOME/.config/karabiner.edn
+
+# Goku config file location. This actually doesn't work because seems like brew (and launchd in general) services ignore env vars set here, so this env var is also duplicated in the launchd plist of goku at `$HOME/Library/LaunchAgents/homebrew.mxcl.goku.plist` like this
+#     <key>GOKU_EDN_CONFIG_FILE</key>
+#     <string>/Users/ruben.tsirunyan/.config/goku/karabiner.edn</string>
+export GOKU_EDN_CONFIG_FILE="$XDG_CONFIG_HOME/goku/karabiner.edn"
 
 export ZSH_DISABLE_COMPFIX=true
 export EDITOR=nvim

@@ -11,7 +11,7 @@ telescope.setup({
 	defaults = {
 		prompt_prefix = " ",
 		selection_caret = " ",
-		path_display = { "smart" },
+		path_display = { "filename_first" },
 
 		mappings = {
 			i = {
@@ -149,7 +149,24 @@ telescope.setup({
         return {
           "--hidden",             -- include dotfiles
           "--no-ignore",          -- skip .gitignore / .ignore
-          "--glob", "!.git/*",    -- still hide the .git folder itself
+          "--glob", "!**/.git/**",
+          "--glob", "!**/node_modules/**",
+          "--glob", "!**/.pnpm-store/**",
+          "--glob", "!**/.yarn/**",
+          "--glob", "!**/.cache/**",
+          "--glob", "!**/dist/**",
+          "--glob", "!**/build/**",
+          "--glob", "!**/coverage/**",
+          "--glob", "!**/.next/**",   -- Next.js
+          "--glob", "!**/.nuxt/**",   -- Nuxt
+          "--glob", "!**/target/**",  -- Rust/Java
+          "--glob", "!**/__pycache__/**",
+          "--glob", "!**/.pytest_cache/**",
+          "--glob", "!**/.mypy_cache/**",
+          "--glob", "!**/venv/**",
+          "--glob", "!**/.venv/**",
+          "--glob", "!**/vendor/**",  -- PHP/Go vendoring
+          "--glob", "!**/.gradle/**",
         }
 			end,
 			-- define mappings, e.g.

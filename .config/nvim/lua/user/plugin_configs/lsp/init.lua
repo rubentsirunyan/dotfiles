@@ -7,7 +7,7 @@ local servers = {
 	"pyright",
 	"lua_ls",
   "jdtls", -- java
-  -- "tsserver",
+  "ts_ls",
   "bashls",
   "gopls",
 }

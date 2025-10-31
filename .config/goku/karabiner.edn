@@ -83,9 +83,20 @@
     ; }
   }
   :main [
-    {:des "Change tab to hyper if pressed with other keys and tab if pressed alone"
+    {:des "Change tab to alt if pressed with other keys and tab if pressed alone"
      :rules [
-      [:tab :lazy-hyper nil {:alone :tab}]
+      ;; --- pass-throughs (do NOT turn these into Option) ---
+      ;; Shift+Tab (either shift)
+      [:!Stab :!Stab] [:!Rtab :!Rtab]
+      ;; Cmd+Tab (either command)
+      [:!Ctab :!Ctab] [:!Qtab :!Qtab]
+      ;; Ctrl+Tab (either control)
+      [:!Ttab :!Ttab] [:!Wtab :!Wtab]
+      ;; Ctrl+Shift+Tab (all four ctrl/shift side combos)
+      [:!TStab :!TStab] [:!TRtab :!TRtab] [:!WStab :!WStab] [:!WRtab :!WRtab]
+      ;; Cmd+Shift+Tab (some apps use it)
+      [:!CStab :!CStab] [:!CRtab :!CRtab] [:!QStab :!QStab] [:!QRtab :!QRtab]
+      [:tab :left_option nil {:alone :tab}]
     ]}
     {:des "Change caps_lock to control if pressed with other keys and escape if pressed alone"
      :rules [
