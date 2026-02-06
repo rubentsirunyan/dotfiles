@@ -12,9 +12,15 @@ telescope.setup({
 		prompt_prefix = " ",
 		selection_caret = " ",
 		path_display = { "filename_first" },
+    file_ignore_patterns = {
+      "^.git/",
+      "^node_modules/",
+    },
 
 		mappings = {
 			i = {
+				["<C-z>"] = actions.cycle_previewers_next,
+				["<C-a>"] = actions.cycle_previewers_prev,
 				["<C-p>"] = require("telescope.actions.layout").toggle_preview,
 
 				["<C-j>"] = actions.move_selection_next,
@@ -84,9 +90,21 @@ telescope.setup({
 			-- theme = "dropdown",
 			-- previewer = false,
 		},
-    -- git_commits = {
-    --   previewer = previewers.git_commit_diff.new(),
-    -- },
+    git_commits = {
+      git_command = {
+        "git", "log", "--color=always", "--date=short", "--pretty=format:%h %ad %an %s%n", "--", ".",
+      },
+    },
+    git_bcommits = {
+      git_command = {
+        "git", "log", "--color=always", "--date=short", "--pretty=format:%h %ad %an %s%n",
+      },
+    },
+    git_bcommits_range = {
+      git_command = {
+        "git", "log", "--color=always", "--date=short", "--pretty=format:%h %ad %an %s%n", "--no-patch","-L",
+      },
+    },
 		live_grep = {
 			additional_args = function(opts)
 				return { "--hidden" }

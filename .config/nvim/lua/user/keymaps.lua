@@ -50,18 +50,18 @@ vim.keymap.set("x", "<leader>p", "\"_dp", { desc = "[P]aste in place of the sele
 -- Formatting keymaps
 vim.keymap.set("n", "<leader>F", vim.lsp.buf.format, { desc = "[F]ormat the curernt buffer"})
 
--- LazyGit
+-- Git
 -- vim.keymap.set("n", "<leader>g", ":LazyGit<CR>", { desc = "Open Lazy[G]it" })
 vim.keymap.set("n", "<leader>gs", require("neogit").open, { desc = "Open Neo[G]it [S]status" })
 vim.keymap.set("n", "<leader>gc", "<cmd>Neogit commit<CR>", { desc = "Neo[G]it [C]commit" })
 vim.keymap.set("n", "<leader>gp", "<cmd>Neogit pull<CR>", { desc = "Neo[G]it [P]ull" })
-vim.keymap.set("n", "<leader>gP", "<cmd>Neogit push<CR>", { desc = "Neo[G]it [P]ush" })
 vim.keymap.set("n", "<leader>gP", "<cmd>Neogit push<CR>", { desc = "Neo[G]it [P]ush" })
 vim.keymap.set("n", "<leader>gd", "<cmd>DiffviewOpen<CR>", { desc = "[G]it [D]iff (with DiffviewOpen)" })
 vim.keymap.set("n", "<leader>gB", "<cmd>Gitsigns blame<CR>", { desc = "[G]itsigns [B]lame" })
 vim.keymap.set("n", "<leader>gb", "<cmd>Telescope git_branches<CR>", { desc = "Telescope [G]it [B]ranches" })
 vim.keymap.set("n", "<leader>gl", "<cmd>Telescope git_commits<CR>", { desc = "Telescope [G]it [L]og" })
 vim.keymap.set("n", "<leader>gh", "<cmd>Telescope git_bcommits<CR>", { desc = "Telescope [G]it file [H]istory" })
+vim.keymap.set("v", "<leader>gh", "<cmd>Telescope git_bcommits_range<CR>", { desc = "Telescope [G]it selection [H]istory" })
 
 -- Telescope
 vim.keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { silent = true })
