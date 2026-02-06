@@ -56,6 +56,26 @@ bufferline.setup {
     --   end
     -- end,
     offsets = { { filetype = "NvimTree", text = "", padding = 1 } },
+    custom_areas = {
+      left = function()
+        local tabs = vim.api.nvim_list_tabpages()
+        if #tabs <= 1 then
+          return {}
+        end
+
+        local current = vim.api.nvim_get_current_tabpage()
+        local result = { { text = " Tabs:", link = "TabLine" } }
+
+        for _, tab in ipairs(tabs) do
+          local tabnr = vim.api.nvim_tabpage_get_number(tab)
+          local hl = (tab == current) and "TabLineSel" or "TabLine"
+          table.insert(result, { text = " " .. tabnr .. " ", link = hl })
+        end
+
+        table.insert(result, { text = "│", link = "TabLine" })
+        return result
+      end,
+    },
     show_buffer_icons = true,
     show_buffer_close_icons = true,
     show_close_icon = true,
@@ -63,7 +83,7 @@ bufferline.setup {
     persist_buffer_sort = true, -- whether or not custom sorted buffers should persist
     -- can also be a table containing 2 custom separators
     -- [focused and unfocused]. eg: { '|', '|' }
-    separator_style = "thin", -- | "thick" | "thin" | { 'any', 'any' },
+    separator_style = "sloped", -- | "thick" | "thin" | { 'any', 'any' },
     enforce_regular_tabs = true,
     always_show_bufferline = true,
     -- sort_by = 'id' | 'extension' | 'relative_directory' | 'directory' | 'tabs' | function(buffer_a, buffer_b)

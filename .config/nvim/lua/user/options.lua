@@ -3,6 +3,9 @@ vim.o.number = true -- set numbered lines
 vim.o.relativenumber = true -- set relative numbered lines
 vim.o.numberwidth = 2 -- set number column width {default 4}
 
+-- Always show the top bar (bufferline lives in the tabline)
+vim.o.showtabline = 2
+
 -- Cursor
 vim.o.scrolloff = 10 -- keep the cursor in the center
 vim.o.cursorline = true -- enable the cursor line
