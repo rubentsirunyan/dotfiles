@@ -4,7 +4,7 @@ if not status_ok then
 end
 
 neogit.setup {
-  kind = "floating",
+  kind = "tab",
   graph_style = "unicode",
   integrations = {
     telescope = true

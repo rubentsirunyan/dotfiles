@@ -187,7 +187,7 @@ if.app-id = 'org.keepassxc.keepassxc'
 run = 'move-node-to-workspace 6'
 
 [[on-window-detected]]
-if.app-id = 'com.openai.chat'
+if.app-id = 'com.todesktop.230313mzl4w4u92'
 run = 'move-node-to-workspace 5'
 
 [[on-window-detected]]
@@ -201,7 +201,7 @@ if.window-title-regex-substring = '.* - Main - Obsidian .*'
 run = 'move-node-to-workspace 7'
 
 [[on-window-detected]]
-if.app-id = 'com.todoist.mac.Todoist'
+if.app-id = 'com.TickTick.task.mac'
 run = 'move-node-to-workspace 7'
 
 [[on-window-detected]]

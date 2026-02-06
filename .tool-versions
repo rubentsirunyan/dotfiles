@@ -1,7 +1,7 @@
 python 3.11.2 2.7.18 system
 nodejs 20.2.0 19.6.0
 golang 1.22.0
-java openjdk-21.0.2
+java openjdk-25
 terraform 1.8.0
 tflint 0.45.0
 terragrunt 0.43.2
@@ -34,6 +34,9 @@ cloudflared 2024.10.1
 mc 2024-11-17T19-35-25Z
 mongodb-database-tools 0.8.9
 wrk 4.2.0
-k6 0.58.0
+k6 1.3.0
 yamllint 1.37.0
 starship 1.23.0
+krew 0.4.5
+loki-logcli 3.5.8
+pnpm 10.26.2

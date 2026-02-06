@@ -103,9 +103,9 @@ local plugins = {
 	},
 
 	-- snippets
-	{
-		"L3MON4D3/LuaSnip",
-	}, --snippet engine
+	-- {
+	-- 	"L3MON4D3/LuaSnip",
+	-- }, --snippet engine
 	{
 		"rafamadriz/friendly-snippets",
 	}, -- a bunch of snippets to use
@@ -125,7 +125,6 @@ local plugins = {
 
 	{
 		"linux-cultist/venv-selector.nvim",
-		branch = "regexp",
 		event = "VeryLazy",
 		config = function()
 			require("venv-selector").setup({})
@@ -206,6 +205,25 @@ local plugins = {
 	},
 	{
 		"RRethy/vim-illuminate",
+	},
+	-- AI
+	{
+		"carlos-algms/agentic.nvim",
+		event = "VeryLazy",
+		opts = {
+			provider = "cursor-acp",
+
+			keymaps = {
+				widget = {
+					change_mode = {
+						{
+							"<leader>am",
+							mode = { "n", "v" },
+						},
+					},
+				},
+			},
+		},
 	},
 	-- Folding
 	{

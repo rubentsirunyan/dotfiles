@@ -61,14 +61,6 @@ vim.diagnostic.config({
   },
 })
 
-local lspconfig_status_ok, lspconfig = pcall(require, "lspconfig")
-if not lspconfig_status_ok then
-	return
-end
-
-local opts = {}
-
-
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 -- Needed for UFO
@@ -79,18 +71,23 @@ capabilities.textDocument.foldingRange = {
     lineFoldingOnly = true
 }
 
-for _, server in pairs(servers) do
-	opts = {
-		on_attach = on_attach,
-		capabilities = capabilities
-	}
+local enabled_servers = {}
 
-	server = vim.split(server, "@")[1]
+for _, server in ipairs(servers) do
+  local name = vim.split(server, "@")[1]
 
-	local require_ok, conf_opts = pcall(require, "user.plugin_configs.lsp.settings." .. server)
-	if require_ok then
-		opts = vim.tbl_deep_extend("force", conf_opts, opts)
-	end
+  local opts = {
+    on_attach = on_attach,
+    capabilities = capabilities
+  }
 
-	lspconfig[server].setup(opts)
+  local require_ok, conf_opts = pcall(require, "user.plugin_configs.lsp.settings." .. name)
+  if require_ok then
+    opts = vim.tbl_deep_extend("force", conf_opts, opts)
+  end
+
+    vim.lsp.config(name, opts)
+    table.insert(enabled_servers, name)
 end
+
+vim.lsp.enable(enabled_servers)
