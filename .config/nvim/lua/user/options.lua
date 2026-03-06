@@ -60,12 +60,11 @@ vim.o.termguicolors = true -- enables 24-bit RGB color in the TUI
 vim.o.completeopt = 'menuone,noselect' -- list of options for Insert mode completion
 
 -- Folding
-vim.o.foldcolumn = '1' -- Show fold sidebar. '0' is not bad
+vim.o.foldcolumn = 'auto' -- Show fold sidebar. '0' is not bad
 vim.o.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
 vim.o.foldlevelstart = 99
 vim.o.foldenable = true
 vim.o.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:⏵]] -- Use nicer characters for fold sidebar
 
 -- Python path
--- vim.g.python3_host_prog  = '~/.asdf/shims/python'
 vim.g.python3_host_prog = vim.fn.exepath('python3')

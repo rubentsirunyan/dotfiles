@@ -58,6 +58,7 @@ vim.keymap.set("n", "<leader>gp", "<cmd>Neogit pull<CR>", { desc = "Neo[G]it [P]
 vim.keymap.set("n", "<leader>gP", "<cmd>Neogit push<CR>", { desc = "Neo[G]it [P]ush" })
 vim.keymap.set("n", "<leader>gd", "<cmd>DiffviewOpen<CR>", { desc = "[G]it [D]iff (with DiffviewOpen)" })
 vim.keymap.set("n", "<leader>gB", "<cmd>Gitsigns blame<CR>", { desc = "[G]itsigns [B]lame" })
+vim.keymap.set("n", "<leader>gn", "<cmd>Gitsigns next_hunk<CR>", { desc = "[G]itsigns [n]ext hunk" })
 vim.keymap.set("n", "<leader>gb", "<cmd>Telescope git_branches<CR>", { desc = "Telescope [G]it [B]ranches" })
 vim.keymap.set("n", "<leader>gl", "<cmd>Telescope git_commits<CR>", { desc = "Telescope [G]it [L]og" })
 vim.keymap.set("n", "<leader>gh", "<cmd>Telescope git_bcommits<CR>", { desc = "Telescope [G]it file [H]istory" })

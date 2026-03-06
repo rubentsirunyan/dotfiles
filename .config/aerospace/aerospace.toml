@@ -205,14 +205,8 @@ if.app-id = 'com.TickTick.task.mac'
 run = 'move-node-to-workspace 7'
 
 [[on-window-detected]]
-if.app-id = 'com.utmapp.UTM'
-check-further-callbacks = true
+if.app-id = 'com.apple.finder'
 run = 'move-node-to-workspace 9'
-
-[[on-window-detected]]
-if.app-id = 'com.utmapp.UTM'
-if.window-title-regex-substring = '^macOS$'
-run = 'move-node-to-workspace 10'
 
 [[on-window-detected]]
 if.app-id = 'org.openvpn.client.app'

@@ -131,6 +131,14 @@ local plugins = {
 		end,
 	},
 
+  -- Autoswitch to english input in normal mode
+  {
+      "keaising/im-select.nvim",
+      config = function()
+          require("im_select").setup({})
+      end,
+  },
+
 	-- {
 	-- 	"j-hui/fidget.nvim",
 	-- },
@@ -217,7 +225,7 @@ local plugins = {
 				widget = {
 					change_mode = {
 						{
-							"<leader>am",
+							"<leader>M",
 							mode = { "n", "v" },
 						},
 					},
