@@ -37,6 +37,8 @@ if [[ ! ${zsh_plugins}.zsh -nt ${zsh_plugins_list} ]]; then
 fi
 source ${zsh_plugins}.zsh
 
+eval "$(mise activate zsh)"
+
 # zsh autoasuggestions color
 # export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=60'
 
@@ -57,24 +59,13 @@ eval "$(starship init zsh)"
 export STARSHIP_CONFIG=~/.config/starship/starship.toml
 # eval "$(oh-my-posh init zsh --config $HOME/dotfiles/.config/ohmyposh/starship-colors.omp.toml)"
 
-eval "$(mise activate zsh)"
 
 export PATH="$HOME/.local/bin:$PATH"
 export PATH=$HOME/.tmux/plugins/t-smart-tmux-session-manager/bin:$PATH
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 
-# Customize p10k.
-# [ -f ~/.p10k.zsh ] && source ~/.p10k.zsh
 # The following lines have been added by Docker Desktop to enable Docker CLI completions.
 fpath=(/Users/ruben.tsirunyan/.docker/completions $fpath)
 autoload -Uz compinit
 compinit
 # End of Docker CLI completions
-
-# pnpm
-export PNPM_HOME="/Users/ruben.tsirunyan/Library/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
-# pnpm end

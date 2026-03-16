@@ -68,3 +68,7 @@ grpcurl = "latest"
 
 # A tool required for nvim's im-select plugin
 "github:laishulu/macism" = "3.0.10"
+pipx = "1.8.0"
+"pipx:mcp-proxy" = "latest"
+"github:grafana/mcp-grafana" = "0.11.2"
+"github:VictoriaMetrics/VictoriaMetrics" = { version = "1.137.0", asset_pattern = "vmutils-*" }
