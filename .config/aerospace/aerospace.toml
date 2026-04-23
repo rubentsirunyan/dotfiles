@@ -81,6 +81,7 @@ non-empty-workspaces-root-containers-layout-on-startup = 'smart'
     alt-8 = 'workspace 8'
     alt-9 = 'workspace 9'
     alt-0 = 'workspace 10'
+    alt-m = 'workspace M'
     alt-c = 'workspace C'
     alt-e = 'workspace E'
 
@@ -94,6 +95,7 @@ non-empty-workspaces-root-containers-layout-on-startup = 'smart'
     alt-shift-8 = 'move-node-to-workspace --focus-follows-window 8'
     alt-shift-9 = 'move-node-to-workspace --focus-follows-window 9'
     alt-shift-0 = 'move-node-to-workspace --focus-follows-window 10'
+    alt-shift-m = 'move-node-to-workspace --focus-follows-window M'
     alt-shift-c = 'move-node-to-workspace --focus-follows-window C'
     alt-shift-e = 'move-node-to-workspace --focus-follows-window e'
 
@@ -138,11 +140,18 @@ non-empty-workspaces-root-containers-layout-on-startup = 'smart'
     l = ['join-with right', 'mode main']
 
 [mode.display.binding]
-    alt-h = ['focus-monitor left', 'mode main']
-    alt-j = ['focus-monitor down', 'mode main']
-    alt-k = ['focus-monitor up', 'mode main']
-    alt-l = ['focus-monitor right', 'mode main']
+    h = ['focus-monitor left', 'mode main']
+    j = ['focus-monitor down', 'mode main']
+    k = ['focus-monitor up', 'mode main']
+    l = ['focus-monitor right', 'mode main']
+    alt-h = ['move-node-to-monitor --wrap-around --focus-follows-window left', 'mode main']
+    alt-j = ['move-node-to-monitor --wrap-around --focus-follows-window down', 'mode main']
+    alt-k = ['move-node-to-monitor --wrap-around --focus-follows-window up', 'mode main']
+    alt-l = ['move-node-to-monitor --wrap-around --focus-follows-window right', 'mode main']
     esc = ['mode main']
+
+[workspace-to-monitor-force-assignment]
+M = 'secondary'
 
 [[on-window-detected]]
 if.app-id = 'com.mitchellh.ghostty'
@@ -176,7 +185,7 @@ run = 'move-node-to-workspace 8'
 
 [[on-window-detected]]
 if.app-id = 'com.spotify.client'
-run = 'move-node-to-workspace 6'
+run = 'move-node-to-workspace M'
 
 [[on-window-detected]]
 if.app-id = 'com.bitwarden.desktop'

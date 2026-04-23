@@ -190,3 +190,20 @@ neo_tree.setup {
   }
 }
 
+-- Mirror neo-tree's git status highlights to gitsigns' so both views agree on
+-- the color of "added/modified/deleted/etc." Re-applied on ColorScheme to
+-- survive theme reloads. Linking to a not-yet-defined group is safe — the link
+-- resolves once the target group exists.
+local function link_neotree_to_gitsigns()
+  local link = function(from, to) vim.api.nvim_set_hl(0, from, { link = to }) end
+  link('NeoTreeGitAdded',     'GitSignsAdd')
+  link('NeoTreeGitStaged',    'GitSignsStagedChange')
+  link('NeoTreeGitModified',  'GitSignsChange')
+  link('NeoTreeGitDeleted',   'GitSignsDelete')
+  link('NeoTreeGitConflict',  'GitSignsDelete')
+  link('NeoTreeGitUnstaged',  'GitSignsChange')
+  link('NeoTreeGitUntracked', 'GitSignsUntracked')
+  link('NeoTreeModified',     'GitSignsChange') -- the [+] buffer-modified marker
+end
+link_neotree_to_gitsigns()
+vim.api.nvim_create_autocmd('ColorScheme', { callback = link_neotree_to_gitsigns })

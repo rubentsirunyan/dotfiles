@@ -1,15 +1,33 @@
--- Leader key must be set before plugins are loaded
-vim.keymap.set({ "n", "x" }, "<Space>", "<Nop>", { silent = true })
-vim.g.mapleader = " "
-vim.g.maplocalleader = " "
+-- Leader keys (must be set before plugins load)
+vim.keymap.set({ 'n', 'x' }, '<Space>', '<Nop>', { silent = true })
+vim.g.mapleader = ' '
+vim.g.maplocalleader = ' '
 
-require('user.plugins')
-require('user.autocommands')
-require('user.colorscheme')
-require('user.plugin_configs')
-require('user.keymaps')
-require('user.options')
+require('config.options')
+require('config.autocmds')
+require('config.diagnostics')
+require('config.pack')
+require('config.lsp')
+require('config.keymaps')
 
+for _, name in ipairs({
+  'blink',
+  'conform',
+  'nvim-lint',
+  'lualine',
+  'neo-tree',
+  'statuscol',
+  'mini',
+  'treesitter',
+  'gitsigns',
+  'neogit',
+  'diffview',
+  'telescope',
+  -- 'hardtime',
+  'agentic',
+  'im-select',
+  'profile',
+  'mason',
+}) do require('config.plugins.' .. name) end
 
--- The line beneath this is called `modeline`. See `:help modeline`
--- vim: ts=2 sts=2 sw=2 et
+vim.cmd.colorscheme('gruvbox')

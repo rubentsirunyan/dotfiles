@@ -6,6 +6,33 @@ end
 local actions = require("telescope.actions")
 local previewers = require('telescope.previewers')
 
+-- -- Flatten window-local options inside telescope previewers so files of
+-- -- differing fold depth / number layout don't visually "shift" as you scroll
+-- -- through results. Triggered once per preview-window attach.
+-- vim.api.nvim_create_autocmd('User', {
+--   pattern = 'TelescopePreviewerLoaded',
+--   callback = function(args)
+--     vim.opt_local.foldcolumn = '0'
+--     vim.opt_local.foldenable = false
+--     vim.opt_local.relativenumber = false
+--     vim.opt_local.number = false
+--     vim.opt_local.signcolumn = 'no'
+--     vim.opt_local.cursorline = false
+--     vim.opt_local.cursorcolumn = false
+--     vim.opt_local.wrap = false
+--     vim.opt_local.list = false
+--     vim.opt_local.conceallevel = 0
+--     -- Stop any treesitter highlight on the preview buffer (avoids virt_text /
+--     -- conceal artifacts that vary per file).
+--     if args.data and args.data.bufnr then
+--       pcall(vim.treesitter.stop, args.data.bufnr)
+--     end
+--     -- Reset cursor + view to top-left so we don't carry over horizontal
+--     -- scroll from the previous file.
+--     vim.cmd('normal! gg0')
+--   end,
+-- })
+
 telescope.setup({
 	hidden = true,
 	defaults = {
@@ -135,32 +162,7 @@ telescope.setup({
 				},
 			},
 		},
-		media_files = {
-			-- filetypes whitelist
-			-- defaults to {"png", "jpg", "mp4", "webm", "pdf"}
-			filetypes = { "png", "webp", "jpg", "jpeg" },
-			find_cmd = "rg", -- find command (defaults to `fd`)
-		},
-		projects = {},
 		-- harpoon = {},
-		file_browser = {
-			theme = "dropdown",
-			previewer = false,
-			hidden = true,
-			cwd_to_path = true,
-			auto_depth = true,
-			hijack_netrw = false, -- disables netrw and use telescope-file-browser in its place
-			mappings = {
-				["i"] = {
-					["<C-h>"] = require("telescope").extensions.file_browser.actions.goto_parent_dir,
-					["<C-l>"] = require("telescope.actions").select_default,
-				},
-				["n"] = {
-					h = require("telescope").extensions.file_browser.actions.goto_parent_dir,
-					l = require("telescope.actions").select_default,
-				},
-			},
-		},
 		live_grep_args = {
 			auto_quoting = true, -- enable/disable auto-quoting
 			additional_args = function()
@@ -210,11 +212,5 @@ telescope.setup({
 --   end
 -- end
 
-telescope.load_extension("media_files")
--- telescope.load_extension('project')
-telescope.load_extension("projects")
-telescope.load_extension("file_browser")
 telescope.load_extension("undo")
--- telescope.load_extension('harpoon')
-telescope.load_extension("macros")
 telescope.load_extension("live_grep_args")

@@ -27,16 +27,16 @@ return {
         -- the schemastore plugin
         enable = false,
       },
-      schemas = require('schemastore').yaml.schemas {
+      schemas = require('schemastore').yaml.schemas({
         extra = {
           {
-            description = "Custom Cloudformation file match",
-            fileMatch = {"/**/cloudformation/*.yaml", "/**/cloudformation/*.yml"},
-            name = "cloudformation.schema.json",
-            url = "https://raw.githubusercontent.com/awslabs/goformation/master/schema/cloudformation.schema.json",
-          }
-        }
-      },
-    }
-  }
+            description = 'Custom Cloudformation file match',
+            fileMatch = { '/**/cloudformation/*.yaml', '/**/cloudformation/*.yml' },
+            name = 'cloudformation.schema.json',
+            url = 'https://raw.githubusercontent.com/awslabs/goformation/master/schema/cloudformation.schema.json',
+          },
+        },
+      }),
+    },
+  },
 }
