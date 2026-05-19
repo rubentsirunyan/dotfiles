@@ -1,0 +1,20 @@
+# Copy to ~/.gitconfig.local and fill in. This file is per-machine and
+# must not be committed to the public dotfiles repo.
+
+[user]
+  email = you@personal.example   # default identity
+
+# Per-client overrides — repos under each gitdir use the matching include.
+# Later matches win
+
+# [includeIf "gitdir:~/work/"]
+#   path = ~/.gitconfig-work
+
+# [includeIf "gitdir:~/work/projectA/"]
+#   path = ~/.gitconfig-projectA
+
+# Each ~/.gitconfig-<project> only needs to override what differs, e.g.:
+#   [user]
+#     email = ruben@projectA.example
+#   [core]
+#     sshCommand = "ssh -i ~/.ssh/id_projectA -F /dev/null"

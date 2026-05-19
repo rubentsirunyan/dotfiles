@@ -1,0 +1,19 @@
+[user]
+  name = Ruben Tsirunyan
+  # email is set in ~/.gitconfig.local
+[core]
+  fileMode = false
+  editor = vim
+  autocrlf = false
+[push]
+  default = current
+[credentials]
+  helper = store
+[diff]
+  tool = vimdiff
+[merge]
+  tool = vimdiff
+
+# Per-machine overrides — identity, includeIf blocks for projects, etc.
+[include]
+  path = ~/.gitconfig.local

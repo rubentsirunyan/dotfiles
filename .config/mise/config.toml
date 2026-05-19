@@ -16,6 +16,9 @@ tflint = "0.45.0"
 terragrunt = "0.43.2"
 packer = "1.8.6"
 
+# AI
+claude-code = "2.1.144"
+
 # Kubernetes
 kubectl = "1.23.17"
 helm = "3.12.2"
