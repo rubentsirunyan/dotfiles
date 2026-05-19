@@ -21,12 +21,17 @@ setopt    sharehistory            #Share history across terminals
 setopt    incappendhistory        #Immediately append to the history file, not just when a term is killed
 setopt    globdots        # Lets files beginning with a . be matched without explicitly specifying the dot.
 
+# Completion system — must initialize before plugins like fzf-tab that wrap it.
+fpath=(/Users/ruben.tsirunyan/.docker/completions $fpath)
+autoload -Uz compinit
+compinit
+
 # Lazy-load antidote and generate the static load file only when needed
 zsh_plugins_list=${XDG_CONFIG_HOME}/zsh/plugins.list
 zsh_plugins=${ZDOTDIR:-$HOME}/.zsh_plugins
 if [[ ! ${zsh_plugins}.zsh -nt ${zsh_plugins_list} ]]; then
   (
-    source ${ZDOTDIR:-~}/.antidote/antidote.zsh
+    source $(brew --prefix antidote)/share/antidote/antidote.zsh
     antidote bundle <${zsh_plugins_list} >${zsh_plugins}.zsh
   )
 fi
@@ -57,9 +62,3 @@ export STARSHIP_CONFIG=~/.config/starship/starship.toml
 export PATH="$HOME/.local/bin:$PATH"
 export PATH=$HOME/.tmux/plugins/t-smart-tmux-session-manager/bin:$PATH
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
-
-# The following lines have been added by Docker Desktop to enable Docker CLI completions.
-fpath=(/Users/ruben.tsirunyan/.docker/completions $fpath)
-autoload -Uz compinit
-compinit
-# End of Docker CLI completions

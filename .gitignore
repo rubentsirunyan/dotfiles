@@ -3,3 +3,6 @@ nvim/.config/nvim/plugin
 # Per-machine git identity files
 .gitconfig.local
 .gitconfig-*
+
+# Per-machine macOS settings (private dock apps, work-only defaults)
+macos.local.sh

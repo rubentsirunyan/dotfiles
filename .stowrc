@@ -3,6 +3,9 @@
 --ignore=DS_Store
 --ignore=Brewfile
 --ignore=README.md
+--ignore=macos\.sh
+--ignore=macos\.local\.sh
+--ignore=macos\.local\.sh\.example
 --ignore=brew
 --ignore=nix
 --ignore=\.gitconfig\.local\.example

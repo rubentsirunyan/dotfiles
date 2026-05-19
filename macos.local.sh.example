@@ -1,0 +1,12 @@
+# Copy to macos.local.sh next to macos.sh and edit. This file is per-machine
+# and must not be committed to the public repo.
+#
+# Sourced by macos.sh just before `killall Dock`, so anything you change here
+# is applied in the same dock restart. set -euo pipefail is already on.
+
+# Extra dock apps (appended after the public ones):
+# dockutil --add /Applications/Slack.app           --no-restart
+# dockutil --add "/Applications/Some Client.app"   --no-restart
+
+# Work-only defaults:
+# defaults write com.example.app SomeKey -bool true

@@ -45,9 +45,20 @@
    commented `includeIf` blocks in the template to switch identity per
    client directory.
 
-6. Install tmux plugins: open tmux and hit `<prefix> + I`.
+6. Apply macOS preferences (dock position, keyboard repeat rate, etc.):
 
-7. Karabiner:
+   ```shell
+   ~/dotfiles/macos.sh
+   ```
+
+   Log out and back in for keyboard-repeat changes to take effect.
+   Optional: copy `macos.local.sh.example` to `macos.local.sh` to add
+   private dock apps or work-only defaults — `macos.sh` sources it
+   automatically when present.
+
+7. Install tmux plugins: open tmux and hit `<prefix> + I`.
+
+8. Karabiner:
    - Open Karabiner Elements, grant permissions, and create a profile called `Default`.
    - Start Goku (reads `~/.config/karabiner.edn` by default, which `stow` already linked):
 
