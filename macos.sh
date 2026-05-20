@@ -22,6 +22,10 @@ dockutil --add /Applications/Spotify.app             --no-restart
 defaults write -g KeyRepeat -int 1          # delay between repeats
 defaults write -g InitialKeyRepeat -int 10  # delay before repeating starts
 
+# Don't hide windows when clicking the wallpaper (macOS Sonoma+ behavior).
+defaults write com.apple.WindowManager EnableStandardClickToShowDesktop -bool false
+killall WindowManager 2>/dev/null || true
+
 # Per-machine additions — extra dock apps, work-only defaults, etc.
 # Lives next to this script but is gitignored. See macos.local.sh.example.
 script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"

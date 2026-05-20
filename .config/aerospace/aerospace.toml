@@ -154,6 +154,14 @@ non-empty-workspaces-root-containers-layout-on-startup = 'smart'
 M = 'secondary'
 
 [[on-window-detected]]
+if.workspace = '5'
+run = ['layout accordion horizontal']
+
+[[on-window-detected]]
+if.workspace = '8'
+run = ['layout accordion horizontal']
+
+[[on-window-detected]]
 if.app-id = 'com.mitchellh.ghostty'
 run = 'move-node-to-workspace 1'
 
@@ -197,6 +205,10 @@ run = 'move-node-to-workspace 6'
 
 [[on-window-detected]]
 if.app-id = 'com.todesktop.230313mzl4w4u92'
+run = 'move-node-to-workspace 5'
+
+[[on-window-detected]]
+if.app-id = 'com.anthropic.claudefordesktop'
 run = 'move-node-to-workspace 5'
 
 [[on-window-detected]]
