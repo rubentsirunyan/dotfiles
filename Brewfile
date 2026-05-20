@@ -13,6 +13,7 @@ brew "antidote"
 brew "tmux"
 brew "zoxide"
 brew "yqrashawn/goku/goku"
+brew "ffmpeg"
 
 cask "claude"
 cask "dropzone"

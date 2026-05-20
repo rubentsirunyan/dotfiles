@@ -1,4 +1,5 @@
 --target=~/
+--no-folding
 --ignore=.stowrc
 --ignore=DS_Store
 --ignore=Brewfile
@@ -10,3 +11,4 @@
 --ignore=nix
 --ignore=\.gitconfig\.local\.example
 --ignore=work\.local\.zsh\.example
+--ignore=work\.local\.zsh

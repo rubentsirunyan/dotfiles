@@ -6,3 +6,6 @@ nvim/.config/nvim/plugin
 
 # Per-machine macOS settings (private dock apps, work-only defaults)
 macos.local.sh
+
+# Per-machine zsh extras (local KUBECONFIG, work-only env, etc.)
+work.local.zsh
