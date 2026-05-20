@@ -9,3 +9,4 @@
 --ignore=brew
 --ignore=nix
 --ignore=\.gitconfig\.local\.example
+--ignore=work\.local\.zsh\.example

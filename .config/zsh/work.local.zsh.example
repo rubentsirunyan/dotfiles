@@ -1,0 +1,1 @@
+export KUBECONFIG=~/.kube/config:~/.kube/config-dev:~/.kube/config-stage:~/.kube/config-prod

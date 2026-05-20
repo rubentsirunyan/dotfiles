@@ -45,7 +45,19 @@
    commented `includeIf` blocks in the template to switch identity per
    client directory.
 
-6. Apply macOS preferences (dock position, keyboard repeat rate, etc.):
+6. Per-machine zsh extras (work-only env vars, kubeconfigs, etc.): copy
+   the template and edit.
+
+   ```shell
+   cp ~/.config/zsh/work.local.zsh.example ~/.config/zsh/work.local.zsh
+   $EDITOR ~/.config/zsh/work.local.zsh
+   ```
+
+   `.zshrc` sources `~/.config/zsh/work.local.zsh` automatically when
+   present. The file is gitignored so secrets and per-machine paths
+   stay local.
+
+7. Apply macOS preferences (dock position, keyboard repeat rate, etc.):
 
    ```shell
    ~/dotfiles/macos.sh
@@ -56,9 +68,9 @@
    private dock apps or work-only defaults — `macos.sh` sources it
    automatically when present.
 
-7. Install tmux plugins: open tmux and hit `<prefix> + I`.
+8. Install tmux plugins: open tmux and hit `<prefix> + I`.
 
-8. Karabiner:
+9. Karabiner:
    - Open Karabiner Elements, grant permissions, and create a profile called `Default`.
    - Start Goku (reads `~/.config/karabiner.edn` by default, which `stow` already linked):
 

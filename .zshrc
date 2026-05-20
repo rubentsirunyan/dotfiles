@@ -48,7 +48,7 @@ source ${XDG_CONFIG_HOME}/zsh/bw_fzf.zsh
 # source ${XDG_CONFIG_HOME}/zsh/gpg.zsh
 source ${XDG_CONFIG_HOME}/zsh/aliases.zsh
 
-# source ~/.zsh/work.zsh
+[[ -f ${XDG_CONFIG_HOME}/zsh/work.local.zsh ]] && source ${XDG_CONFIG_HOME}/zsh/work.local.zsh
 
 eval "$(fzf --zsh)"
 
