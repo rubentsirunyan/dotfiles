@@ -152,6 +152,7 @@ non-empty-workspaces-root-containers-layout-on-startup = 'smart'
 
 [workspace-to-monitor-force-assignment]
 M = 'secondary'
+'10' = 'secondary'
 
 [[on-window-detected]]
 if.workspace = '5'
@@ -231,4 +232,4 @@ run = 'move-node-to-workspace 9'
 
 [[on-window-detected]]
 if.app-id = 'org.openvpn.client.app'
-run = 'move-node-to-workspace 11'
+run = 'move-node-to-workspace 10'
