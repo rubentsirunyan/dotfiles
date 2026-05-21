@@ -14,6 +14,7 @@ brew "tmux"
 brew "zoxide"
 brew "yqrashawn/goku/goku"
 brew "ffmpeg"
+brew "laishulu/homebrew/macism" # needed for neovim's im-select plugin
 
 cask "claude"
 cask "dropzone"
@@ -24,3 +25,4 @@ cask "ticktick"
 cask "spotify"
 cask "karabiner-elements"
 cask "nikitabobko/tap/aerospace"
+cask "hovancik/stretchly/stretchly"
