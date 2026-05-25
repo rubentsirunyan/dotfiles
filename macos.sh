@@ -26,6 +26,10 @@ defaults write -g InitialKeyRepeat -int 10  # delay before repeating starts
 defaults write com.apple.WindowManager EnableStandardClickToShowDesktop -bool false
 killall WindowManager 2>/dev/null || true
 
+# Don't restore app windows on login/relaunch — AeroSpace's after-startup-command
+# owns app launches, and system restoration races its window-detection rules.
+defaults write -g NSQuitAlwaysKeepsWindows -bool false
+
 # Menu bar / Control Center items. 1 = show, 0 = hide.
 # Positions are intentionally omitted — they're pixel offsets and don't transfer well.
 defaults write com.apple.controlcenter "NSStatusItem VisibleCC Battery"            -bool true

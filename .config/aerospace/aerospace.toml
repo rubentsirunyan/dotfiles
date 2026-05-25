@@ -1,6 +1,17 @@
 after-login-command = []
 after-startup-command = [
-  'exec-and-forget borders active_color=0xfffcba03 inactive_color=0xff494d64 width=5.0'
+  'exec-and-forget borders active_color=0xfffcba03 inactive_color=0xff494d64 width=5.0',
+  'exec-and-forget open -b com.mitchellh.ghostty',
+  'exec-and-forget open -b com.google.Chrome',
+  'exec-and-forget open -b com.apple.mail',
+  'exec-and-forget open -b com.apple.iCal',
+  'exec-and-forget open -b org.whispersystems.signal-desktop',
+  'exec-and-forget open -b im.riot.app',
+  'exec-and-forget open -b com.spotify.client',
+  'exec-and-forget open -b md.obsidian',
+  'exec-and-forget open -b com.TickTick.task.mac',
+  'exec-and-forget open -b com.bitwarden.desktop',
+  'exec-and-forget open -b org.keepassxc.keepassxc',
 ]
 
 start-at-login = true

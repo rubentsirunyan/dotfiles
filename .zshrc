@@ -9,6 +9,7 @@ export XDG_CONFIG_HOME="$HOME/.config" # Added for lazygit https://github.com/je
 
 export ZSH_DISABLE_COMPFIX=true
 export EDITOR=nvim
+export HOMEBREW_NO_AUTO_UPDATE="1"
 
 # History
 export HISTSIZE=50000             #How many lines of history to keep in memory
