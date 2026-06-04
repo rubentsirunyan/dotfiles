@@ -51,6 +51,13 @@ defaults write com.apple.controlcenter "NSStatusItem VisibleCC Hearing"         
 defaults write com.apple.controlcenter "NSStatusItem VisibleCC MusicRecognition"   -bool false
 killall ControlCenter 2>/dev/null || true
 
+# Login window: show the list of users (click your name, type only the password)
+# instead of the empty name+password form. SHOWOTHERUSERS_MANAGED makes
+# network/mobile (domain) accounts appear in that list too. These live in a
+# system-wide domain, so they need sudo (unlike the per-user defaults above).
+sudo defaults write /Library/Preferences/com.apple.loginwindow SHOWFULLNAME -bool false
+sudo defaults write /Library/Preferences/com.apple.loginwindow SHOWOTHERUSERS_MANAGED -bool true
+
 # Per-machine additions — extra dock apps, work-only defaults, etc.
 # Lives next to this script but is gitignored. See macos.local.sh.example.
 script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"

@@ -17,7 +17,7 @@ terragrunt = "0.43.2"
 packer = "1.8.6"
 
 # AI
-claude-code = "2.1.144"
+claude-code = "2.1.156"
 
 # Kubernetes
 kubectl = "1.23.17"
