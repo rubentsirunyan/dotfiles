@@ -51,6 +51,11 @@ defaults write com.apple.controlcenter "NSStatusItem VisibleCC Hearing"         
 defaults write com.apple.controlcenter "NSStatusItem VisibleCC MusicRecognition"   -bool false
 killall ControlCenter 2>/dev/null || true
 
+# New Finder windows open Home instead of Recents.
+defaults write com.apple.finder NewWindowTarget -string "PfHm"
+defaults write com.apple.finder NewWindowTargetPath -string "file://${HOME}/"
+killall Finder 2>/dev/null || true
+
 # Login window: show the list of users (click your name, type only the password)
 # instead of the empty name+password form. SHOWOTHERUSERS_MANAGED makes
 # network/mobile (domain) accounts appear in that list too. These live in a
