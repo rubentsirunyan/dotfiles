@@ -77,3 +77,31 @@
      ```shell
      brew services start yqrashawn/goku/goku
      ```
+
+## Ubuntu setup
+
+Ubuntu 24.04 or newer — `.tmux.conf` uses `allow-passthrough`, which needs
+tmux ≥ 3.3, and 22.04 ships 3.2a.
+
+1. Clone the repo as above.
+
+2. Install the core packages (zsh, git, stow, tmux, fzf, zoxide, a C
+   toolchain), mise from its apt repo, and antidote:
+
+   ```shell
+   ~/dotfiles/ubuntu.sh
+   ```
+
+   This is the apt counterpart of `brew bundle` for the packages the rest of
+   the setup depends on; everything else comes from `mise install`. GUI apps
+   and the desktop layer (AeroSpace, Karabiner, Raycast) have no Linux
+   counterpart here.
+
+3. Make zsh the login shell, then log out and back in:
+
+   ```shell
+   chsh -s "$(command -v zsh)"
+   ```
+
+4. Follow macOS steps 3–6 and 8 (stow, `mise install`, git identity, zsh
+   extras, tmux plugins). Steps 7 and 9 are macOS-only.

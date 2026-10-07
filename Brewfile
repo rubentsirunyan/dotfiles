@@ -13,11 +13,14 @@ brew "watch"
 brew "antidote"
 brew "tmux"
 brew "zoxide"
-brew "yqrashawn/goku/goku"
-brew "homebrew-ffmpeg/ffmpeg/ffmpeg", args: ["with-srt"]
-brew "laishulu/homebrew/macism" # needed for neovim's im-select plugin
+brew "yqrashawn/goku/goku", trusted: true
+brew "homebrew-ffmpeg/ffmpeg/ffmpeg", args: ["with-srt"], trusted: true
+brew "laishulu/homebrew/macism", trusted: true # needed for neovim's im-select plugin
+brew "bat"
 brew "btop"
 brew "tree"
+brew "dyff"
+brew "marp-cli"
 
 cask "claude"
 cask "dropzone"
@@ -29,9 +32,10 @@ cask "spotify"
 cask "vlc"
 cask "ace-link"
 cask "karabiner-elements"
-cask "nikitabobko/tap/aerospace"
-cask "disk-drill"
+cask "nikitabobko/tap/aerospace", trusted: true
+cask "radix"
 cask "input-source-pro"
 cask "hovancik/stretchly/stretchly"
 cask "dropzone"
 cask "monitorcontrol"
+cask "utm"

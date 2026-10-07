@@ -22,17 +22,29 @@ setopt    sharehistory            #Share history across terminals
 setopt    incappendhistory        #Immediately append to the history file, not just when a term is killed
 setopt    globdots        # Lets files beginning with a . be matched without explicitly specifying the dot.
 
+# Keep path/fpath duplicate-free so re-sourcing this file in a live shell
+# (e.g. `source ~/.zshrc` after a config change) doesn't grow them each time.
+typeset -U path fpath
+
 # Completion system — must initialize before plugins like fzf-tab that wrap it.
 fpath=(/Users/ruben.tsirunyan/.docker/completions $fpath)
 autoload -Uz compinit
-compinit
+# -i ignores insecure files instead of asking. Docker Desktop's symlinks in
+# /opt/homebrew/share/zsh/site-functions are admin-group-writable, so without
+# -i a re-source hangs on compinit's "[y] or abort [n]?" prompt.
+compinit -i
 
 # Lazy-load antidote and generate the static load file only when needed
 zsh_plugins_list=${XDG_CONFIG_HOME}/zsh/plugins.list
 zsh_plugins=${ZDOTDIR:-$HOME}/.zsh_plugins
 if [[ ! ${zsh_plugins}.zsh -nt ${zsh_plugins_list} ]]; then
   (
-    source $(brew --prefix antidote)/share/antidote/antidote.zsh
+    # antidote lives in ~/.antidote (git clone; see ubuntu.sh) or under Homebrew (macOS).
+    if [[ -r ${ZDOTDIR:-$HOME}/.antidote/antidote.zsh ]]; then
+      source ${ZDOTDIR:-$HOME}/.antidote/antidote.zsh
+    else
+      source $(brew --prefix antidote)/share/antidote/antidote.zsh
+    fi
     antidote bundle <${zsh_plugins_list} >${zsh_plugins}.zsh
   )
 fi
@@ -45,7 +57,8 @@ eval "$(mise activate zsh)"
 
 source ${XDG_CONFIG_HOME}/zsh/fzf.zsh
 source ${XDG_CONFIG_HOME}/zsh/git_fzf.zsh
-source ${XDG_CONFIG_HOME}/zsh/bw_fzf.zsh
+# source ${XDG_CONFIG_HOME}/zsh/bw_fzf.zsh
+# source ${XDG_CONFIG_HOME}/zsh/xpdiff.zsh
 # source ${XDG_CONFIG_HOME}/zsh/gpg.zsh
 source ${XDG_CONFIG_HOME}/zsh/aliases.zsh
 
@@ -57,6 +70,8 @@ eval "$(fzf --zsh)"
 eval "$(zoxide init zsh)"
 eval "$(starship init zsh)"
 export STARSHIP_CONFIG=~/.config/starship/starship.toml
+# export STARSHIP_CONFIG=/Users/ruben.tsirunyan/dotfiles/starship-omerxx.toml
+
 # eval "$(oh-my-posh init zsh --config $HOME/dotfiles/.config/ohmyposh/starship-colors.omp.toml)"
 
 

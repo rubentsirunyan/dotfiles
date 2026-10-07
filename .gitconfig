@@ -5,14 +5,19 @@
   fileMode = false
   editor = vim
   autocrlf = false
+[pull]
+  rebase = true
 [push]
   default = current
-[credentials]
+[rebase]
+  autoStash = true
+[credential]
   helper = store
 [diff]
   tool = vimdiff
 [merge]
   tool = vimdiff
+  ff = only
 
 # Per-machine overrides — identity, includeIf blocks for projects, etc.
 [include]

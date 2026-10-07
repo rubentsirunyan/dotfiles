@@ -70,6 +70,10 @@
   }
 
   :simlayers {
+    ;; space + key (pressed within :sim ms) = ctrl+alt+cmd + key
+    :super-space {
+      :key :spacebar
+    }
     ; :space-layer {
     ;   :key :spacebar
     ;   :modi {
@@ -83,7 +87,40 @@
     ; }
   }
   :main [
-    {:des "Change tab to alt if pressed with other keys and tab if pressed alone"
+    {:des "Space super layer: space+key chords to ctrl+alt+cmd+key (trial, tab mapping kept as fallback)"
+     :rules [
+      ;; ## (optional any) lets held shift pass through, so space+shift+key
+      ;; produces the ctrl+alt+cmd+shift move/mode variants with one rule per key
+      [:##h :!CTOh :super-space]
+      [:##j :!CTOj :super-space]
+      [:##k :!CTOk :super-space]
+      [:##l :!CTOl :super-space]
+      [:##t :!CTOt :super-space]
+      [:##s :!CTOs :super-space]
+      [:##z :!CTOz :super-space]
+      [:##r :!CTOr :super-space]
+      [:##d :!CTOd :super-space]
+      [:##m :!CTOm :super-space]
+      [:##c :!CTOc :super-space]
+      [:##e :!CTOe :super-space]
+      [:##1 :!CTO1 :super-space]
+      [:##2 :!CTO2 :super-space]
+      [:##3 :!CTO3 :super-space]
+      [:##4 :!CTO4 :super-space]
+      [:##5 :!CTO5 :super-space]
+      [:##6 :!CTO6 :super-space]
+      [:##7 :!CTO7 :super-space]
+      [:##8 :!CTO8 :super-space]
+      [:##9 :!CTO9 :super-space]
+      [:##0 :!CTO0 :super-space]
+      [:##hyphen :!CTOhyphen :super-space]
+      [:##equal_sign :!CTOequal_sign :super-space]
+      [:##semicolon :!CTOsemicolon :super-space]
+      [:##backslash :!CTObackslash :super-space]
+      ;; space+tab: possible here, impossible with tab-as-super (tab can't chord with itself)
+      [:##tab :!CTOtab :super-space]
+    ]}
+    {:des "Change tab to super (ctrl+alt+cmd) if pressed with other keys and tab if pressed alone"
      :rules [
       ;; --- pass-throughs (do NOT turn these into Option) ---
       ;; Shift+Tab (either shift)
@@ -96,7 +133,9 @@
       [:!TStab :!TStab] [:!TRtab :!TRtab] [:!WStab :!WStab] [:!WRtab :!WRtab]
       ;; Cmd+Shift+Tab (some apps use it)
       [:!CStab :!CStab] [:!CRtab :!CRtab] [:!QStab :!QStab] [:!QRtab :!QRtab]
-      [:tab :left_option nil {:alone :tab}]
+      ;; shift is deliberately NOT part of the chord so it can act as the
+      ;; "move" layer on top (tab+shift+key = full hyper)
+      [:tab :!CTleft_option nil {:alone :tab}]
     ]}
     {:des "Change caps_lock to control if pressed with other keys and escape if pressed alone"
      :rules [
