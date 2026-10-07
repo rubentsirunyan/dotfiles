@@ -1,0 +1,68 @@
+# herdr configuration, mapped from ~/.tmux.conf
+onboarding = false
+
+[theme]
+name = "gruvbox"
+auto_switch = false
+
+[terminal]
+new_cwd = "follow"
+
+[keys]
+prefix = "ctrl+b"
+
+copy_mode = ["prefix+b", "prefix+["]
+toggle_sidebar = "prefix+shift+b"
+
+new_tab = "prefix+c"
+split_vertical = "prefix+|"
+split_horizontal = "prefix+minus"
+rename_tab = "prefix+comma"
+
+previous_tab = ["prefix+h", "prefix+p"]
+next_tab = ["prefix+l", "prefix+n"]
+previous_workspace = "prefix+k"
+next_workspace = "prefix+j"
+resize_mode = "prefix+shift+r"
+
+focus_pane_left = "prefix+ctrl+h"
+focus_pane_down = "prefix+ctrl+j"
+focus_pane_up = "prefix+ctrl+k"
+focus_pane_right = "prefix+ctrl+l"
+
+cycle_pane_next = "prefix+o"
+open_notification_target = "prefix+shift+o"
+last_pane = "prefix+;"
+
+reload_config = "prefix+r"
+detach = "prefix+d"
+workspace_picker = ["prefix+s", "prefix+w"]
+settings = "prefix+shift+s"
+
+# built-in goto unbound; herdr-navigator below covers it
+goto = ""
+
+[[keys.command]]
+key = "prefix+t"
+type = "plugin_action"
+command = "sessionizer.pick"
+description = "workspace picker (sessionizer)"
+
+[ui]
+prompt_new_tab_name = false
+
+status_indicators = "symbols"
+show_agent_labels_on_pane_borders = true
+
+agent_panel_sort = "priority"
+[ui.sidebar.agents.rows_by_agent]
+claude = [["state_icon", "workspace", "tab"], ["terminal_title_stripped"], ["agent"]]
+
+[advanced]
+scrollback_limit_bytes = 100000000
+
+[experimental]
+pane_history = false
+
+[ui.toast]
+delivery = "herdr"
